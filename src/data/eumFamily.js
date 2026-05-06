@@ -15,7 +15,7 @@ export const EUM_FAMILY = [
     name: '이음 캠프',
     tagline: '수련회·모임 운영 도우미',
     emoji: '🏕️',
-    url: 'https://eum-camp.web.app/',
+    url: 'https://eum-camp-template.web.app/',
     accent: '#a5b4fc',
   },
   {
