@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 220" fill="none">
+  <defs>
+    <linearGradient id="eumGold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fef3c7"/>
+      <stop offset="22%" stop-color="#fcd34d"/>
+      <stop offset="50%" stop-color="#d4a017"/>
+      <stop offset="78%" stop-color="#a16207"/>
+      <stop offset="100%" stop-color="#78350f"/>
+    </linearGradient>
+    <radialGradient id="eumGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="1"/>
+      <stop offset="22%" stop-color="#fef3c7" stop-opacity="0.95"/>
+      <stop offset="55%" stop-color="#fcd34d" stop-opacity="0.45"/>
+      <stop offset="100%" stop-color="#d4a017" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="eumStarFill" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fffbeb"/>
+      <stop offset="50%" stop-color="#fcd34d"/>
+      <stop offset="100%" stop-color="#d4a017"/>
+    </linearGradient>
+  </defs>
+
+  <!-- 검은 배경 (둥근 모서리) -->
+  <rect width="220" height="220" rx="40" fill="#060a18"/>
+
+  <!-- 황금 두 링 -->
+  <ellipse cx="80"  cy="110" rx="48" ry="72" fill="none" stroke="url(#eumGold)" stroke-width="20"/>
+  <ellipse cx="140" cy="110" rx="48" ry="72" fill="none" stroke="url(#eumGold)" stroke-width="20"/>
+
+  <!-- 중앙 광채 -->
+  <circle cx="110" cy="110" r="55" fill="url(#eumGlow)"/>
+
+  <!-- 4점 별 (큰) -->
+  <path d="M110,50 L115,105 L165,110 L115,115 L110,170 L105,115 L55,110 L105,105 Z" fill="url(#eumStarFill)" opacity="0.85"/>
+  <!-- 4점 별 (작은 중앙) -->
+  <path d="M110,85 L112,108 L135,110 L112,112 L110,135 L108,112 L85,110 L108,108 Z" fill="#ffffff"/>
+  <!-- 중앙 점 -->
+  <circle cx="110" cy="110" r="3" fill="#ffffff"/>
+</svg>

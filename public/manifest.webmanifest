@@ -1,0 +1,22 @@
+{
+  "name": "이음 (E:UM) — 교회 활동 도우미",
+  "short_name": "이음 EUM",
+  "description": "하나님과 사람을, 사람과 사람을 잇는 교회 활동 도우미",
+  "lang": "ko",
+  "dir": "ltr",
+  "start_url": "/eum-play/",
+  "scope": "/eum-play/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "theme_color": "#060a18",
+  "background_color": "#060a18",
+  "categories": ["education", "lifestyle", "utilities"],
+  "icons": [
+    {
+      "src": "/eum-play/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

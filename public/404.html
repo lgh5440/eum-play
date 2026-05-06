@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <title>이음 EUM</title>
+  <script>
+    // GitHub Pages SPA fallback — 404로 떨어진 경로를 sessionStorage에 보관 후 / 로 리다이렉트.
+    // index.html 진입 시 main.jsx에서 history.replaceState 로 복원.
+    sessionStorage.setItem('eum-redirect', location.pathname + location.search + location.hash);
+    location.replace('/eum-play/');
+  </script>
+</head>
+<body></body>
+</html>
