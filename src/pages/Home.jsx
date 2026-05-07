@@ -40,47 +40,15 @@ export default function Home() {
           style={{ background: 'radial-gradient(circle, rgba(252,211,77,0.18), transparent 65%)' }} />
 
         <div className="relative z-10 flex items-center gap-3">
-          {/* 왼쪽: 작은 황금 로고 */}
-          <svg width="56" height="56" viewBox="0 0 220 220" fill="none" aria-hidden
-            className="shrink-0"
-            style={{ filter: 'drop-shadow(0 3px 12px rgba(252,211,77,0.4))' }}>
-            <defs>
-              <linearGradient id="eumGold" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%"   stopColor="#fef3c7" />
-                <stop offset="22%"  stopColor="#fcd34d" />
-                <stop offset="50%"  stopColor="#d4a017" />
-                <stop offset="78%"  stopColor="#a16207" />
-                <stop offset="100%" stopColor="#78350f" />
-              </linearGradient>
-              <radialGradient id="eumStarGlow" cx="50%" cy="50%" r="50%">
-                <stop offset="0%"  stopColor="#ffffff" stopOpacity="1" />
-                <stop offset="20%" stopColor="#fef3c7" stopOpacity="0.95" />
-                <stop offset="55%" stopColor="#fcd34d" stopOpacity="0.45" />
-                <stop offset="100%" stopColor="#d4a017" stopOpacity="0" />
-              </radialGradient>
-              <linearGradient id="eumStarFill" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%"   stopColor="#fffbeb" />
-                <stop offset="50%"  stopColor="#fcd34d" />
-                <stop offset="100%" stopColor="#d4a017" />
-              </linearGradient>
-            </defs>
-
-            <ellipse cx="80"  cy="100" rx="48" ry="72" fill="none" stroke="url(#eumGold)" strokeWidth="20" />
-            <ellipse cx="140" cy="100" rx="48" ry="72" fill="none" stroke="url(#eumGold)" strokeWidth="20" />
-            <circle  cx="110" cy="100" r="55" fill="url(#eumStarGlow)" />
-            <path d="M110,40 L115,95 L165,100 L115,105 L110,160 L105,105 L55,100 L105,95 Z"
-              fill="url(#eumStarFill)" opacity="0.85" />
-            <path d="M110,75 L112,98 L135,100 L112,102 L110,125 L108,102 L85,100 L108,98 Z"
-              fill="#ffffff" />
-            <circle cx="110" cy="100" r="3" fill="#ffffff" />
-            <text x="110" y="200"
-              textAnchor="middle"
-              fontFamily="Georgia, 'Times New Roman', serif"
-              fontSize="28" fontWeight="700"
-              fill="url(#eumGold)" letterSpacing="6">
-              E:UM
-            </text>
-          </svg>
+          {/* 왼쪽: 이음(E:UM) 공식 로고 — 이음 패밀리 통일 */}
+          <img
+            src={`${import.meta.env.BASE_URL}eum-logo.png`}
+            alt="E:UM"
+            width="56"
+            height="56"
+            className="shrink-0 object-contain"
+            style={{ filter: 'drop-shadow(0 3px 12px rgba(252,211,77,0.4))' }}
+          />
 
           {/* 오른쪽: 이름 + 설명 */}
           <div className="flex-1 min-w-0">
