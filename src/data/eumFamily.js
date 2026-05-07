@@ -6,7 +6,7 @@ export const EUM_FAMILY = [
     key: 'talentroad',
     name: '달란트로드',
     tagline: '나의 은사 찾기 · 56유형 검사',
-    emoji: '🧭',
+    emoji: '🗺️',
     url: 'https://lgh5440.github.io/talentroad-test/',
     accent: '#fcd34d',
   },

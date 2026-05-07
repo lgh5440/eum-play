@@ -57,7 +57,17 @@ export default function EumFamilyFooter({ currentApp, variant = 'footer' }) {
                 opacity: isCurrent ? 0.45 : 1,
               }}
             >
-              <span aria-hidden style={{ fontSize: 26, marginBottom: 4 }}>{app.emoji}</span>
+              <span
+                aria-hidden
+                style={{
+                  fontSize: 26,
+                  marginBottom: 4,
+                  fontFamily: '"Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", "Twemoji Mozilla", emoji',
+                  lineHeight: 1,
+                }}
+              >
+                {app.emoji}
+              </span>
               <p
                 className="font-black text-[12px] leading-tight"
                 style={{ color: isCurrent ? 'rgba(255,255,255,0.6)' : '#fff' }}
