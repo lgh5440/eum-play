@@ -6,9 +6,20 @@ import { VitePWA } from 'vite-plugin-pwa'
 export default defineConfig({
   // GitHub Pages 배포 경로 — https://lgh5440.github.io/eum-play/
   base: '/eum-play/',
+  server: {
+    port: 5190,
+    strictPort: true,
+  },
   plugins: [
     react(),
     tailwindcss(),
+    {
+      name: 'dev-title-prefix',
+      apply: 'serve',
+      transformIndexHtml(html) {
+        return html.replace(/<title>(.*?)<\/title>/, '<title>[DEV·플레이] $1</title>')
+      },
+    },
     VitePWA({
       registerType: 'autoUpdate',
       injectRegister: 'auto',

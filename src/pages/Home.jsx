@@ -114,7 +114,7 @@ export default function Home() {
       </Card>
 
       {/* 이음 패밀리 앱 광고 */}
-      <EumFamilyFooter currentApp="eumplay" variant="footer" />
+      <EumFamilyFooter currentApp="eumplay" variant="footer" size="compact" />
 
     </div>
   )
