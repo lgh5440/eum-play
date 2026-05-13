@@ -76,7 +76,24 @@ export default function EumFamilyFooter({ currentApp, variant = 'footer', size =
         </p>
       </header>
 
-      <div className={`grid gap-2 ${items.length === 3 ? 'grid-cols-3' : 'grid-cols-2'}`}>
+      <p
+        className="mt-3 text-center text-[11px]"
+        style={{ color: 'rgba(255,255,255,0.55)' }}
+      >
+        오류 신고 · 문의 :{' '}
+        <a
+          href="mailto:lgh544092@gmail.com?subject=%5BE%3AUM%20%ED%8C%A8%EB%B0%80%EB%A6%AC%5D%20%EB%AC%B8%EC%9D%98%C2%B7%EC%98%A4%EB%A5%98%20%EC%A0%9C%EB%B3%B4"
+          style={{
+            color: 'rgba(252,211,77,0.9)',
+            textDecoration: 'underline',
+            textUnderlineOffset: 4,
+          }}
+        >
+          lgh544092@gmail.com
+        </a>
+      </p>
+
+      <div className={`grid gap-2 ${items.length === 3 ? 'grid-cols-3' : 'grid-cols-2'}`} style={{ marginTop: 8 }}>
         {items.map((app) => {
           const isCurrent = app.key === currentApp
           const href = isCurrent ? undefined : buildEumFamilyUrl(app, currentApp, variant)
