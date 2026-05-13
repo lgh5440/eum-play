@@ -5,7 +5,19 @@
 export const RELAY_THEMES = [
   /* ─── 신앙 ─── */
   {
-    id: 'disciples_12', name: '12제자', emoji: '✝️',
+    id: 'jesus_names', name: '예수님의 이름', emoji: '✝️',
+    gradient: 'linear-gradient(135deg,#0891b2,#1d4ed8)', accent: '#22d3ee',
+    goal: 15, hint: '예수님의 호칭들',
+    answers: ['예수','그리스도','메시아','임마누엘','어린양','독생자','세상의빛','생명의떡','선한목자','다윗의자손','하나님의아들','인자','구원자','만왕의왕','알파와오메가'],
+  },
+  {
+    id: 'beatitudes', name: '산상수훈 8복', emoji: '⛰️',
+    gradient: 'linear-gradient(135deg,#f59e0b,#b45309)', accent: '#fbbf24',
+    goal: 8, hint: '마 5:3-12',
+    answers: ['심령이 가난한 자','애통하는 자','온유한 자','의에 주리고 목마른 자','긍휼히 여기는 자','마음이 청결한 자','화평하게 하는 자','의를 위해 박해받는 자'],
+  },
+  {
+    id: 'disciples_12', name: '12제자', emoji: '👥',
     gradient: 'linear-gradient(135deg,#6366f1,#4338ca)', accent: '#a5b4fc',
     goal: 12, hint: '예수님의 12사도',
     answers: ['베드로','안드레','야고보','요한','빌립','바돌로매','마태','도마','알패오의야고보','다대오','시몬','가룟유다'],
