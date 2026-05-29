@@ -13,9 +13,9 @@
   "categories": ["education", "lifestyle", "utilities"],
   "icons": [
     {
-      "src": "/eum-play/favicon.svg",
-      "sizes": "any",
-      "type": "image/svg+xml",
+      "src": "/eum-play/app-icon.png",
+      "sizes": "512x512",
+      "type": "image/png",
       "purpose": "any maskable"
     }
   ]
