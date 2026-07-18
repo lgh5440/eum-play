@@ -2,7 +2,7 @@ import { useState, useRef, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import {
   initPhotoStore, loadLibrary, addPhoto, removePhoto, compressImage,
-  loadPhotoProgress, markPhotoPlayed, resetAllPhotoProgress,
+  loadPhotoProgress, markPhotoPlayed, resetAllPhotoProgress, getPhotoStoreError,
 } from '../utils/photoLibrary'
 import VerseHeader from '../components/VerseHeader'
 import HowToCard from '../components/HowToCard'
@@ -30,14 +30,18 @@ export default function PhotoGuess() {
   const [library, setLibrary]      = useState([])
   const [progress, setProgress]    = useState({})
   const [shownAnswers, setShownAnswers] = useState(() => new Set())  // 정답 보임 카드 id 집합
+  const [loadError, setLoadError]       = useState(null)
 
   /* IndexedDB 초기화 (마이그레이션 + 캐시 채움) */
   useEffect(() => {
-    initPhotoStore().then(() => {
-      setLibrary(loadLibrary())
-      setProgress(loadPhotoProgress())
-      setReady(true)
-    })
+    initPhotoStore()
+      .catch(err => { console.error('[photo] init failed unexpectedly', err) })
+      .finally(() => {
+        setLibrary(loadLibrary())
+        setProgress(loadPhotoProgress())
+        setLoadError(getPhotoStoreError())
+        setReady(true)
+      })
   }, [])
 
   /* 사진 추가 폼 */
@@ -163,6 +167,14 @@ export default function PhotoGuess() {
         <HowToCard gameId="photo-guess" defaultOpen={false} />
 
         <div className="max-w-lg mx-auto w-full px-4 pb-6 flex-1">
+          {loadError && (
+            <div className="mb-4 px-3 py-2 rounded-lg" style={{ background: 'rgba(248,113,113,0.12)', border: '1px solid rgba(248,113,113,0.3)' }}>
+              <p style={{ color: '#f87171', fontSize: 12, fontWeight: 700 }}>
+                저장된 사진 라이브러리를 불러오지 못했어요. 이 브라우저의 저장공간 설정을 확인해 주세요
+                (시크릿/프라이빗 모드에서는 사진이 저장되지 않을 수 있어요).
+              </p>
+            </div>
+          )}
           <p className="mb-4 leading-relaxed" style={{ color: '#94a3b8', fontSize: 13 }}>
             진행 전에 사진과 정답을 미리 등록해 두세요. 게임 시작 시 화면 일부만 강하게 확대되어 보이고,
             8단계로 점점 전체가 드러납니다.
@@ -212,7 +224,7 @@ export default function PhotoGuess() {
                       }}>
                       {/* 진행 완료 배지 */}
                       {played && (
-                        <div className="absolute top-2 right-2 z-10 px-2 py-0.5 rounded-md text-[10px] font-black"
+                        <div className="absolute top-2 right-2 z-10 px-2 py-0.5 rounded-md text-[13px] font-black"
                           style={{ background:'rgba(34,211,238,0.18)', color:'#22d3ee', border:'1px solid rgba(34,211,238,0.45)' }}>
                           ✓ 완료
                         </div>
@@ -231,7 +243,7 @@ export default function PhotoGuess() {
                           style={{ background: 'radial-gradient(circle, rgba(34,211,238,0.18), transparent 65%)' }} />
                         <div className="text-center relative z-10">
                           <div className="text-4xl mb-1 drop-shadow-lg">🔍</div>
-                          <p className="text-[10px] font-black tracking-widest uppercase" style={{ color:'rgba(255,255,255,0.55)' }}>
+                          <p className="text-[13px] font-black tracking-widest uppercase" style={{ color:'rgba(255,255,255,0.55)' }}>
                             가려짐
                           </p>
                         </div>
@@ -243,14 +255,14 @@ export default function PhotoGuess() {
                         </p>
                         <div className="flex items-center justify-between gap-2">
                           <button onClick={() => toggleAnswer(photo.id)}
-                            className="text-[10px] truncate text-left flex-1 py-0.5"
+                            className="text-[13px] truncate text-left flex-1 py-0.5"
                             style={{ color: ansShown ? '#22d3ee' : '#64748b' }}>
                             {photo.answer
                               ? (ansShown ? `정답: ${photo.answer}` : '🔒 정답 숨김 (탭)')
                               : '정답 미설정'}
                           </button>
                           <button onClick={() => deletePhoto(photo.id)}
-                            className="text-[10px] font-bold px-2 py-1 rounded-lg shrink-0"
+                            className="text-[13px] font-bold px-2 py-1 rounded-lg shrink-0"
                             style={{ background:'rgba(239,68,68,0.1)', color:'#f87171', border:'1px solid rgba(239,68,68,0.2)' }}>
                             삭제
                           </button>
@@ -370,7 +382,7 @@ export default function PhotoGuess() {
                 }} />
               ))}
             </div>
-            <span className="text-[10px] font-black tracking-widest px-2 py-0.5 rounded-md"
+            <span className="text-[13px] font-black tracking-widest px-2 py-0.5 rounded-md"
               style={{ background:'rgba(0,0,0,0.5)', color:'#fff' }}>
               {pct}%
             </span>

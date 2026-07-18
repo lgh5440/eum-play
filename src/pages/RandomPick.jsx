@@ -173,7 +173,7 @@ export default function RandomPick() {
   /* ───── 감속 정착 (phase=stopping) ───── */
   useEffect(() => {
     if (phase !== 'stopping' || !stopDataRef.current) return
-    const { targetAngle, winnerName } = stopDataRef.current
+    const { targetAngle, winnerName, winnerPoolIdx } = stopDataRef.current
 
     let id
     const startA  = angleRef.current
@@ -197,7 +197,7 @@ export default function RandomPick() {
         drawDrum(finalA, 'done')
         setPickedName(winnerName)
         setPhase('done')
-        if (removeAfterPick) setRemainNames(p => p.filter(nm => nm !== winnerName))
+        if (removeAfterPick) setRemainNames(p => p.filter((_, i) => i !== winnerPoolIdx))
       }
     }
     id = requestAnimationFrame(decel)
@@ -220,14 +220,15 @@ export default function RandomPick() {
 
   const stopSpin = () => {
     if (phase !== 'spinning') return
-    const pool      = removeAfterPick ? remainNames : names
-    const winner    = pool[Math.floor(Math.random() * pool.length)]
+    const pool         = removeAfterPick ? remainNames : names
+    const winnerPoolIdx = Math.floor(Math.random() * pool.length)
+    const winner        = pool[winnerPoolIdx]
     const list      = namesRef.current
     const n         = list.length
     const winnerIdx = list.indexOf(winner)
     const segAngle  = (Math.PI * 2) / n
 
-    stopDataRef.current = { targetAngle: winnerIdx * segAngle, winnerName: winner }
+    stopDataRef.current = { targetAngle: winnerIdx * segAngle, winnerName: winner, winnerPoolIdx }
     setPhase('stopping')
   }
 
@@ -301,8 +302,8 @@ export default function RandomPick() {
           <div className="flex items-center justify-between">
             <button onClick={() => navigate('/')} className="w-8 h-8 rounded-xl flex items-center justify-center"
               style={{ background:'rgba(10,16,35,0.8)', border:'1px solid rgba(255,255,255,0.08)', color:'#64748b' }}>←</button>
-            <p className="text-[10px] font-black tracking-widest uppercase" style={{ color:'#64748b' }}>랜덤 뽑기</p>
-            <button onClick={reset} className="text-[10px] font-bold px-2 py-1 rounded-lg"
+            <p className="text-[13px] font-black tracking-widest uppercase" style={{ color:'#64748b' }}>랜덤 뽑기</p>
+            <button onClick={reset} className="text-[13px] font-bold px-2 py-1 rounded-lg"
               style={{ color:'#64748b', border:'1px solid rgba(255,255,255,0.07)' }}>초기화</button>
           </div>
           <label className="flex items-center gap-2 cursor-pointer">
@@ -310,7 +311,7 @@ export default function RandomPick() {
               onChange={e => { setRemoveAfterPick(e.target.checked); reset() }} className="w-4 h-4" />
             <span className="text-xs font-bold" style={{ color:'#64748b' }}>뽑힌 이름 제외</span>
           </label>
-          <p className="text-[10px] font-black tracking-widest uppercase" style={{ color:'#64748b' }}>
+          <p className="text-[13px] font-black tracking-widest uppercase" style={{ color:'#64748b' }}>
             참가자 ({pool.length}/{names.length})
           </p>
           <div className="flex gap-1.5">
@@ -342,7 +343,7 @@ export default function RandomPick() {
     <div className="min-h-screen flex flex-col" style={{ background: '#060a18' }}>
       <Header title="랜덤 뽑기" onBack={() => navigate('/')}
         right={
-          <button onClick={reset} className="text-[10px] font-bold px-2.5 py-1.5 rounded-lg"
+          <button onClick={reset} className="text-[13px] font-bold px-2.5 py-1.5 rounded-lg"
             style={{ color:'#64748b', border:'1px solid rgba(255,255,255,0.07)' }}>
             초기화
           </button>
@@ -397,7 +398,7 @@ export default function RandomPick() {
           <span className="text-xs font-bold" style={{ color:'#64748b' }}>뽑힌 이름 다음 추첨 제외</span>
         </label>
 
-        <p className="text-[10px] font-black tracking-widest uppercase" style={{ color:'#64748b' }}>
+        <p className="text-[13px] font-black tracking-widest uppercase" style={{ color:'#64748b' }}>
           참가자 ({removeAfterPick ? `${remainNames.length}/` : ''}{names.length})
         </p>
         <div className="flex gap-1.5">

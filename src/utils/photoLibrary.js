@@ -11,6 +11,7 @@ const PROGRESS_KEY = 'photoguess:progress'
 let _libCache      = []
 let _progressCache = {}
 let _ready         = false
+let _lastInitError = null
 
 /* ─── 초기화 (앱 시작 시 한 번) ───
  * 1) localStorage에 기존 데이터 있으면 IndexedDB로 옮기고 localStorage 비움
@@ -45,10 +46,23 @@ export async function initPhotoStore() {
     }
   } catch { /* 무시 */ }
 
-  _libCache      = (await get(LIB_KEY)) || []
-  _progressCache = (await get(PROGRESS_KEY)) || {}
+  _lastInitError = null
+  try {
+    _libCache      = (await get(LIB_KEY)) || []
+    _progressCache = (await get(PROGRESS_KEY)) || {}
+  } catch (err) {
+    // IndexedDB 접근 실패(사파리 시크릿모드, 저장공간 권한 등) — 빈 라이브러리로 계속 진행.
+    // _ready를 여기서도 true로 세팅하지 않으면 "불러오는 중…" 화면에서 영원히 멈춘다.
+    console.error('[photo] IndexedDB read failed, starting with empty library', err)
+    _libCache      = []
+    _progressCache = {}
+    _lastInitError = err
+  }
   _ready = true
 }
+
+/** initPhotoStore()가 실패로 빈 라이브러리로 대체됐는지 확인 (UI 경고용). */
+export function getPhotoStoreError() { return _lastInitError }
 
 /* ─── 라이브러리 — 동기 read (캐시) ─── */
 export function loadLibrary() { return _libCache }

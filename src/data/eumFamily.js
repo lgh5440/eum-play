@@ -9,6 +9,7 @@ export const EUM_FAMILY = [
 ];
 
 export function buildEumFamilyUrl(target, source, medium) {
+  if (!target.url) return '';
   const u = new URL(target.url);
   u.searchParams.set('utm_source', source);
   u.searchParams.set('utm_medium', medium);
