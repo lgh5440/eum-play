@@ -89,7 +89,7 @@ export default function Settings() {
                 <button key={lv} onClick={() => setChosungLevel(lv)}
                   className="flex-1 py-2 rounded-xl text-xs font-black"
                   style={chosungLevel === lv
-                    ? { background: 'rgba(6,182,212,0.18)', color: '#3B82F6', border: '1px solid #BFDBFE' }
+                    ? { background: '#EFF6FF', color: '#2563EB', border: '1px solid #BFDBFE' }
                     : { background: 'rgba(255,255,255,0.03)', color: '#3B4759', border: '1px solid #E4ECF7' }}>
                   {lv}
                 </button>

@@ -118,7 +118,7 @@ export default function Timer() {
                 aria-label={`${p.label} 타이머`}
                 className="px-3 py-1.5 rounded-full text-xs font-bold transition-all"
                 style={selected
-                  ? { background: 'rgba(6,182,212,0.2)', color: '#3B82F6', border: '1px solid #BFDBFE' }
+                  ? { background: '#EFF6FF', color: '#2563EB', border: '1px solid #BFDBFE' }
                   : { background: '#EFF6FF', color: '#3B4759', border: '1px solid #E6EEF9' }
                 }
               >

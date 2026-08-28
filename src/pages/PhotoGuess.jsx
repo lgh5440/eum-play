@@ -451,8 +451,8 @@ function TinyBtn({ onClick, children, disabled }) {
     <button onClick={onClick} disabled={disabled}
       className="text-[11px] font-bold px-3 py-1.5 rounded-lg"
       style={{ color: disabled ? 'rgba(100,116,139,0.5)' : '#3B82F6',
-        background: 'rgba(6,182,212,0.1)',
-        border: '1px solid rgba(6,182,212,0.25)' }}>
+        background: '#EFF6FF',
+        border: '1px solid #BFDBFE' }}>
       {children}
     </button>
   )

@@ -95,7 +95,7 @@ export default function Home() {
           >
             <span aria-hidden className="drop-shadow-lg mb-1.5" style={{ fontSize: 42 }}>{game.emoji}</span>
             <p className="font-black text-white text-[12px] leading-tight text-center px-1.5"
-              style={{ textShadow: '0 1px 4px #E4ECF7' }}>
+              style={{ textShadow: '0 1px 4px #1E2A45' }}>
               {game.name}
             </p>
           </button>
@@ -103,7 +103,7 @@ export default function Home() {
       </div>
 
       {/* 안내 카드 */}
-      <Card style={{ background: 'rgba(6,182,212,0.04)', border: '1px solid rgba(6,182,212,0.1)' }}>
+      <Card style={{ background: '#EFF6FF', border: '1px solid #BFDBFE' }}>
         <p className="text-[11px] font-black mb-1.5 tracking-wider uppercase" style={{ color: '#3B82F6' }}>
           💡 사용 안내
         </p>
