@@ -7,9 +7,9 @@ import { Header } from '../components/ui'
 
 const LEVELS = ['상', '중', '하']
 const LEVEL_COLOR = {
-  '상': { txt: '#f87171', bg: 'rgba(248,113,113,0.10)', bd: 'rgba(248,113,113,0.45)' },
-  '중': { txt: '#fbbf24', bg: 'rgba(251,191,36,0.10)',  bd: 'rgba(251,191,36,0.45)' },
-  '하': { txt: '#34d399', bg: 'rgba(52,211,153,0.10)',  bd: 'rgba(52,211,153,0.45)' },
+  '상': { txt: '#9C6F0F', bg: 'rgba(248,113,113,0.10)', bd: 'rgba(248,113,113,0.45)' },
+  '중': { txt: '#FFD98C', bg: 'rgba(251,191,36,0.10)',  bd: 'rgba(251,191,36,0.45)' },
+  '하': { txt: '#3B82F6', bg: 'rgba(52,211,153,0.10)',  bd: 'rgba(52,211,153,0.45)' },
 }
 
 export default function SentenceMatch() {
@@ -28,7 +28,7 @@ export default function SentenceMatch() {
   /* ───── 화면 1 — 카테고리 선택 ───── */
   if (mode === 'cat') {
     return (
-      <div className="min-h-screen" style={{ background: '#060a18' }}>
+      <div className="min-h-screen" style={{ background: '#F8FBFF' }}>
         <Header title="📜 문장 매칭" onBack={back} />
 
         <VerseHeader gameId="sentence-match" />
@@ -36,11 +36,11 @@ export default function SentenceMatch() {
 
         <div className="max-w-lg mx-auto px-4 pb-6">
           <div className="rounded-2xl p-4 mb-4"
-            style={{ background:'rgba(34,211,238,0.06)', border:'1px solid rgba(34,211,238,0.2)' }}>
-            <p className="text-[11px] font-black tracking-widest uppercase mb-2" style={{ color: '#22d3ee' }}>
+            style={{ background:'rgba(34,211,238,0.06)', border:'1px solid #EFF6FF' }}>
+            <p className="text-[11px] font-black tracking-widest uppercase mb-2" style={{ color: '#3B82F6' }}>
               📖 진행 방법
             </p>
-            <ol className="text-[13px] leading-relaxed space-y-1.5" style={{ color: '#cbd5e1' }}>
+            <ol className="text-[13px] leading-relaxed space-y-1.5" style={{ color: '#3B4759' }}>
               <li>1. 진행자가 화면을 봅니다 (학생들에게 보여주지 않음).</li>
               <li>2. 앞부분을 학생들에게 천천히 읽습니다.</li>
               <li>3. 학생들이 뒷부분을 답합니다.</li>
@@ -48,7 +48,7 @@ export default function SentenceMatch() {
             </ol>
           </div>
 
-          <p className="text-[10px] font-black tracking-widest uppercase mb-2" style={{ color: '#64748b' }}>
+          <p className="text-[13px] font-black tracking-widest uppercase mb-2" style={{ color: '#3B4759' }}>
             카테고리 선택
           </p>
           <div className="grid grid-cols-2 gap-2.5">
@@ -63,10 +63,10 @@ export default function SentenceMatch() {
                 }}>
                 <span className="drop-shadow-lg" style={{ fontSize: 44 }}>{cat.emoji}</span>
                 <p className="font-black text-white text-base leading-tight"
-                  style={{ textShadow: '0 1px 4px rgba(0,0,0,0.4)' }}>
+                  style={{ textShadow: '0 1px 4px #E4ECF7' }}>
                   {cat.name}
                 </p>
-                <p className="text-[10px] font-bold" style={{ color: 'rgba(255,255,255,0.75)' }}>
+                <p className="text-[13px] font-bold" style={{ color: '#3B4759' }}>
                   상·중·하 각 30문제
                 </p>
               </button>
@@ -80,12 +80,12 @@ export default function SentenceMatch() {
   /* ───── 화면 2 — 난이도 선택 ───── */
   if (mode === 'level') {
     return (
-      <div className="min-h-screen" style={{ background: '#060a18' }}>
+      <div className="min-h-screen" style={{ background: '#F8FBFF' }}>
         <Header title={`${category.emoji} ${category.name}`} onBack={back} />
 
         <div className="max-w-lg mx-auto px-4 pb-6">
-          <p className="text-[12px] mb-4 leading-relaxed" style={{ color: '#94a3b8' }}>
-            난이도를 선택하세요. 각 난이도당 <b style={{ color: '#cbd5e1' }}>30문제</b>가 준비되어 있습니다.
+          <p className="text-[12px] mb-4 leading-relaxed" style={{ color: '#3B4759' }}>
+            난이도를 선택하세요. 각 난이도당 <b style={{ color: '#3B4759' }}>30문제</b>가 준비되어 있습니다.
           </p>
 
           <div className="flex flex-col gap-2.5">
@@ -99,7 +99,7 @@ export default function SentenceMatch() {
                   style={{ background: c.bg, border: `1px solid ${c.bd}` }}>
                   <div className="flex items-center gap-3">
                     <span className="px-3 py-1 rounded-full text-base font-black"
-                      style={{ background: c.bd, color: '#fff' }}>
+                      style={{ background: c.bd, color: '#FFFFFF' }}>
                       {lv}
                     </span>
                     <p className="font-black text-base" style={{ color: c.txt }}>
@@ -123,7 +123,7 @@ export default function SentenceMatch() {
   const c = LEVEL_COLOR[level]
 
   return (
-    <div className="min-h-screen" style={{ background: '#060a18' }}>
+    <div className="min-h-screen" style={{ background: '#F8FBFF' }}>
       <Header title={`${category.emoji} ${category.name} · ${level}`} onBack={back}
         right={
           <span className="text-xs font-black px-2 py-0.5 rounded-md"
@@ -133,7 +133,7 @@ export default function SentenceMatch() {
         } />
 
       <div className="max-w-lg mx-auto px-4 pb-6">
-        <p className="text-[11px] mb-3 leading-relaxed text-center" style={{ color: '#64748b' }}>
+        <p className="text-[11px] mb-3 leading-relaxed text-center" style={{ color: '#3B4759' }}>
           앞부분 <b style={{ color: c.txt }}>/</b> 뒷부분 (장절)
         </p>
 
@@ -146,14 +146,14 @@ export default function SentenceMatch() {
                 borderLeft: `3px solid ${category.accent}88`,
               }}>
               <div className="flex items-start gap-2">
-                <span className="text-[10px] font-black tabular-nums shrink-0 mt-0.5"
-                  style={{ color: '#64748b', minWidth: 22 }}>
+                <span className="text-[13px] font-black tabular-nums shrink-0 mt-0.5"
+                  style={{ color: '#3B4759', minWidth: 22 }}>
                   {String(i + 1).padStart(2, '0')}
                 </span>
-                <p className="text-[13px] leading-snug flex-1" style={{ color: '#e2e8f0' }}>
-                  <span style={{ color: '#cbd5e1' }}>{item.left}</span>
+                <p className="text-[13px] leading-snug flex-1" style={{ color: '#243147' }}>
+                  <span style={{ color: '#3B4759' }}>{item.left}</span>
                   <span className="mx-1.5 font-black" style={{ color: category.accent }}>/</span>
-                  <span style={{ color: '#cbd5e1' }}>{item.right}</span>
+                  <span style={{ color: '#3B4759' }}>{item.right}</span>
                   {item.ref && (
                     <span className="ml-1.5 text-[11px] font-bold whitespace-nowrap"
                       style={{ color: category.accent }}>

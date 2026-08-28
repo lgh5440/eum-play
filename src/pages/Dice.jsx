@@ -16,11 +16,11 @@ const yutNameOf = (sticks) => {
 }
 
 const YUT_INFO = {
-  '도': { steps: 1, again: false, color: '#94a3b8', emoji: '🐖', desc: '돼지' },
-  '개': { steps: 2, again: false, color: '#a5b4fc', emoji: '🐕', desc: '개' },
-  '걸': { steps: 3, again: false, color: '#fbbf24', emoji: '🐑', desc: '양' },
-  '윷': { steps: 4, again: true,  color: '#f87171', emoji: '🐄', desc: '소' },
-  '모': { steps: 5, again: true,  color: '#a78bfa', emoji: '🐎', desc: '말' },
+  '도': { steps: 1, again: false, color: '#3B4759', emoji: '🐖', desc: '돼지' },
+  '개': { steps: 2, again: false, color: '#93C5FD', emoji: '🐕', desc: '개' },
+  '걸': { steps: 3, again: false, color: '#FFD98C', emoji: '🐑', desc: '양' },
+  '윷': { steps: 4, again: true,  color: '#9C6F0F', emoji: '🐄', desc: '소' },
+  '모': { steps: 5, again: true,  color: '#3B82F6', emoji: '🐎', desc: '말' },
 }
 
 export default function Dice() {
@@ -87,14 +87,14 @@ export default function Dice() {
 
   /* 결과 색상 / 배경 글로우 */
   const sum = diceValues.slice(0, diceCount).reduce((a, b) => a + b, 0)
-  const yutColor = yutName ? YUT_INFO[yutName].color : '#fb923c'
+  const yutColor = yutName ? YUT_INFO[yutName].color : '#9C6F0F'
   const isBigDice = mode === 'dice' && diceCount === 2 && (sum === 12 || sum === 2)
   const isBigYut  = mode === 'yut' && (yutName === '윷' || yutName === '모')
   const explosive = showResult && (isBigDice || isBigYut)
-  const glowColor = mode === 'dice' ? '#fb923c' : yutColor
+  const glowColor = mode === 'dice' ? '#9C6F0F' : yutColor
 
   return (
-    <div className="min-h-screen flex flex-col relative overflow-hidden" style={{ background: '#060a18' }}>
+    <div className="min-h-screen flex flex-col relative overflow-hidden" style={{ background: '#F8FBFF' }}>
 
       {/* ───── 배경 라이트 (결과 확정 시 부드럽게 ON) ───── */}
       <div className="absolute inset-0 pointer-events-none transition-opacity duration-700"
@@ -116,16 +116,16 @@ export default function Dice() {
       {/* 모드 토글 */}
       <div className="max-w-lg mx-auto w-full px-4 mb-3 relative z-10">
         <div className="grid grid-cols-2 gap-2 p-1 rounded-2xl"
-          style={{ background:'rgba(10,16,35,0.7)', border:'1px solid rgba(255,255,255,0.07)' }}>
-          <ModeBtn active={mode === 'dice'} onClick={() => switchMode('dice')} color="#fb923c">🎲 주사위</ModeBtn>
-          <ModeBtn active={mode === 'yut'} onClick={() => switchMode('yut')} color="#fbbf24">🎴 윷놀이</ModeBtn>
+          style={{ background:'rgba(10,16,35,0.7)', border:'1px solid #E4ECF7' }}>
+          <ModeBtn active={mode === 'dice'} onClick={() => switchMode('dice')} color="#9C6F0F">🎲 주사위</ModeBtn>
+          <ModeBtn active={mode === 'yut'} onClick={() => switchMode('yut')} color="#FFD98C">🎴 윷놀이</ModeBtn>
         </div>
       </div>
 
       {/* 주사위 개수 토글 */}
       {mode === 'dice' && (
         <div className="max-w-lg mx-auto w-full px-4 mb-3 relative z-10">
-          <p className="text-[10px] font-black tracking-widest uppercase mb-2" style={{ color: '#64748b' }}>
+          <p className="text-[13px] font-black tracking-widest uppercase mb-2" style={{ color: '#3B4759' }}>
             주사위 개수
           </p>
           <div className="grid grid-cols-2 gap-2">
@@ -133,9 +133,9 @@ export default function Dice() {
               <button key={n} onClick={() => setCount(n)} disabled={rolling}
                 className="py-2.5 rounded-xl font-black text-sm active:scale-95 transition-all"
                 style={{
-                  background: diceCount === n ? 'linear-gradient(135deg,#dc2626,#9a3412)' : 'rgba(255,255,255,0.04)',
-                  color: diceCount === n ? '#fff' : '#94a3b8',
-                  border: `1px solid ${diceCount === n ? 'rgba(251,146,60,0.5)' : 'rgba(255,255,255,0.1)'}`,
+                  background: diceCount === n ? 'linear-gradient(135deg,#9C6F0F,#9a3412)' : '#EFF6FF',
+                  color: diceCount === n ? '#FFFFFF' : '#3B4759',
+                  border: `1px solid ${diceCount === n ? 'rgba(251,146,60,0.5)' : '#E4ECF7'}`,
                   opacity: rolling ? 0.5 : 1,
                 }}>
                 {n}개
@@ -163,9 +163,9 @@ export default function Dice() {
           className="w-full py-5 rounded-2xl font-black text-xl active:scale-95 transition-all"
           style={{
             background: mode === 'dice'
-              ? 'linear-gradient(135deg,#dc2626,#9a3412)'
-              : 'linear-gradient(135deg,#d97706,#92400e)',
-            color: '#fff',
+              ? 'linear-gradient(135deg,#9C6F0F,#9a3412)'
+              : 'linear-gradient(135deg,#9C6F0F,#92400e)',
+            color: '#FFFFFF',
             boxShadow: mode === 'dice'
               ? '0 8px 40px rgba(251,146,60,0.4)'
               : '0 8px 40px rgba(251,191,36,0.4)',
@@ -237,13 +237,13 @@ function DiceArea({ values, rolling, showResult, count, sum }) {
       </div>
       {showResult && count === 2 && (
         <div className="text-center relative" key={`sum-${sum}`}>
-          <Sparkles count={6} color="#fb923c" />
-          <p className="text-[11px] font-black tracking-widest uppercase mb-1" style={{ color: '#64748b' }}>
+          <Sparkles count={6} color="#9C6F0F" />
+          <p className="text-[11px] font-black tracking-widest uppercase mb-1" style={{ color: '#3B4759' }}>
             합계
           </p>
           <p className="font-black leading-none relative inline-block"
             style={{
-              fontSize: 72, color: '#fb923c',
+              fontSize: 72, color: '#9C6F0F',
               textShadow: '0 0 50px rgba(251,146,60,0.7)',
               animation: isBig ? 'popBig 0.7s cubic-bezier(0.34, 1.56, 0.64, 1)' : 'pop 0.5s cubic-bezier(0.34, 1.56, 0.64, 1)',
             }}>
@@ -317,7 +317,7 @@ function YutArea({ sticks, rolling, showResult, name }) {
       {showResult && info && (
         <div className="text-center relative" key={`yut-${name}`}>
           <Sparkles count={info.again ? 10 : 6} color={info.color} />
-          <p className="text-[11px] font-black tracking-widest uppercase mb-1" style={{ color: '#64748b' }}>
+          <p className="text-[11px] font-black tracking-widest uppercase mb-1" style={{ color: '#3B4759' }}>
             결과
           </p>
           <div className="flex items-baseline justify-center gap-2 mb-1 relative">
@@ -337,13 +337,13 @@ function YutArea({ sticks, rolling, showResult, name }) {
               {name}
             </p>
           </div>
-          <p className="text-sm font-bold" style={{ color: '#94a3b8' }}>
+          <p className="text-sm font-bold" style={{ color: '#3B4759' }}>
             ({info.desc}) · {info.steps}칸 이동
           </p>
           {info.again && (
             <p className="mt-3 px-4 py-2 rounded-full inline-block text-sm font-black"
               style={{
-                background:'rgba(251,191,36,0.15)', color:'#fbbf24',
+                background:'rgba(251,191,36,0.15)', color:'#FFD98C',
                 border:'1px solid rgba(251,191,36,0.4)',
                 animation: 'pop 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) 0.4s both',
               }}>
@@ -387,7 +387,7 @@ function YutStick({ flat, rolling, index }) {
 /* ───── 스파클 (별 6~10개 주변에서 반짝) ───── */
 /* eslint-disable react-hooks/purity -- Sparkles·Confetti는 의도된 랜덤 비주얼 효과 */
 
-function Sparkles({ count = 6, color = '#fbbf24' }) {
+function Sparkles({ count = 6, color = '#FFD98C' }) {
   const items = useMemo(() => Array.from({ length: count }, (_, i) => {
     const angle  = (i / count) * Math.PI * 2 + Math.random() * 0.5
     const dist   = 70 + Math.random() * 60
@@ -419,7 +419,7 @@ function Sparkles({ count = 6, color = '#fbbf24' }) {
 /* ───── 컨페티 (결과 확정 시 폭발 — 일반 16개 / 큰 결과 32개) ───── */
 function Confetti({ explosive, color }) {
   const items = useMemo(() => {
-    const COLORS = ['#fb923c', '#fbbf24', '#22d3ee', '#a78bfa', '#34d399', '#f87171', color]
+    const COLORS = ['#9C6F0F', '#FFD98C', '#3B82F6', '#3B82F6', '#3B82F6', '#9C6F0F', color]
     const count = explosive ? 36 : 18
     return Array.from({ length: count }, (_, i) => {
       const angle = (i / count) * Math.PI * 2 + Math.random() * 0.6
@@ -461,7 +461,7 @@ function ModeBtn({ active, onClick, color, children }) {
       className="py-2.5 rounded-xl font-black text-sm active:scale-95 transition-all"
       style={{
         background: active ? `linear-gradient(135deg, ${color}33, ${color}11)` : 'transparent',
-        color: active ? color : '#94a3b8',
+        color: active ? color : '#3B4759',
         border: `1px solid ${active ? color + '66' : 'transparent'}`,
       }}>
       {children}

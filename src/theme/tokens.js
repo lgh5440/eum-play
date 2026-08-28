@@ -5,39 +5,39 @@
 
 export const colors = {
   // 배경
-  bg:           '#060a18',
+  bg:           '#F8FBFF',
   bgCard:       'rgba(10,16,35,0.7)',
-  bgCardSolid:  '#0a1228',
-  bgInput:      'rgba(255,255,255,0.04)',
-  bgOverlay:    'rgba(0,0,0,0.7)',
+  bgCardSolid:  '#FFFFFF',
+  bgInput:      '#EFF6FF',
+  bgOverlay:    '#E4ECF7',
 
   // 텍스트 (밝은 톤 ~ 어두운 톤)
-  text:         '#e2e8f0',   // 메인 본문
-  textMuted:    '#94a3b8',   // 보조
-  textDim:      '#64748b',   // 어렴풋
-  textGhost:    '#64748b',   // 매우 어렴풋 (라벨 등)
+  text:         '#243147',   // 메인 본문
+  textMuted:    '#3B4759',   // 보조
+  textDim:      '#3B4759',   // 어렴풋
+  textGhost:    '#3B4759',   // 매우 어렴풋 (라벨 등)
 
   // 메인 액션 — 시안
-  primary:      '#22d3ee',
-  primaryDark:  '#0891b2',
-  primaryDeep:  '#1d4ed8',
+  primary:      '#3B82F6',
+  primaryDark:  '#2563EB',
+  primaryDeep:  '#2563EB',
 
   // 보조 액션 — 인디고·보라
-  secondary:        '#a5b4fc',
-  secondaryDeep:    '#6366f1',
-  accent:           '#a78bfa',
+  secondary:        '#93C5FD',
+  secondaryDeep:    '#2563EB',
+  accent:           '#3B82F6',
 
   // 의미 색상
-  warning:      '#fbbf24',   // 정보·경고 (정답 노출 등)
-  danger:       '#f87171',   // 삭제·오류
-  dangerDeep:   '#dc2626',
-  success:      '#34d399',   // 성공·맞춤
-  successDeep:  '#10b981',
+  warning:      '#FFD98C',   // 정보·경고 (정답 노출 등)
+  danger:       '#9C6F0F',   // 삭제·오류
+  dangerDeep:   '#9C6F0F',
+  success:      '#3B82F6',   // 성공·맞춤
+  successDeep:  '#2563EB',
 
   // 보더
-  border:        'rgba(255,255,255,0.07)',
-  borderHover:   'rgba(255,255,255,0.12)',
-  borderActive:  'rgba(34,211,238,0.45)',
+  border:        '#E4ECF7',
+  borderHover:   '#BFDBFE',
+  borderActive:  '#BFDBFE',
   borderDashed:  'rgba(99,102,241,0.3)',
 }
 
@@ -79,7 +79,7 @@ export const touchTarget = 48
 
 /* 그림자 (강조 액션용) */
 export const shadow = {
-  primary: '0 8px 40px rgba(6,182,212,0.5)',
+  primary: '0 8px 40px #BFDBFE',
   danger:  '0 8px 40px rgba(239,68,68,0.6)',
   success: '0 8px 40px rgba(16,185,129,0.45)',
   warning: '0 8px 40px rgba(251,191,36,0.4)',

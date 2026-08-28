@@ -6,18 +6,18 @@ export default function Field({ label, hint, error, children }) {
       {label && (
         <p
           className="text-[11px] font-black tracking-widest uppercase"
-          style={{ color: '#94a3b8' }}>
+          style={{ color: '#3B4759' }}>
           {label}
         </p>
       )}
       {children}
       {hint && !error && (
-        <p className="text-[11px] leading-relaxed" style={{ color: '#94a3b8' }}>
+        <p className="text-[11px] leading-relaxed" style={{ color: '#3B4759' }}>
           {hint}
         </p>
       )}
       {error && (
-        <p className="text-[11px] leading-relaxed" style={{ color: '#f87171' }}>
+        <p className="text-[11px] leading-relaxed" style={{ color: '#9C6F0F' }}>
           {error}
         </p>
       )}

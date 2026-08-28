@@ -20,16 +20,16 @@ export default function VerseHeader({ gameId, className = '' }) {
         <div className="flex items-center gap-2 mb-2">
           <span style={{ fontSize: 18 }}>📖</span>
           <p className="text-[12px] font-black tracking-widest uppercase"
-            style={{ color: '#fbbf24' }}>
+            style={{ color: '#FFD98C' }}>
             진행자 멘트 · 오늘의 말씀
           </p>
         </div>
         <p className="font-bold leading-relaxed"
-          style={{ fontSize: 16, color: '#fffbeb' }}>
+          style={{ fontSize: 16, color: '#FFFFFFbeb' }}>
           “{verse.text}”
         </p>
         <p className="text-right mt-2 font-black"
-          style={{ fontSize: 13, color: '#fcd34d' }}>
+          style={{ fontSize: 13, color: '#9C6F0F' }}>
           — {verse.ref}
         </p>
       </div>

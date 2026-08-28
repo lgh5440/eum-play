@@ -9,12 +9,12 @@
  */
 
 export const CATEGORIES = [
-  { key: 'word2',    label: '2글자 단어', emoji: '🔤', color: '#22d3ee', mode: 'guess', length: 2 },
+  { key: 'word2',    label: '2글자 단어', emoji: '🔤', color: '#3B82F6', mode: 'guess', length: 2 },
   { key: 'word3',    label: '3글자 단어', emoji: '📝', color: '#60a5fa', mode: 'guess', length: 3 },
-  { key: 'idiom',    label: '사자성어',   emoji: '📜', color: '#fbbf24', mode: 'guess' },
-  { key: 'proverb',  label: '속담',       emoji: '💬', color: '#fb923c', mode: 'guess' },
-  { key: 'bible_ot', label: '성경 — 구약', emoji: '📖', color: '#34d399', mode: 'guess', subdivided: true },
-  { key: 'bible_nt', label: '성경 — 신약', emoji: '✝️', color: '#10b981', mode: 'guess', subdivided: true },
+  { key: 'idiom',    label: '사자성어',   emoji: '📜', color: '#FFD98C', mode: 'guess' },
+  { key: 'proverb',  label: '속담',       emoji: '💬', color: '#9C6F0F', mode: 'guess' },
+  { key: 'bible_ot', label: '성경 — 구약', emoji: '📖', color: '#3B82F6', mode: 'guess', subdivided: true },
+  { key: 'bible_nt', label: '성경 — 신약', emoji: '✝️', color: '#2563EB', mode: 'guess', subdivided: true },
 ]
 
 /* 분류 → 이모지·라벨 (게임 박스·헤더 표시) */

@@ -13,7 +13,7 @@ export default function HowToCard({ gameId, defaultOpen = true, className = '' }
     <div className={`max-w-lg mx-auto w-full px-4 mb-4 ${className}`}>
       <div className="rounded-2xl"
         style={{
-          background: 'linear-gradient(135deg, rgba(34,211,238,0.1), rgba(14,116,144,0.04))',
+          background: 'linear-gradient(135deg, #EFF6FF, rgba(14,116,144,0.04))',
           border: '1px solid rgba(34,211,238,0.32)',
           boxShadow: '0 4px 20px rgba(34,211,238,0.08)',
         }}>
@@ -22,12 +22,12 @@ export default function HowToCard({ gameId, defaultOpen = true, className = '' }
           <div className="flex items-center gap-2">
             <span style={{ fontSize: 18 }}>📚</span>
             <p className="font-black tracking-widest uppercase"
-              style={{ color: '#22d3ee', fontSize: 12 }}>
+              style={{ color: '#3B82F6', fontSize: 12 }}>
               진행 방법 (초보자 안내)
             </p>
           </div>
           <span style={{
-            color: '#22d3ee',
+            color: '#3B82F6',
             fontSize: 16,
             transform: open ? 'rotate(180deg)' : 'none',
             transition: 'transform 0.2s',
@@ -42,17 +42,17 @@ export default function HowToCard({ gameId, defaultOpen = true, className = '' }
               <li key={i} className="flex items-start gap-2.5">
                 <span className="font-black shrink-0 px-2 py-0.5 rounded-md"
                   style={{
-                    color: '#22d3ee',
+                    color: '#3B82F6',
                     fontSize: 12,
                     background: 'rgba(34,211,238,0.15)',
-                    border: '1px solid rgba(34,211,238,0.35)',
+                    border: '1px solid #BFDBFE',
                     minWidth: 24,
                     textAlign: 'center',
                   }}>
                   {i + 1}
                 </span>
                 <span className="leading-relaxed pt-0.5"
-                  style={{ color: '#e2e8f0', fontSize: 14 }}>
+                  style={{ color: '#243147', fontSize: 14 }}>
                   {step}
                 </span>
               </li>

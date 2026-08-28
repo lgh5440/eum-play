@@ -81,12 +81,12 @@ export default function Timer() {
 
   /* 진행률 & 색상 */
   const ratio = totalSecs > 0 ? remaining / totalSecs : 0
-  const color  = done        ? '#ef4444'
-               : ratio > 0.5 ? '#22d3ee'
-               : ratio > 0.2 ? '#fbbf24'
+  const color  = done        ? '#9C6F0F'
+               : ratio > 0.5 ? '#3B82F6'
+               : ratio > 0.2 ? '#FFD98C'
                :                '#f97316'
   const glow   = done        ? 'rgba(239,68,68,0.5)'
-               : ratio > 0.5 ? 'rgba(6,182,212,0.3)'
+               : ratio > 0.5 ? '#BFDBFE'
                : ratio > 0.2 ? 'rgba(251,191,36,0.3)'
                :                'rgba(249,115,22,0.4)'
 
@@ -95,8 +95,8 @@ export default function Timer() {
       className="min-h-screen flex flex-col transition-all duration-700"
       style={{
         background: done
-          ? 'linear-gradient(160deg, #1a0505 0%, #2d0a0a 100%)'
-          : '#070b16',
+          ? 'linear-gradient(160deg, #FFF7ED 0%, #FFFFFF 100%)'
+          : '#F8FBFF',
       }}
     >
       <Header title="타이머" onBack={() => navigate('/')} />
@@ -118,8 +118,8 @@ export default function Timer() {
                 aria-label={`${p.label} 타이머`}
                 className="px-3 py-1.5 rounded-full text-xs font-bold transition-all"
                 style={selected
-                  ? { background: 'rgba(6,182,212,0.2)', color: '#22d3ee', border: '1px solid rgba(6,182,212,0.5)' }
-                  : { background: 'rgba(255,255,255,0.04)', color: '#94a3b8', border: '1px solid rgba(255,255,255,0.08)' }
+                  ? { background: 'rgba(6,182,212,0.2)', color: '#3B82F6', border: '1px solid #BFDBFE' }
+                  : { background: '#EFF6FF', color: '#3B4759', border: '1px solid #E6EEF9' }
                 }
               >
                 {p.label}
@@ -139,9 +139,9 @@ export default function Timer() {
             min="1"
             className="rounded-xl px-3 py-1.5 text-xs text-center font-bold w-32"
             style={{
-              background: 'rgba(255,255,255,0.04)',
-              border: '1px solid rgba(255,255,255,0.08)',
-              color: '#e2e8f0',
+              background: '#EFF6FF',
+              border: '1px solid #E6EEF9',
+              color: '#243147',
               outline: 'none',
             }}
           />
@@ -149,7 +149,7 @@ export default function Timer() {
             onClick={applyCustom}
             aria-label="사용자 지정 시간 적용"
             className="px-3 py-1.5 rounded-xl text-xs font-bold"
-            style={{ background: 'rgba(255,255,255,0.06)', color: '#94a3b8', border: '1px solid rgba(255,255,255,0.1)' }}
+            style={{ background: '#EFF6FF', color: '#3B4759', border: '1px solid #E4ECF7' }}
           >적용</button>
         </div>
       </div>
@@ -166,7 +166,7 @@ export default function Timer() {
             {/* 배경 원 */}
             <circle cx="140" cy="140" r="125"
               fill="none"
-              stroke="rgba(255,255,255,0.05)"
+              stroke="#EFF6FF"
               strokeWidth="8"
             />
             {/* 진행 원 */}
@@ -187,7 +187,7 @@ export default function Timer() {
           {/* 숫자 */}
           <div className="absolute text-center">
             {done ? (
-              <div className="text-6xl font-black" style={{ color: '#ef4444' }}>종료!</div>
+              <div className="text-6xl font-black" style={{ color: '#9C6F0F' }}>종료!</div>
             ) : (
               <>
                 <div
@@ -203,7 +203,7 @@ export default function Timer() {
                   {display}
                 </div>
                 {totalSecs >= 60 && (
-                  <div className="text-sm font-semibold mt-1" style={{ color: 'rgba(255,255,255,0.2)' }}>
+                  <div className="text-sm font-semibold mt-1" style={{ color: '#E4ECF7' }}>
                     {mins > 0 ? `${mins}분 ` : ''}{secs}초 남음
                   </div>
                 )}
@@ -218,9 +218,9 @@ export default function Timer() {
             onClick={handleReset}
             className="flex-1 py-5 rounded-2xl font-black text-base transition-all active:scale-95"
             style={{
-              background: 'rgba(255,255,255,0.05)',
-              border: '1px solid rgba(255,255,255,0.1)',
-              color: '#64748b',
+              background: '#EFF6FF',
+              border: '1px solid #E4ECF7',
+              color: '#3B4759',
             }}
           >리셋</button>
 
@@ -230,18 +230,18 @@ export default function Timer() {
             className="flex-[2] py-5 rounded-2xl font-black text-xl transition-all active:scale-95"
             style={done ? {
               background: 'rgba(239,68,68,0.15)',
-              color: '#ef4444',
+              color: '#9C6F0F',
               border: '1px solid rgba(239,68,68,0.3)',
             } : running ? {
               background: 'rgba(251,191,36,0.15)',
-              color: '#fbbf24',
+              color: '#FFD98C',
               border: '1px solid rgba(251,191,36,0.3)',
               boxShadow: '0 4px 20px rgba(251,191,36,0.2)',
             } : {
-              background: 'linear-gradient(135deg, #0891b2, #1d4ed8)',
-              color: '#fff',
-              boxShadow: '0 6px 30px rgba(6,182,212,0.4)',
-              border: '1px solid rgba(6,182,212,0.4)',
+              background: 'linear-gradient(135deg, #2563EB, #2563EB)',
+              color: '#FFFFFF',
+              boxShadow: '0 6px 30px #BFDBFE',
+              border: '1px solid #BFDBFE',
             }}
           >
             {done ? '종료' : running ? '일시정지' : '시작'}

@@ -12,8 +12,8 @@ export default function Home() {
       {/* 상단 배지 */}
       <div className="flex items-center justify-between mb-5">
         <div
-          className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[10px] font-black tracking-widest uppercase"
-          style={{ background: 'rgba(99,102,241,0.18)', color: '#a5b4fc', border: '1px solid rgba(99,102,241,0.35)' }}
+          className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[13px] font-black tracking-widest uppercase"
+          style={{ background: 'rgba(99,102,241,0.18)', color: '#93C5FD', border: '1px solid rgba(99,102,241,0.35)' }}
         >
           ✦ CHURCH ACTIVITY
         </div>
@@ -21,7 +21,7 @@ export default function Home() {
           onClick={() => navigate('/settings')}
           aria-label="설정 열기"
           className="px-3 py-1.5 rounded-full text-[11px] font-bold flex items-center gap-1.5"
-          style={{ background: 'rgba(34,211,238,0.1)', color: '#22d3ee', border: '1px solid rgba(34,211,238,0.3)' }}
+          style={{ background: '#EFF6FF', color: '#3B82F6', border: '1px solid #BFDBFE' }}
         >
           <span aria-hidden>⚙</span> 설정
         </button>
@@ -31,7 +31,7 @@ export default function Home() {
       <div
         className="relative rounded-2xl p-4 mb-5 overflow-hidden"
         style={{
-          background: 'linear-gradient(150deg, #0d1b3e 0%, #1a1050 45%, #1e3a8a 100%)',
+          background: 'linear-gradient(150deg, #EAF3FF 0%, #EFF6FF 45%, #2563EB 100%)',
           border: '1px solid rgba(99,102,241,0.35)',
           boxShadow: '0 6px 24px rgba(99,102,241,0.18)',
         }}
@@ -56,7 +56,7 @@ export default function Home() {
               <h1 className="font-black leading-none tracking-tight"
                 style={{
                   fontSize: 22,
-                  background: 'linear-gradient(135deg, #fef3c7 0%, #fcd34d 50%, #a16207 100%)',
+                  background: 'linear-gradient(135deg, #fef3c7 0%, #9C6F0F 50%, #9C6F0F 100%)',
                   WebkitBackgroundClip: 'text',
                   WebkitTextFillColor: 'transparent',
                   backgroundClip: 'text',
@@ -68,7 +68,7 @@ export default function Home() {
                 E:UM
               </span>
             </div>
-            <p className="text-[12px] leading-snug mt-1.5" style={{ color: 'rgba(255,255,255,0.82)' }}>
+            <p className="text-[12px] leading-snug mt-1.5" style={{ color: '#3B4759' }}>
               하나님과 사람을, 사람과 사람을 잇다.<br/>
               교회 활동 도우미입니다.
             </p>
@@ -77,7 +77,7 @@ export default function Home() {
       </div>
 
       {/* 게임 9종 — 3×3 그리드 */}
-      <p className="text-[11px] font-black mb-3 tracking-widest uppercase" style={{ color: '#64748b' }}>
+      <p className="text-[11px] font-black mb-3 tracking-widest uppercase" style={{ color: '#3B4759' }}>
         🎲 게임 모음
       </p>
       <div className="grid grid-cols-3 gap-2 mb-5">
@@ -95,7 +95,7 @@ export default function Home() {
           >
             <span aria-hidden className="drop-shadow-lg mb-1.5" style={{ fontSize: 42 }}>{game.emoji}</span>
             <p className="font-black text-white text-[12px] leading-tight text-center px-1.5"
-              style={{ textShadow: '0 1px 4px rgba(0,0,0,0.4)' }}>
+              style={{ textShadow: '0 1px 4px #E4ECF7' }}>
               {game.name}
             </p>
           </button>
@@ -104,10 +104,10 @@ export default function Home() {
 
       {/* 안내 카드 */}
       <Card style={{ background: 'rgba(6,182,212,0.04)', border: '1px solid rgba(6,182,212,0.1)' }}>
-        <p className="text-[11px] font-black mb-1.5 tracking-wider uppercase" style={{ color: '#22d3ee' }}>
+        <p className="text-[11px] font-black mb-1.5 tracking-wider uppercase" style={{ color: '#3B82F6' }}>
           💡 사용 안내
         </p>
-        <p className="text-xs leading-relaxed" style={{ color: '#94a3b8' }}>
+        <p className="text-xs leading-relaxed" style={{ color: '#3B4759' }}>
           말씀·찬양·교제 — 마음을 잇는 다양한 게임을 제공합니다.<br/>
           진행자 멘트와 사용법이 함께 들어 있어 초보자도 즉시 사용할 수 있습니다.
         </p>

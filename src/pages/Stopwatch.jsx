@@ -56,21 +56,21 @@ export default function Stopwatch() {
   const mins = Math.floor(time / 60000)
   const display = `${String(mins).padStart(2,'0')}:${String(secs).padStart(2,'0')}:${String(ms).padStart(2,'0')}`
 
-  const mainColor = running ? '#22d3ee' : time > 0 ? '#f97316' : '#ffffff'
-  const glow      = running ? '0 0 60px rgba(34,211,238,0.35)' : 'none'
+  const mainColor = running ? '#3B82F6' : time > 0 ? '#f97316' : '#FFFFFF'
+  const glow      = running ? '0 0 60px #BFDBFE' : 'none'
 
   /* ───── 가로 (TV·모니터·태블릿) ───── */
   if (isLandscape) {
     return (
       <div
         className="fixed inset-0 flex items-center justify-center"
-        style={{ background: '#070b16' }}
+        style={{ background: '#F8FBFF' }}
       >
         {/* 뒤로 버튼 — 좌상단 */}
         <button
           onClick={() => navigate('/')}
           className="absolute top-4 left-4 w-9 h-9 rounded-xl flex items-center justify-center text-lg z-10"
-          style={{ background: 'rgba(10,16,35,0.8)', border: '1px solid rgba(255,255,255,0.08)', color: '#64748b' }}
+          style={{ background: 'rgba(10,16,35,0.8)', border: '1px solid #E6EEF9', color: '#3B4759' }}
         >←</button>
 
         {/* 시간 — 화면 꽉 채움 */}
@@ -94,9 +94,9 @@ export default function Stopwatch() {
             onClick={handleReset}
             className="px-6 py-3 rounded-2xl font-black text-base transition-all active:scale-95"
             style={{
-              background: 'rgba(255,255,255,0.05)',
-              border: '1px solid rgba(255,255,255,0.1)',
-              color: '#64748b',
+              background: '#EFF6FF',
+              border: '1px solid #E4ECF7',
+              color: '#3B4759',
             }}
           >리셋</button>
 
@@ -105,10 +105,10 @@ export default function Stopwatch() {
               onClick={handleStart}
               className="px-10 py-3 rounded-2xl font-black text-base transition-all active:scale-95"
               style={{
-                background: 'linear-gradient(135deg, #0891b2, #1d4ed8)',
-                color: '#fff',
-                boxShadow: '0 4px 20px rgba(6,182,212,0.4)',
-                border: '1px solid rgba(6,182,212,0.4)',
+                background: 'linear-gradient(135deg, #2563EB, #2563EB)',
+                color: '#FFFFFF',
+                boxShadow: '0 4px 20px #BFDBFE',
+                border: '1px solid #BFDBFE',
               }}
             >시작</button>
           ) : (
@@ -116,8 +116,8 @@ export default function Stopwatch() {
               onClick={handleStop}
               className="px-10 py-3 rounded-2xl font-black text-base transition-all active:scale-95"
               style={{
-                background: 'linear-gradient(135deg, #dc2626, #b91c1c)',
-                color: '#fff',
+                background: 'linear-gradient(135deg, #9C6F0F, #b91c1c)',
+                color: '#FFFFFF',
                 boxShadow: '0 4px 20px rgba(239,68,68,0.4)',
                 border: '1px solid rgba(239,68,68,0.4)',
               }}
@@ -132,7 +132,7 @@ export default function Stopwatch() {
   return (
     <div
       className="min-h-screen flex flex-col"
-      style={{ background: '#070b16' }}
+      style={{ background: '#F8FBFF' }}
     >
       <Header title="스톱워치" onBack={() => navigate('/')} />
 
@@ -163,9 +163,9 @@ export default function Stopwatch() {
             onClick={handleReset}
             className="flex-1 py-5 rounded-2xl font-black text-lg transition-all active:scale-95"
             style={{
-              background: 'rgba(255,255,255,0.05)',
-              border: '1px solid rgba(255,255,255,0.1)',
-              color: '#64748b',
+              background: '#EFF6FF',
+              border: '1px solid #E4ECF7',
+              color: '#3B4759',
             }}
           >리셋</button>
 
@@ -174,10 +174,10 @@ export default function Stopwatch() {
               onClick={handleStart}
               className="flex-[2] py-5 rounded-2xl font-black text-xl transition-all active:scale-95"
               style={{
-                background: 'linear-gradient(135deg, #0891b2, #1d4ed8)',
-                color: '#fff',
-                boxShadow: '0 6px 30px rgba(6,182,212,0.4)',
-                border: '1px solid rgba(6,182,212,0.4)',
+                background: 'linear-gradient(135deg, #2563EB, #2563EB)',
+                color: '#FFFFFF',
+                boxShadow: '0 6px 30px #BFDBFE',
+                border: '1px solid #BFDBFE',
               }}
             >시작</button>
           ) : (
@@ -185,8 +185,8 @@ export default function Stopwatch() {
               onClick={handleStop}
               className="flex-[2] py-5 rounded-2xl font-black text-xl transition-all active:scale-95"
               style={{
-                background: 'linear-gradient(135deg, #dc2626, #b91c1c)',
-                color: '#fff',
+                background: 'linear-gradient(135deg, #9C6F0F, #b91c1c)',
+                color: '#FFFFFF',
                 boxShadow: '0 6px 30px rgba(239,68,68,0.4)',
                 border: '1px solid rgba(239,68,68,0.4)',
               }}

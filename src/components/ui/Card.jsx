@@ -18,9 +18,9 @@ export default function Card({
       style={{
         background: 'rgba(10,16,35,0.7)',
         border: active
-          ? '1px solid rgba(34,211,238,0.45)'
-          : '1px solid rgba(255,255,255,0.07)',
-        boxShadow: active ? '0 0 30px rgba(34,211,238,0.2)' : undefined,
+          ? '1px solid #BFDBFE'
+          : '1px solid #E4ECF7',
+        boxShadow: active ? '0 0 30px #EFF6FF' : undefined,
         padding: PADS[padding],
         transition: hover ? 'border-color 0.2s, box-shadow 0.2s' : undefined,
         ...style,

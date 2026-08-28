@@ -9,7 +9,7 @@ export const BINGO_CATEGORIES = [
   /* ════════════════════ 1. 신약 ════════════════════ */
   {
     id: 'nt', name: '신약', emoji: '✝️',
-    gradient: 'linear-gradient(135deg, #0891b2, #1d4ed8)', accent: '#22d3ee',
+    gradient: 'linear-gradient(135deg, #2563EB, #2563EB)', accent: '#3B82F6',
     subjects: [
       {
         id: 'disciples_12', name: '12제자', emoji: '👥', size: 3,
@@ -30,7 +30,7 @@ export const BINGO_CATEGORIES = [
   /* ════════════════════ 2. 구약 ════════════════════ */
   {
     id: 'ot', name: '구약', emoji: '📜',
-    gradient: 'linear-gradient(135deg, #ca8a04, #78350f)', accent: '#fbbf24',
+    gradient: 'linear-gradient(135deg, #9C6F0F, #9C6F0F)', accent: '#FFD98C',
     subjects: [
       {
         id: 'commandments', name: '십계명', emoji: '📜', size: 3,
@@ -56,7 +56,7 @@ export const BINGO_CATEGORIES = [
   /* ════════════════════ 3. 교회·신앙 (신규) ════════════════════ */
   {
     id: 'church', name: '교회·신앙', emoji: '⛪',
-    gradient: 'linear-gradient(135deg, #8b5cf6, #5b21b6)', accent: '#a78bfa',
+    gradient: 'linear-gradient(135deg, #3B82F6, #2563EB)', accent: '#3B82F6',
     subjects: [
       {
         id: 'church_terms', name: '예수·신앙 용어', emoji: '✝️', size: 5,
@@ -85,7 +85,7 @@ export const BINGO_CATEGORIES = [
   /* ════════════════════ 4. 음식 (편의점 제거 / 서양식 → 일본식·이탈리안 분리) ════════════════════ */
   {
     id: 'food', name: '음식', emoji: '🍔',
-    gradient: 'linear-gradient(135deg, #f59e0b, #b45309)', accent: '#fcd34d',
+    gradient: 'linear-gradient(135deg, #FFD98C, #b45309)', accent: '#9C6F0F',
     subjects: [
       {
         id: 'bunsik', name: '분식', emoji: '🍢', size: 5,
@@ -113,7 +113,7 @@ export const BINGO_CATEGORIES = [
   /* ════════════════════ 5. 동물 ════════════════════ */
   {
     id: 'animal', name: '동물', emoji: '🦁',
-    gradient: 'linear-gradient(135deg, #ea580c, #7c2d12)', accent: '#fb923c',
+    gradient: 'linear-gradient(135deg, #ea580c, #7c2d12)', accent: '#9C6F0F',
     subjects: [
       {
         id: 'sea', name: '바다생물', emoji: '🐟', size: 5,
@@ -137,7 +137,7 @@ export const BINGO_CATEGORIES = [
   /* ════════════════════ 6. 자연·생활 (신규) ════════════════════ */
   {
     id: 'life', name: '자연·생활', emoji: '🌳',
-    gradient: 'linear-gradient(135deg, #10b981, #047857)', accent: '#34d399',
+    gradient: 'linear-gradient(135deg, #2563EB, #047857)', accent: '#3B82F6',
     subjects: [
       {
         id: 'fruits', name: '과일', emoji: '🍎', size: 5,
