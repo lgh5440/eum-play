@@ -1,16 +1,56 @@
-# React + Vite
+# 이음 플레이
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+교회 소그룹, 수련회, 친교 시간에서 바로 사용할 수 있는 진행자용 웹 게임 모음입니다.
 
-Currently, two official plugins are available:
+## 주요 기능
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- 스톱워치
+- 타이머
+- 랜덤 뽑기
+- 사진 맞추기
+- 초성 게임
+- 주사위 / 윷놀이
+- 빙고
+- 단어 릴레이
+- 문장 매칭
 
-## React Compiler
+## 기술 스택
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- React
+- Vite
+- Tailwind CSS
+- React Router
+- vite-plugin-pwa
+- idb-keyval
 
-## Expanding the ESLint configuration
+## 실행
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+```bash
+npm install
+npm run dev
+```
+
+개발 서버 기본 포트는 `5190`입니다.
+
+## 점검 명령
+
+```bash
+npm run lint
+npm run build
+npm audit
+```
+
+## 배포
+
+GitHub Pages 하위 경로 배포를 기준으로 설정되어 있습니다.
+
+- Base path: `/eum-play/`
+- 배포 URL: `https://lgh5440.github.io/eum-play/`
+- SPA fallback: `public/404.html`
+- PWA manifest: `public/manifest.webmanifest`
+
+## 데이터 저장
+
+- 초성 게임 진행 기록과 옵션은 `localStorage`를 사용합니다.
+- 사진 맞추기 사진 라이브러리와 진행 기록은 `IndexedDB`를 사용합니다.
+- 기존 사진 맞추기 `localStorage` 데이터는 최초 실행 시 `IndexedDB`로 마이그레이션됩니다.

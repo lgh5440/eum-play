@@ -36,7 +36,7 @@ export default function SentenceMatch() {
 
         <div className="max-w-lg mx-auto px-4 pb-6">
           <div className="rounded-2xl p-4 mb-4"
-            style={{ background:'rgba(34,211,238,0.06)', border:'1px solid #EFF6FF' }}>
+            style={{ background:'rgba(37,99,235,0.06)', border:'1px solid #EFF6FF' }}>
             <p className="text-[11px] font-black tracking-widest uppercase mb-2" style={{ color: '#3B82F6' }}>
               📖 진행 방법
             </p>
@@ -63,7 +63,7 @@ export default function SentenceMatch() {
                 }}>
                 <span className="drop-shadow-lg" style={{ fontSize: 44 }}>{cat.emoji}</span>
                 <p className="font-black text-white text-base leading-tight"
-                  style={{ textShadow: '0 1px 4px #E4ECF7' }}>
+                  style={{ textShadow: '0 1px 4px #1E2A45' }}>
                   {cat.name}
                 </p>
                 <p className="text-[13px] font-bold" style={{ color: '#3B4759' }}>

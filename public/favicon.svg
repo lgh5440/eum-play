@@ -2,20 +2,20 @@
   <defs>
     <linearGradient id="eumGold" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" stop-color="#fef3c7"/>
-      <stop offset="22%" stop-color="#fcd34d"/>
+      <stop offset="22%" stop-color="#C9962B"/>
       <stop offset="50%" stop-color="#d4a017"/>
-      <stop offset="78%" stop-color="#a16207"/>
+      <stop offset="78%" stop-color="#8A6D1F"/>
       <stop offset="100%" stop-color="#78350f"/>
     </linearGradient>
     <radialGradient id="eumGlow" cx="50%" cy="50%" r="50%">
       <stop offset="0%" stop-color="#ffffff" stop-opacity="1"/>
       <stop offset="22%" stop-color="#fef3c7" stop-opacity="0.95"/>
-      <stop offset="55%" stop-color="#fcd34d" stop-opacity="0.45"/>
+      <stop offset="55%" stop-color="#C9962B" stop-opacity="0.45"/>
       <stop offset="100%" stop-color="#d4a017" stop-opacity="0"/>
     </radialGradient>
     <linearGradient id="eumStarFill" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" stop-color="#fffbeb"/>
-      <stop offset="50%" stop-color="#fcd34d"/>
+      <stop offset="50%" stop-color="#C9962B"/>
       <stop offset="100%" stop-color="#d4a017"/>
     </linearGradient>
   </defs>

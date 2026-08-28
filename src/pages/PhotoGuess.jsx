@@ -225,7 +225,7 @@ export default function PhotoGuess() {
                       {/* 진행 완료 배지 */}
                       {played && (
                         <div className="absolute top-2 right-2 z-10 px-2 py-0.5 rounded-md text-[13px] font-black"
-                          style={{ background:'rgba(34,211,238,0.18)', color:'#3B82F6', border:'1px solid #BFDBFE' }}>
+                          style={{ background:'rgba(37,99,235,0.18)', color:'#3B82F6', border:'1px solid #BFDBFE' }}>
                           ✓ 완료
                         </div>
                       )}
@@ -240,7 +240,7 @@ export default function PhotoGuess() {
                         <div className="absolute -top-12 -right-8 w-32 h-32 rounded-full pointer-events-none"
                           style={{ background: 'radial-gradient(circle, rgba(167,139,250,0.25), transparent 65%)' }} />
                         <div className="absolute -bottom-12 -left-8 w-28 h-28 rounded-full pointer-events-none"
-                          style={{ background: 'radial-gradient(circle, rgba(34,211,238,0.18), transparent 65%)' }} />
+                          style={{ background: 'radial-gradient(circle, rgba(37,99,235,0.18), transparent 65%)' }} />
                         <div className="text-center relative z-10">
                           <div className="text-4xl mb-1 drop-shadow-lg">🔍</div>
                           <p className="text-[13px] font-black tracking-widest uppercase" style={{ color:'#3B4759' }}>
@@ -394,7 +394,7 @@ export default function PhotoGuess() {
       {revealed && (
         <div className="max-w-lg w-full mx-auto px-4 mb-2 text-center">
           <p className="font-black text-3xl"
-            style={{ color: '#3B82F6', textShadow: '0 0 30px rgba(34,211,238,0.4)' }}>
+            style={{ color: '#3B82F6', textShadow: '0 0 30px rgba(37,99,235,0.35)' }}>
             {photo?.answer || '정답 미설정'}
           </p>
         </div>

@@ -67,7 +67,7 @@ export default function Bingo() {
                 }}>
                 <span className="drop-shadow-lg" style={{ fontSize: 44 }}>{cat.emoji}</span>
                 <p className="font-black text-white text-base leading-tight"
-                  style={{ textShadow: '0 1px 4px #E4ECF7' }}>
+                  style={{ textShadow: '0 1px 4px #1E2A45' }}>
                   {cat.name}
                 </p>
                 <p className="text-[13px] font-bold" style={{ color: '#3B4759' }}>
@@ -103,7 +103,7 @@ export default function Bingo() {
                 }}>
                 <span className="drop-shadow-lg" style={{ fontSize: 36 }}>{s.emoji}</span>
                 <p className="font-black text-[13px] leading-tight text-center text-white"
-                  style={{ textShadow: '0 1px 4px #E4ECF7' }}>
+                  style={{ textShadow: '0 1px 4px #1E2A45' }}>
                   {s.name}
                 </p>
                 <p className="text-[13px] font-bold" style={{ color: '#3B4759' }}>

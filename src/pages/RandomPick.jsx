@@ -146,7 +146,7 @@ export default function RandomPick() {
     })
 
     /* 선택 기준선 */
-    ctx.strokeStyle = curPhase === 'done' ? 'rgba(34,211,238,0.7)' : '#BFDBFE'
+    ctx.strokeStyle = curPhase === 'done' ? 'rgba(37,99,235,0.7)' : '#BFDBFE'
     ctx.lineWidth   = curPhase === 'done' ? 2 : 1
     ;[cy - 36, cy + 36].forEach(y => {
       ctx.beginPath(); ctx.moveTo(0, y); ctx.lineTo(W, y); ctx.stroke()
@@ -266,7 +266,7 @@ export default function RandomPick() {
           <canvas ref={canvasRef} width={LCW} height={LCH}
             style={{ display: 'block', borderRadius: 12,
               border: phase === 'done' ? '1px solid #BFDBFE' : '1px solid #EFF6FF',
-              boxShadow: phase === 'done' ? '0 0 40px rgba(34,211,238,0.25)' : 'none',
+              boxShadow: phase === 'done' ? '0 0 40px rgba(37,99,235,0.25)' : 'none',
               transition: 'border-color 0.4s, box-shadow 0.4s',
             }} />
 

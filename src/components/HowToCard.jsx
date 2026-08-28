@@ -14,8 +14,8 @@ export default function HowToCard({ gameId, defaultOpen = true, className = '' }
       <div className="rounded-2xl"
         style={{
           background: 'linear-gradient(135deg, #EFF6FF, rgba(14,116,144,0.04))',
-          border: '1px solid rgba(34,211,238,0.32)',
-          boxShadow: '0 4px 20px rgba(34,211,238,0.08)',
+          border: '1px solid rgba(37,99,235,0.32)',
+          boxShadow: '0 4px 20px rgba(37,99,235,0.08)',
         }}>
         <button onClick={() => setOpen(!open)}
           className="w-full px-4 py-3 flex items-center justify-between active:scale-[0.99] transition-all">
@@ -44,7 +44,7 @@ export default function HowToCard({ gameId, defaultOpen = true, className = '' }
                   style={{
                     color: '#3B82F6',
                     fontSize: 12,
-                    background: 'rgba(34,211,238,0.15)',
+                    background: 'rgba(37,99,235,0.15)',
                     border: '1px solid #BFDBFE',
                     minWidth: 24,
                     textAlign: 'center',
