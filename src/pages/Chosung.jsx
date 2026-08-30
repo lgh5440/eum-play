@@ -148,7 +148,7 @@ export default function Chosung() {
   /* ───── 화면 1 — 카테고리 선택 ───── */
   if (mode === 'cat') {
     return (
-      <div className="min-h-screen" style={{ background: '#F8FBFF' }}>
+      <div className="min-h-screen">
         <Header title="초성 게임" onBack={back}
           right={<TinyBtn onClick={() => { if (confirm('모든 진행 기록을 초기화할까요?')) { resetAll(); reload() } }}>전체 초기화</TinyBtn>} />
 
@@ -156,7 +156,7 @@ export default function Chosung() {
         <HowToCard gameId="chosung" defaultOpen={false} />
 
         <div className="max-w-lg mx-auto px-4 pb-6">
-          <p className="mb-3 leading-relaxed" style={{ color: '#3B4759', fontSize: 13 }}>
+          <p className="mb-3 leading-relaxed" style={{ color: '#3A4568', fontSize: 13 }}>
             카테고리를 선택하세요. 각 난이도당 한 세트 10문제로 진행되며,
             완료한 세트는 회색으로 표시되어 중복되지 않습니다.
           </p>
@@ -168,7 +168,7 @@ export default function Chosung() {
               <input type="checkbox" checked={options.timerOn}
                 onChange={e => updateOption({ timerOn: e.target.checked })}
                 className="w-4 h-4" />
-              <span className="text-xs font-bold" style={{ color: '#3B4759' }}>⏱ 타이머 사용</span>
+              <span className="text-xs font-bold" style={{ color: '#5C6A93' }}>⏱ 타이머 사용</span>
             </label>
             {options.timerOn && (
               <div className="flex items-center gap-1">
@@ -178,7 +178,7 @@ export default function Chosung() {
                     className="text-[11px] font-black px-2.5 py-1 rounded-lg"
                     style={{
                       background: options.timerSec === sec ? 'rgba(251,191,36,0.15)' : '#EFF6FF',
-                      color:      options.timerSec === sec ? '#FFD98C' : '#3B4759',
+                      color:      options.timerSec === sec ? '#FFD98C' : '#5C6A93',
                       border:     options.timerSec === sec ? '1px solid rgba(251,191,36,0.4)' : '1px solid #E6EEF9',
                     }}>
                     {sec}초
@@ -216,11 +216,11 @@ export default function Chosung() {
                     {isFree ? (
                       <div className="flex items-center justify-between">
                         <p className="text-[13px] font-black" style={{ color: cat.color }}>🎲 자유 모드</p>
-                        <p className="text-[13px]" style={{ color: '#3B4759' }}>단어 찾기</p>
+                        <p className="text-[13px]" style={{ color: '#5C6A93' }}>단어 찾기</p>
                       </div>
                     ) : (
                       <div className="flex items-center justify-between">
-                        <p className="text-[13px]" style={{ color: '#3B4759' }}>
+                        <p className="text-[13px]" style={{ color: '#5C6A93' }}>
                           {stats.total}{cat.subdivided ? '종류' : '세트'}
                         </p>
                         <p className="text-[13px] font-black" style={{ color: cat.color }}>
@@ -244,13 +244,13 @@ export default function Chosung() {
     const subdivided = isSubdivided(category)
 
     return (
-      <div className="min-h-screen" style={{ background: '#F8FBFF' }}>
+      <div className="min-h-screen">
         <Header title={category.label} onBack={back}
           right={<TinyBtn onClick={() => { if (confirm('이 카테고리 진행 기록만 초기화할까요?')) { resetCategory(category.key); reload() } }}>초기화</TinyBtn>} />
 
         <div className="max-w-lg mx-auto px-4 pb-6 flex flex-col gap-5">
           {subdivided && (
-            <p className="text-[12px] leading-relaxed text-center px-2" style={{ color: '#3B4759' }}>
+            <p className="text-[12px] leading-relaxed text-center px-2" style={{ color: '#3A4568' }}>
               난이도와 종류를 선택하세요. (예: <b style={{ color: '#3B82F6' }}>하 난이도 인물 게임</b>)
             </p>
           )}
@@ -266,7 +266,7 @@ export default function Chosung() {
                     style={{ background: c.bg, color: c.txt, border: `1px solid ${c.bd}` }}>
                     {lv}
                   </span>
-                  <span className="text-[13px] font-bold" style={{ color: '#3B4759' }}>
+                  <span className="text-[13px] font-bold" style={{ color: '#5C6A93' }}>
                     {lvKeys.length}{subdivided ? '종류' : '세트'} · {SET_SIZE}문제
                   </span>
                 </div>
@@ -283,7 +283,7 @@ export default function Chosung() {
                           background: done
                             ? '#EFF6FF'
                             : `linear-gradient(135deg, ${c.txt}26, ${c.txt}0d)`,
-                          color: done ? '#3B4759' : c.txt,
+                          color: done ? '#5C6A93' : c.txt,
                           border: `1px solid ${done ? '#E4ECF7' : c.bd}`,
                           boxShadow: done ? 'none' : `0 4px 16px ${c.txt}1a`,
                         }}>
@@ -296,7 +296,7 @@ export default function Chosung() {
                           <span className="text-xl drop-shadow">{i + 1}</span>
                         )}
                         {done && (
-                          <span className="text-[13px] font-bold absolute bottom-1" style={{ color: '#3B4759' }}>
+                          <span className="text-[13px] font-bold absolute bottom-1" style={{ color: '#5C6A93' }}>
                             ✓ {st.score ?? '–'}/{SET_SIZE}
                           </span>
                         )}
@@ -315,11 +315,11 @@ export default function Chosung() {
   /* ───── 화면 — 자유 모드 (단어 찾기) ───── */
   if (mode === 'freePlay') {
     return (
-      <div className="min-h-screen flex flex-col" style={{ background: '#F8FBFF' }}>
+      <div className="min-h-screen flex flex-col">
         <Header title={category.label} onBack={back} />
 
         <div className="max-w-lg w-full mx-auto px-4 pb-3">
-          <p className="text-[12px] leading-relaxed text-center" style={{ color: '#3B4759' }}>
+          <p className="text-[12px] leading-relaxed text-center" style={{ color: '#3A4568' }}>
             아래 초성으로 시작하는 <b style={{ color: category.color }}>{category.length}글자</b> 단어를
             가장 많이 찾는 사람이 승!
           </p>
@@ -368,7 +368,7 @@ export default function Chosung() {
     const urgent    = showTimer && timeLeft <= 3
 
     return (
-      <div className="min-h-screen flex flex-col" style={{ background: '#F8FBFF' }}>
+      <div className="min-h-screen flex flex-col">
         <Header title={`${category.label} · ${level}`} onBack={back}
           right={
             <div className="flex items-center gap-1.5">
@@ -397,7 +397,7 @@ export default function Chosung() {
             ))}
           </div>
           <div className="flex items-center justify-between">
-            <p className="text-[13px] font-bold tracking-widest" style={{ color: '#3B4759' }}>
+            <p className="text-[13px] font-bold tracking-widest" style={{ color: '#5C6A93' }}>
               {subdivided ? (TYPE_BADGE[setIdx]?.label || setIdx) : `세트 ${setIdx + 1}`} · 정답 {score.ok} · 패스 {score.pass}
             </p>
             {showTimer && (
@@ -463,7 +463,7 @@ export default function Chosung() {
             <div className="flex gap-2">
               <button onClick={() => judge(false)}
                 className="flex-1 py-5 rounded-2xl font-black text-xl active:scale-95"
-                style={{ background:'#EFF6FF', color:'#3B4759', border:'1px solid #E4ECF7' }}>
+                style={{ background:'#EFF6FF', color:'#3A4568', border:'1px solid #E4ECF7' }}>
                 ✗ 패스
               </button>
               <button onClick={() => judge(true)}
@@ -484,7 +484,7 @@ export default function Chosung() {
   const c = LEVEL_COLOR[level]
 
   return (
-    <div className="min-h-screen flex flex-col" style={{ background: '#F8FBFF' }}>
+    <div className="min-h-screen flex flex-col">
       <Header title="결과" onBack={back} />
 
       <div className="flex-1 flex items-center justify-center px-4">
@@ -495,7 +495,7 @@ export default function Chosung() {
               : `세트 ${setIdx + 1}`}
           </p>
           <p className="font-black leading-none mb-3" style={{ fontSize: '110px', color: '#FFFFFF' }}>
-            {score.ok}<span style={{ fontSize: '40px', color: '#3B4759' }}>/{questions.length}</span>
+            {score.ok}<span style={{ fontSize: '40px', color: '#5C6A93' }}>/{questions.length}</span>
           </p>
           <p className="text-2xl font-black" style={{ color: c.txt }}>
             {resultPct >= 80 ? '🎉 훌륭해요!' : resultPct >= 50 ? '👍 잘했어요!' : '💪 다시 도전!'}
@@ -511,7 +511,7 @@ export default function Chosung() {
         </button>
         <button onClick={() => { setMode('cat'); setCategory(null) }}
           className="flex-1 py-4 rounded-2xl font-black"
-          style={{ background:'#EFF6FF', color:'#3B4759', border:'1px solid #E4ECF7' }}>
+          style={{ background:'#EFF6FF', color:'#3A4568', border:'1px solid #E4ECF7' }}>
           🔀 카테고리 변경
         </button>
       </div>
@@ -525,7 +525,7 @@ function TinyBtn({ onClick, children }) {
   return (
     <button onClick={onClick}
       className="text-[13px] font-bold px-2.5 py-1.5 rounded-lg"
-      style={{ color:'#3B4759', border:'1px solid #E4ECF7' }}>
+      style={{ color:'#3A4568', border:'1px solid #E4ECF7' }}>
       {children}
     </button>
   )

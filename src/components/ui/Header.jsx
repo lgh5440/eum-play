@@ -9,7 +9,8 @@ export default function Header({ title, subtitle, onBack, right, sticky = false 
         position: sticky ? 'sticky' : 'static',
         top: 0,
         zIndex: sticky ? 40 : undefined,
-        background: sticky ? '#F8FBFF' : undefined,
+        background: sticky ? 'rgba(207, 230, 255, 0.92)' : undefined,
+        backdropFilter: sticky ? 'blur(10px)' : undefined,
       }}>
 
       {/* 뒤로 버튼 — 44×44 터치 영역 */}
@@ -21,7 +22,7 @@ export default function Header({ title, subtitle, onBack, right, sticky = false 
             width: 44, height: 44,
             background: 'rgba(10,16,35,0.8)',
             border: '1px solid #E6EEF9',
-            color: '#3B4759',
+            color: '#3A4568',
           }}
           aria-label="뒤로">
           ←
@@ -33,11 +34,11 @@ export default function Header({ title, subtitle, onBack, right, sticky = false 
       {/* 가운데 제목 */}
       <div className="flex-1 min-w-0 text-center">
         <h1 className="text-xs font-black tracking-widest uppercase truncate m-0"
-          style={{ color: '#3B4759' }}>
+          style={{ color: '#101A3D' }}>
           {title}
         </h1>
         {subtitle && (
-          <p className="text-[13px] mt-0.5 truncate" style={{ color: '#3B4759' }}>
+          <p className="text-[13px] mt-0.5 truncate" style={{ color: '#5C6A93' }}>
             {subtitle}
           </p>
         )}

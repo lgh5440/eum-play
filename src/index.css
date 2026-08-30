@@ -8,16 +8,16 @@
   }
 
   body {
-    background: #F8FBFF;
+    background: linear-gradient(180deg, #CFE6FF 0%, #EAF3FF 45%, #F8FBFF 100%);
     min-height: 100vh;
     font-family: 'Noto Sans KR', 'Apple SD Gothic Neo', -apple-system, BlinkMacSystemFont, sans-serif;
-    color: #243147;
+    color: #3A4568;
     -webkit-font-smoothing: antialiased;
   }
 
   #root {
     min-height: 100vh;
-    background: linear-gradient(160deg, #F8FBFF 0%, #EAF3FF 55%, #FFFFFF 100%);
+    background: linear-gradient(180deg, #CFE6FF 0%, #EAF3FF 45%, #F8FBFF 100%);
   }
 
   ::-webkit-scrollbar { width: 4px; height: 4px; }

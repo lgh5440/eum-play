@@ -11,11 +11,13 @@ export const colors = {
   bgInput:      '#EFF6FF',
   bgOverlay:    '#E4ECF7',
 
-  // 텍스트 (밝은 톤 ~ 어두운 톤)
-  text:         '#243147',   // 메인 본문
-  textMuted:    '#3B4759',   // 보조
-  textDim:      '#3B4759',   // 어렴풋
-  textGhost:    '#3B4759',   // 매우 어렴풋 (라벨 등)
+  // 텍스트 (밝은 톤 ~ 어두운 톤 — Tier 1 정본)
+  heading:      '#101A3D',   // 제목 (h1급)
+  text:         '#3A4568',   // 메인 일반 본문
+  textMuted:    '#5C6A93',   // 부제·보조 본문
+  textDim:      '#5C6A93',   // 어렴풋
+  textGhost:    '#5C6A93',   // 매우 어렴풋 (라벨 등)
+  gold:         '#FFD98C',   // 강조 골드 단색
 
   // 메인 액션 — 시안
   primary:      '#3B82F6',

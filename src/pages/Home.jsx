@@ -68,7 +68,7 @@ export default function Home() {
                 E:UM
               </span>
             </div>
-            <p className="text-[12px] leading-snug mt-1.5" style={{ color: '#3B4759' }}>
+            <p className="text-[12px] leading-snug mt-1.5" style={{ color: '#5C6A93' }}>
               하나님과 사람을, 사람과 사람을 잇다.<br/>
               교회 활동 도우미입니다.
             </p>
@@ -77,7 +77,7 @@ export default function Home() {
       </div>
 
       {/* 게임 9종 — 3×3 그리드 */}
-      <p className="text-[11px] font-black mb-3 tracking-widest uppercase" style={{ color: '#3B4759' }}>
+      <p className="text-[11px] font-black mb-3 tracking-widest uppercase" style={{ color: '#5C6A93' }}>
         🎲 게임 모음
       </p>
       <div className="grid grid-cols-3 gap-2 mb-5">
@@ -107,7 +107,7 @@ export default function Home() {
         <p className="text-[11px] font-black mb-1.5 tracking-wider uppercase" style={{ color: '#3B82F6' }}>
           💡 사용 안내
         </p>
-        <p className="text-xs leading-relaxed" style={{ color: '#3B4759' }}>
+        <p className="text-xs leading-relaxed" style={{ color: '#3A4568' }}>
           말씀·찬양·교제 — 마음을 잇는 다양한 게임을 제공합니다.<br/>
           진행자 멘트와 사용법이 함께 들어 있어 초보자도 즉시 사용할 수 있습니다.
         </p>

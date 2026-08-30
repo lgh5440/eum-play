@@ -93,11 +93,7 @@ export default function Timer() {
   return (
     <div
       className="min-h-screen flex flex-col transition-all duration-700"
-      style={{
-        background: done
-          ? 'linear-gradient(160deg, #FFF7ED 0%, #FFFFFF 100%)'
-          : '#F8FBFF',
-      }}
+      style={done ? { background: 'linear-gradient(160deg, #FFF7ED 0%, #FFFFFF 100%)' } : undefined}
     >
       <Header title="타이머" onBack={() => navigate('/')} />
 
@@ -119,7 +115,7 @@ export default function Timer() {
                 className="px-3 py-1.5 rounded-full text-xs font-bold transition-all"
                 style={selected
                   ? { background: '#EFF6FF', color: '#2563EB', border: '1px solid #BFDBFE' }
-                  : { background: '#EFF6FF', color: '#3B4759', border: '1px solid #E6EEF9' }
+                  : { background: '#EFF6FF', color: '#5C6A93', border: '1px solid #E6EEF9' }
                 }
               >
                 {p.label}
@@ -141,7 +137,7 @@ export default function Timer() {
             style={{
               background: '#EFF6FF',
               border: '1px solid #E6EEF9',
-              color: '#243147',
+              color: '#3A4568',
               outline: 'none',
             }}
           />
@@ -149,7 +145,7 @@ export default function Timer() {
             onClick={applyCustom}
             aria-label="사용자 지정 시간 적용"
             className="px-3 py-1.5 rounded-xl text-xs font-bold"
-            style={{ background: '#EFF6FF', color: '#3B4759', border: '1px solid #E4ECF7' }}
+            style={{ background: '#EFF6FF', color: '#3A4568', border: '1px solid #E4ECF7' }}
           >적용</button>
         </div>
       </div>
@@ -220,7 +216,7 @@ export default function Timer() {
             style={{
               background: '#EFF6FF',
               border: '1px solid #E4ECF7',
-              color: '#3B4759',
+              color: '#3A4568',
             }}
           >리셋</button>
 

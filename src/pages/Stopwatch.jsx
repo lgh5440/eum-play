@@ -64,13 +64,12 @@ export default function Stopwatch() {
     return (
       <div
         className="fixed inset-0 flex items-center justify-center"
-        style={{ background: '#F8FBFF' }}
       >
         {/* 뒤로 버튼 — 좌상단 */}
         <button
           onClick={() => navigate('/')}
           className="absolute top-4 left-4 w-9 h-9 rounded-xl flex items-center justify-center text-lg z-10"
-          style={{ background: 'rgba(10,16,35,0.8)', border: '1px solid #E6EEF9', color: '#3B4759' }}
+          style={{ background: 'rgba(10,16,35,0.8)', border: '1px solid #E6EEF9', color: '#3A4568' }}
         >←</button>
 
         {/* 시간 — 화면 꽉 채움 */}
@@ -96,7 +95,7 @@ export default function Stopwatch() {
             style={{
               background: '#EFF6FF',
               border: '1px solid #E4ECF7',
-              color: '#3B4759',
+              color: '#3A4568',
             }}
           >리셋</button>
 
@@ -132,7 +131,6 @@ export default function Stopwatch() {
   return (
     <div
       className="min-h-screen flex flex-col"
-      style={{ background: '#F8FBFF' }}
     >
       <Header title="스톱워치" onBack={() => navigate('/')} />
 
@@ -165,7 +163,7 @@ export default function Stopwatch() {
             style={{
               background: '#EFF6FF',
               border: '1px solid #E4ECF7',
-              color: '#3B4759',
+              color: '#3A4568',
             }}
           >리셋</button>
 

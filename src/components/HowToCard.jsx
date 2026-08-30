@@ -52,7 +52,7 @@ export default function HowToCard({ gameId, defaultOpen = true, className = '' }
                   {i + 1}
                 </span>
                 <span className="leading-relaxed pt-0.5"
-                  style={{ color: '#243147', fontSize: 14 }}>
+                  style={{ color: '#3A4568', fontSize: 14 }}>
                   {step}
                 </span>
               </li>

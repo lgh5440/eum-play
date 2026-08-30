@@ -260,7 +260,7 @@ export default function RandomPick() {
   /* ───── 가로 (TV) ───── */
   if (isLandscape) {
     return (
-      <div className="fixed inset-0 flex items-center gap-4 px-4" style={{ background: '#F8FBFF' }}>
+      <div className="fixed inset-0 flex items-center gap-4 px-4">
         {/* 드럼 + 버튼 */}
         <div className="flex flex-col items-center gap-3 flex-shrink-0">
           <canvas ref={canvasRef} width={LCW} height={LCH}
@@ -301,17 +301,17 @@ export default function RandomPick() {
         <div className="flex-1 flex flex-col gap-3 overflow-y-auto" style={{ maxHeight:'100vh', paddingBlock:16 }}>
           <div className="flex items-center justify-between">
             <button onClick={() => navigate('/')} className="w-8 h-8 rounded-xl flex items-center justify-center"
-              style={{ background:'rgba(10,16,35,0.8)', border:'1px solid #E6EEF9', color:'#3B4759' }}>←</button>
-            <p className="text-[13px] font-black tracking-widest uppercase" style={{ color:'#3B4759' }}>랜덤 뽑기</p>
+              style={{ background:'rgba(10,16,35,0.8)', border:'1px solid #E6EEF9', color:'#3A4568' }}>←</button>
+            <p className="text-[13px] font-black tracking-widest uppercase" style={{ color:'#101A3D' }}>랜덤 뽑기</p>
             <button onClick={reset} className="text-[13px] font-bold px-2 py-1 rounded-lg"
-              style={{ color:'#3B4759', border:'1px solid #E4ECF7' }}>초기화</button>
+              style={{ color:'#3A4568', border:'1px solid #E4ECF7' }}>초기화</button>
           </div>
           <label className="flex items-center gap-2 cursor-pointer">
             <input type="checkbox" checked={removeAfterPick}
               onChange={e => { setRemoveAfterPick(e.target.checked); reset() }} className="w-4 h-4" />
-            <span className="text-xs font-bold" style={{ color:'#3B4759' }}>뽑힌 이름 제외</span>
+            <span className="text-xs font-bold" style={{ color:'#5C6A93' }}>뽑힌 이름 제외</span>
           </label>
-          <p className="text-[13px] font-black tracking-widest uppercase" style={{ color:'#3B4759' }}>
+          <p className="text-[13px] font-black tracking-widest uppercase" style={{ color:'#5C6A93' }}>
             참가자 ({pool.length}/{names.length})
           </p>
           <div className="flex gap-1.5">
@@ -319,7 +319,7 @@ export default function RandomPick() {
               aria-label="추가할 참가자 이름"
               onKeyDown={e => e.key === 'Enter' && !e.nativeEvent.isComposing && addName()}
               className="flex-1 rounded-xl px-3 py-1.5 text-xs font-bold"
-              style={{ background:'#EFF6FF', border:'1px solid #E4ECF7', color:'#243147', outline:'none' }} />
+              style={{ background:'#EFF6FF', border:'1px solid #E4ECF7', color:'#3A4568', outline:'none' }} />
             <button onClick={addName} aria-label="참가자 추가" className="w-8 rounded-xl font-black"
               style={{ background:'rgba(99,102,241,0.2)', color:'#93C5FD', border:'1px solid rgba(99,102,241,0.3)' }}>+</button>
           </div>
@@ -328,8 +328,8 @@ export default function RandomPick() {
               <div key={i} className="flex items-center justify-between px-2.5 py-1.5 rounded-xl"
                 style={{ background: pickedName === nm ? '#EFF6FF' : '#EFF6FF',
                   border: pickedName === nm ? '1px solid #BFDBFE' : '1px solid #E4ECF7' }}>
-                <span className="text-xs font-bold truncate" style={{ color: pickedName === nm ? '#3B82F6' : '#3B4759' }}>{nm}</span>
-                <button onClick={() => removeName(i)} aria-label={`${nm} 제거`} className="ml-2 text-xs flex-shrink-0" style={{ color:'#3B4759' }}>×</button>
+                <span className="text-xs font-bold truncate" style={{ color: pickedName === nm ? '#3B82F6' : '#5C6A93' }}>{nm}</span>
+                <button onClick={() => removeName(i)} aria-label={`${nm} 제거`} className="ml-2 text-xs flex-shrink-0" style={{ color:'#5C6A93' }}>×</button>
               </div>
             ))}
           </div>
@@ -340,11 +340,11 @@ export default function RandomPick() {
 
   /* ───── 세로 (모바일) ───── */
   return (
-    <div className="min-h-screen flex flex-col" style={{ background: '#F8FBFF' }}>
+    <div className="min-h-screen flex flex-col">
       <Header title="랜덤 뽑기" onBack={() => navigate('/')}
         right={
           <button onClick={reset} className="text-[13px] font-bold px-2.5 py-1.5 rounded-lg"
-            style={{ color:'#3B4759', border:'1px solid #E4ECF7' }}>
+            style={{ color:'#3A4568', border:'1px solid #E4ECF7' }}>
             초기화
           </button>
         } />
@@ -383,7 +383,7 @@ export default function RandomPick() {
             style={pool.length > 0 || poolEmpty ? {
               background:'linear-gradient(135deg,#2563EB,#2563EB)', color:'#FFFFFF',
               boxShadow:'0 8px 40px #BFDBFE', border:'1px solid #BFDBFE',
-            } : { background:'#EFF6FF', color:'#3B4759', border:'1px solid #E6EEF9' }}>
+            } : { background:'#EFF6FF', color:'#5C6A93', border:'1px solid #E6EEF9' }}>
             {poolEmpty ? '✓ 다시 시작' : phase === 'done' ? '🔁 다시 돌리기' : '🎲 돌리기!'}
           </button>
         )}
@@ -395,10 +395,10 @@ export default function RandomPick() {
         <label className="flex items-center gap-2 cursor-pointer">
           <input type="checkbox" checked={removeAfterPick}
             onChange={e => { setRemoveAfterPick(e.target.checked); reset() }} className="w-4 h-4" />
-          <span className="text-xs font-bold" style={{ color:'#3B4759' }}>뽑힌 이름 다음 추첨 제외</span>
+          <span className="text-xs font-bold" style={{ color:'#5C6A93' }}>뽑힌 이름 다음 추첨 제외</span>
         </label>
 
-        <p className="text-[13px] font-black tracking-widest uppercase" style={{ color:'#3B4759' }}>
+        <p className="text-[13px] font-black tracking-widest uppercase" style={{ color:'#5C6A93' }}>
           참가자 ({removeAfterPick ? `${remainNames.length}/` : ''}{names.length})
         </p>
         <div className="flex gap-1.5">
@@ -406,7 +406,7 @@ export default function RandomPick() {
             aria-label="추가할 참가자 이름"
             onKeyDown={e => e.key === 'Enter' && !e.nativeEvent.isComposing && addName()}
             className="flex-1 rounded-xl px-3 py-2 text-sm font-bold"
-            style={{ background:'#EFF6FF', border:'1px solid #E4ECF7', color:'#243147', outline:'none' }} />
+            style={{ background:'#EFF6FF', border:'1px solid #E4ECF7', color:'#3A4568', outline:'none' }} />
           <button onClick={addName} aria-label="참가자 추가" className="w-10 rounded-xl font-black text-xl"
             style={{ background:'rgba(99,102,241,0.2)', color:'#93C5FD', border:'1px solid rgba(99,102,241,0.3)' }}>+</button>
         </div>
@@ -415,8 +415,8 @@ export default function RandomPick() {
             <div key={i} className="flex items-center justify-between px-3 py-1.5 rounded-xl"
               style={{ background: pickedName === nm ? '#EFF6FF' : '#EFF6FF',
                 border: pickedName === nm ? '1px solid #BFDBFE' : '1px solid #E4ECF7' }}>
-              <span className="text-sm font-bold truncate" style={{ color: pickedName === nm ? '#3B82F6' : '#3B4759' }}>{nm}</span>
-              <button onClick={() => removeName(i)} aria-label={`${nm} 제거`} className="ml-2 text-xs flex-shrink-0" style={{ color:'#3B4759' }}>×</button>
+              <span className="text-sm font-bold truncate" style={{ color: pickedName === nm ? '#3B82F6' : '#5C6A93' }}>{nm}</span>
+              <button onClick={() => removeName(i)} aria-label={`${nm} 제거`} className="ml-2 text-xs flex-shrink-0" style={{ color:'#5C6A93' }}>×</button>
             </div>
           ))}
         </div>

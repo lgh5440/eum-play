@@ -6,13 +6,13 @@ export default function Field({ label, hint, error, children }) {
       {label && (
         <p
           className="text-[11px] font-black tracking-widest uppercase"
-          style={{ color: '#3B4759' }}>
+          style={{ color: '#5C6A93' }}>
           {label}
         </p>
       )}
       {children}
       {hint && !error && (
-        <p className="text-[11px] leading-relaxed" style={{ color: '#3B4759' }}>
+        <p className="text-[11px] leading-relaxed" style={{ color: '#5C6A93' }}>
           {hint}
         </p>
       )}

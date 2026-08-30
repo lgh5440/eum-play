@@ -18,7 +18,7 @@ export default function EmptyState({ icon = '📭', title, description, action, 
         </p>
       )}
       {description && (
-        <p className="text-xs mt-2 leading-relaxed" style={{ color: '#3B4759' }}>
+        <p className="text-xs mt-2 leading-relaxed" style={{ color: '#5C6A93' }}>
           {description}
         </p>
       )}

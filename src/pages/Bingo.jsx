@@ -44,14 +44,14 @@ export default function Bingo() {
   /* ───── 화면 1 — 분류 선택 ───── */
   if (mode === 'cat') {
     return (
-      <div className="min-h-screen" style={{ background: '#F8FBFF' }}>
+      <div className="min-h-screen">
         <Header title="🎯 빙고 게임" onBack={back} />
 
         <VerseHeader gameId="bingo" />
         <HowToCard gameId="bingo" defaultOpen={false} />
 
         <div className="max-w-lg mx-auto px-4 pb-6">
-          <p className="mb-4 leading-relaxed" style={{ color: '#3B4759', fontSize: 13 }}>
+          <p className="mb-4 leading-relaxed" style={{ color: '#3A4568', fontSize: 13 }}>
             분류를 선택하면 세부 주제가 나옵니다. 주제마다 빙고판 크기가 정해져 있습니다.
           </p>
 
@@ -70,7 +70,7 @@ export default function Bingo() {
                   style={{ textShadow: '0 1px 4px #1E2A45' }}>
                   {cat.name}
                 </p>
-                <p className="text-[13px] font-bold" style={{ color: '#3B4759' }}>
+                <p className="text-[13px] font-bold" style={{ color: '#5C6A93' }}>
                   주제 {cat.subjects.length}종
                 </p>
               </button>
@@ -84,12 +84,12 @@ export default function Bingo() {
   /* ───── 화면 2 — 세부 주제 선택 ───── */
   if (mode === 'subject') {
     return (
-      <div className="min-h-screen" style={{ background: '#F8FBFF' }}>
+      <div className="min-h-screen">
         <Header title={`${category.emoji} ${category.name}`} onBack={back} />
 
         <div className="max-w-lg mx-auto px-4 pb-6">
-          <p className="text-[12px] mb-4 leading-relaxed" style={{ color: '#3B4759' }}>
-            세부 주제를 선택하세요. 각 주제 카드에 <b style={{ color: '#3B4759' }}>빙고판 크기</b>가 표시됩니다.
+          <p className="text-[12px] mb-4 leading-relaxed" style={{ color: '#3A4568' }}>
+            세부 주제를 선택하세요. 각 주제 카드에 <b style={{ color: '#3A4568' }}>빙고판 크기</b>가 표시됩니다.
           </p>
 
           <div className="grid grid-cols-2 gap-2.5">
@@ -106,7 +106,7 @@ export default function Bingo() {
                   style={{ textShadow: '0 1px 4px #1E2A45' }}>
                   {s.name}
                 </p>
-                <p className="text-[13px] font-bold" style={{ color: '#3B4759' }}>
+                <p className="text-[13px] font-bold" style={{ color: '#5C6A93' }}>
                   단어 {s.words.length}개
                 </p>
                 {/* 빙고 크기 배지 — 주제별 고정 */}
@@ -116,7 +116,7 @@ export default function Bingo() {
                 </span>
                 {s.note && (
                   <span className="absolute top-2 left-2 text-[13px] font-bold px-1.5 py-0.5 rounded-md"
-                    style={{ background: '#E4ECF7', color: '#3B4759' }}>
+                    style={{ background: '#E4ECF7', color: '#5C6A93' }}>
                     {s.note}
                   </span>
                 )}
@@ -135,7 +135,7 @@ export default function Bingo() {
   const size        = theme.size
 
   return (
-    <div className="min-h-screen flex flex-col" style={{ background: '#F8FBFF' }}>
+    <div className="min-h-screen flex flex-col">
       <Header title={`${theme.name} · ${size}×${size}`} onBack={back}
         right={
           <span className="text-xs font-black px-2 py-0.5 rounded-md"
@@ -154,7 +154,7 @@ export default function Bingo() {
       <div className="flex-1 flex items-center justify-center px-4">
         {currentWord ? (
           <div className="text-center" key={currentWord + called.length}>
-            <p className="text-[11px] font-black tracking-widest uppercase mb-3" style={{ color: '#3B4759' }}>
+            <p className="text-[11px] font-black tracking-widest uppercase mb-3" style={{ color: '#5C6A93' }}>
               호명 단어
             </p>
             <p className="font-black leading-none drop-shadow-lg"
@@ -173,13 +173,13 @@ export default function Bingo() {
         ) : (
           <div className="text-center px-6">
             <div className="text-5xl mb-4">📋</div>
-            <p className="text-[14px] font-bold mb-2" style={{ color: '#3B4759' }}>
+            <p className="text-[14px] font-bold mb-2" style={{ color: '#3A4568' }}>
               학생들이 빙고판을 채울 시간을 주세요
             </p>
-            <p className="text-[12px] leading-relaxed" style={{ color: '#3B4759' }}>
+            <p className="text-[12px] leading-relaxed" style={{ color: '#3A4568' }}>
               주제: <b style={{ color: category.accent }}>{theme.name}</b><br/>
               빙고판: {size}×{size} ({size*size}칸) · 단어 풀 {pool.length}개<br/>
-              준비되면 <b style={{ color: '#3B4759' }}>"시작!"</b>을 누르세요.
+              준비되면 <b style={{ color: '#3A4568' }}>"시작!"</b>을 누르세요.
             </p>
           </div>
         )}
@@ -187,7 +187,7 @@ export default function Bingo() {
 
       {called.length > 1 && (
         <div className="max-w-lg mx-auto w-full px-4 mb-3">
-          <p className="text-[13px] font-black tracking-widest uppercase mb-2" style={{ color: '#3B4759' }}>
+          <p className="text-[13px] font-black tracking-widest uppercase mb-2" style={{ color: '#5C6A93' }}>
             지금까지 호명 ({called.length - 1})
           </p>
           <div className="flex flex-wrap gap-1.5 max-h-24 overflow-y-auto">
@@ -231,7 +231,7 @@ export default function Bingo() {
             className="w-full py-3 rounded-xl font-bold text-sm active:scale-95"
             style={{
               background: '#EFF6FF',
-              color: '#3B4759',
+              color: '#3A4568',
               border: '1px solid #E4ECF7',
             }}>
             🔁 다시 셔플하고 시작

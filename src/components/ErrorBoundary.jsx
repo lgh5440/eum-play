@@ -30,13 +30,13 @@ export default class ErrorBoundary extends Component {
 
 function ErrorFallback({ error, reset }) {
   return (
-    <div className="min-h-screen flex items-center justify-center px-6" style={{ background: '#F8FBFF' }}>
+    <div className="min-h-screen flex items-center justify-center px-6">
       <div className="max-w-md w-full text-center">
         <div className="text-6xl mb-5" aria-hidden>⚠️</div>
         <p className="font-black mb-2" style={{ color: '#9C6F0F', fontSize: 22 }}>
           문제가 발생했습니다
         </p>
-        <p className="leading-relaxed mb-5" style={{ color: '#3B4759', fontSize: 14 }}>
+        <p className="leading-relaxed mb-5" style={{ color: '#3A4568', fontSize: 14 }}>
           앱에서 예상치 못한 오류가 발생했어요.<br />
           다시 시도하거나 홈으로 돌아가 주세요.
         </p>

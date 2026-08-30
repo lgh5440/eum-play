@@ -71,14 +71,14 @@ export default function EumFamilyFooter({ currentApp, variant = 'footer', size =
         >
           {heading}
         </h3>
-        <p className={s.sub} style={{ color: '#3B4759' }}>
+        <p className={s.sub} style={{ color: '#5C6A93' }}>
           {subText}
         </p>
       </header>
 
       <p
         className="mt-3 text-center text-[11px]"
-        style={{ color: '#3B4759' }}
+        style={{ color: '#5C6A93' }}
       >
         오류 신고 · 문의 :{' '}
         <a
@@ -125,20 +125,20 @@ export default function EumFamilyFooter({ currentApp, variant = 'footer', size =
               </span>
               <p
                 className={s.name}
-                style={{ color: isCurrent || !hasUrl ? '#3B4759' : '#FFFFFF' }}
+                style={{ color: isCurrent || !hasUrl ? '#5C6A93' : '#FFFFFF' }}
               >
                 {app.name}
               </p>
               <p
                 className={s.tagline}
-                style={{ color: isCurrent || !hasUrl ? '#E4ECF7' : '#3B4759' }}
+                style={{ color: isCurrent || !hasUrl ? '#E4ECF7' : '#5C6A93' }}
               >
                 {app.tagline}
               </p>
               {isCurrent && (
                 <span
                   className={s.badge}
-                  style={{ background: '#E6EEF9', color: '#3B4759' }}
+                  style={{ background: '#E6EEF9', color: '#5C6A93' }}
                 >
                   현재 앱
                 </span>

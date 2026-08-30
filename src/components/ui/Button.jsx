@@ -44,13 +44,13 @@ const VARIANTS = {
   /* 중립 — 회색 보조 */
   ghost: {
     background: '#EFF6FF',
-    color: '#3B4759',
+    color: '#3A4568',
     border: '1px solid #E4ECF7',
   },
   /* 매우 약함 — 헤더 작은 액션 등 */
   subtle: {
     background: 'rgba(10,16,35,0.8)',
-    color: '#3B4759',
+    color: '#3A4568',
     border: '1px solid #E6EEF9',
   },
 }

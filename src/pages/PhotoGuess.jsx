@@ -148,16 +148,16 @@ export default function PhotoGuess() {
   if (mode === 'library') {
     if (!ready) {
       return (
-        <div className="min-h-screen flex items-center justify-center" style={{ background: '#F8FBFF' }}>
+        <div className="min-h-screen flex items-center justify-center">
           <div className="text-center">
             <div className="text-4xl mb-3 animate-pulse">🖼</div>
-            <p className="font-bold" style={{ color: '#3B4759', fontSize: 14 }}>사진 라이브러리 불러오는 중…</p>
+            <p className="font-bold" style={{ color: '#3A4568', fontSize: 14 }}>사진 라이브러리 불러오는 중…</p>
           </div>
         </div>
       )
     }
     return (
-      <div className="min-h-screen flex flex-col" style={{ background: '#F8FBFF' }}>
+      <div className="min-h-screen flex flex-col">
         <Header title="📷 사진 맞추기" onBack={back}
           right={<TinyBtn onClick={() => fileRef.current?.click()} disabled={compressing}>
             {compressing ? '처리중…' : '+ 사진 추가'}
@@ -175,7 +175,7 @@ export default function PhotoGuess() {
               </p>
             </div>
           )}
-          <p className="mb-4 leading-relaxed" style={{ color: '#3B4759', fontSize: 13 }}>
+          <p className="mb-4 leading-relaxed" style={{ color: '#3A4568', fontSize: 13 }}>
             진행 전에 사진과 정답을 미리 등록해 두세요. 게임 시작 시 화면 일부만 강하게 확대되어 보이고,
             8단계로 점점 전체가 드러납니다.
           </p>
@@ -193,7 +193,7 @@ export default function PhotoGuess() {
                 if (playedCount === 0) return null
                 return (
                   <div className="flex items-center justify-between mb-3 px-1">
-                    <span className="text-[11px] font-bold" style={{ color:'#3B4759' }}>
+                    <span className="text-[11px] font-bold" style={{ color:'#5C6A93' }}>
                       진행 완료 {playedCount} / {library.length}
                     </span>
                     <button
@@ -243,20 +243,20 @@ export default function PhotoGuess() {
                           style={{ background: 'radial-gradient(circle, rgba(37,99,235,0.18), transparent 65%)' }} />
                         <div className="text-center relative z-10">
                           <div className="text-4xl mb-1 drop-shadow-lg">🔍</div>
-                          <p className="text-[13px] font-black tracking-widest uppercase" style={{ color:'#3B4759' }}>
+                          <p className="text-[13px] font-black tracking-widest uppercase" style={{ color:'#5C6A93' }}>
                             가려짐
                           </p>
                         </div>
                       </button>
 
                       <div className="p-2.5 flex flex-col gap-1">
-                        <p className="text-xs font-bold truncate" style={{ color:'#243147' }}>
+                        <p className="text-xs font-bold truncate" style={{ color:'#3A4568' }}>
                           {photo.name || '제목 없음'}
                         </p>
                         <div className="flex items-center justify-between gap-2">
                           <button onClick={() => toggleAnswer(photo.id)}
                             className="text-[13px] truncate text-left flex-1 py-0.5"
-                            style={{ color: ansShown ? '#3B82F6' : '#3B4759' }}>
+                            style={{ color: ansShown ? '#3B82F6' : '#5C6A93' }}>
                             {photo.answer
                               ? (ansShown ? `정답: ${photo.answer}` : '🔒 정답 숨김 (탭)')
                               : '정답 미설정'}
@@ -285,7 +285,7 @@ export default function PhotoGuess() {
   /* ──────────── 화면 2 — 사진 추가 폼 ──────────── */
   if (mode === 'addForm') {
     return (
-      <div className="min-h-screen flex flex-col" style={{ background: '#F8FBFF' }}>
+      <div className="min-h-screen flex flex-col">
         <Header title="새 사진 등록" onBack={back} />
 
         <div className="max-w-lg mx-auto w-full px-4 pb-6 flex flex-col gap-4">
@@ -302,7 +302,7 @@ export default function PhotoGuess() {
               onChange={e => setPendingName(e.target.value)}
               placeholder="예: 우리 교회 입구"
               className="w-full rounded-xl px-3 py-2.5 text-sm font-bold"
-              style={{ background:'#EFF6FF', border:'1px solid #E4ECF7', color:'#243147', outline:'none' }} />
+              style={{ background:'#EFF6FF', border:'1px solid #E4ECF7', color:'#3A4568', outline:'none' }} />
           </Field>
 
           <Field label="정답 — 학생들이 맞춰야 할 답">
@@ -310,13 +310,13 @@ export default function PhotoGuess() {
               onChange={e => setPendingAnswer(e.target.value)}
               placeholder="예: 교회 종탑"
               className="w-full rounded-xl px-3 py-2.5 text-sm font-bold"
-              style={{ background:'#EFF6FF', border:'1px solid #E4ECF7', color:'#243147', outline:'none' }} />
+              style={{ background:'#EFF6FF', border:'1px solid #E4ECF7', color:'#3A4568', outline:'none' }} />
           </Field>
 
           <div className="flex gap-2 mt-2">
             <button onClick={cancelPending}
               className="flex-1 py-3.5 rounded-2xl font-black text-sm"
-              style={{ background:'#EFF6FF', color:'#3B4759', border:'1px solid #E4ECF7' }}>
+              style={{ background:'#EFF6FF', color:'#3A4568', border:'1px solid #E4ECF7' }}>
               취소
             </button>
             <button onClick={savePending} disabled={!pendingDataUrl}
@@ -339,7 +339,7 @@ export default function PhotoGuess() {
   const origin = `${pos.cx}% ${pos.cy}%`
 
   return (
-    <div className="min-h-screen flex flex-col" style={{ background: '#F8FBFF' }}>
+    <div className="min-h-screen flex flex-col">
       <Header title={photo?.name || '사진 맞추기'} onBack={back}
         right={
           <span className="text-xs font-black tracking-widest" style={{ color: revealed ? '#3B82F6' : '#FFD98C' }}>
@@ -435,7 +435,7 @@ export default function PhotoGuess() {
             </button>
             <button onClick={backToLibrary}
               className="flex-1 py-4 rounded-2xl font-black text-base active:scale-95"
-              style={{ background:'#EFF6FF', color:'#3B4759', border:'1px solid #E4ECF7' }}>
+              style={{ background:'#EFF6FF', color:'#3A4568', border:'1px solid #E4ECF7' }}>
               📂 라이브러리
             </button>
           </div>

@@ -94,7 +94,7 @@ export default function Dice() {
   const glowColor = mode === 'dice' ? '#9C6F0F' : yutColor
 
   return (
-    <div className="min-h-screen flex flex-col relative overflow-hidden" style={{ background: '#F8FBFF' }}>
+    <div className="min-h-screen flex flex-col relative overflow-hidden">
 
       {/* ───── 배경 라이트 (결과 확정 시 부드럽게 ON) ───── */}
       <div className="absolute inset-0 pointer-events-none transition-opacity duration-700"
@@ -125,7 +125,7 @@ export default function Dice() {
       {/* 주사위 개수 토글 */}
       {mode === 'dice' && (
         <div className="max-w-lg mx-auto w-full px-4 mb-3 relative z-10">
-          <p className="text-[13px] font-black tracking-widest uppercase mb-2" style={{ color: '#3B4759' }}>
+          <p className="text-[13px] font-black tracking-widest uppercase mb-2" style={{ color: '#5C6A93' }}>
             주사위 개수
           </p>
           <div className="grid grid-cols-2 gap-2">
@@ -134,7 +134,7 @@ export default function Dice() {
                 className="py-2.5 rounded-xl font-black text-sm active:scale-95 transition-all"
                 style={{
                   background: diceCount === n ? 'linear-gradient(135deg,#9C6F0F,#9a3412)' : '#EFF6FF',
-                  color: diceCount === n ? '#FFFFFF' : '#3B4759',
+                  color: diceCount === n ? '#FFFFFF' : '#5C6A93',
                   border: `1px solid ${diceCount === n ? 'rgba(251,146,60,0.5)' : '#E4ECF7'}`,
                   opacity: rolling ? 0.5 : 1,
                 }}>
@@ -238,7 +238,7 @@ function DiceArea({ values, rolling, showResult, count, sum }) {
       {showResult && count === 2 && (
         <div className="text-center relative" key={`sum-${sum}`}>
           <Sparkles count={6} color="#9C6F0F" />
-          <p className="text-[11px] font-black tracking-widest uppercase mb-1" style={{ color: '#3B4759' }}>
+          <p className="text-[11px] font-black tracking-widest uppercase mb-1" style={{ color: '#5C6A93' }}>
             합계
           </p>
           <p className="font-black leading-none relative inline-block"
@@ -317,7 +317,7 @@ function YutArea({ sticks, rolling, showResult, name }) {
       {showResult && info && (
         <div className="text-center relative" key={`yut-${name}`}>
           <Sparkles count={info.again ? 10 : 6} color={info.color} />
-          <p className="text-[11px] font-black tracking-widest uppercase mb-1" style={{ color: '#3B4759' }}>
+          <p className="text-[11px] font-black tracking-widest uppercase mb-1" style={{ color: '#5C6A93' }}>
             결과
           </p>
           <div className="flex items-baseline justify-center gap-2 mb-1 relative">
@@ -337,7 +337,7 @@ function YutArea({ sticks, rolling, showResult, name }) {
               {name}
             </p>
           </div>
-          <p className="text-sm font-bold" style={{ color: '#3B4759' }}>
+          <p className="text-sm font-bold" style={{ color: '#3A4568' }}>
             ({info.desc}) · {info.steps}칸 이동
           </p>
           {info.again && (
@@ -461,7 +461,7 @@ function ModeBtn({ active, onClick, color, children }) {
       className="py-2.5 rounded-xl font-black text-sm active:scale-95 transition-all"
       style={{
         background: active ? `linear-gradient(135deg, ${color}33, ${color}11)` : 'transparent',
-        color: active ? color : '#3B4759',
+        color: active ? color : '#5C6A93',
         border: `1px solid ${active ? color + '66' : 'transparent'}`,
       }}>
       {children}
