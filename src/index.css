@@ -45,19 +45,19 @@
   .glass-card-hover {
     background: #DBEAFE;
     backdrop-filter: blur(16px);
-    border: 1px solid #93C5FD;
+    border: 1px solid #3B82F6;
     box-shadow: 0 4px 24px rgba(37, 99, 235, 0.12);
   }
   .stat-card {
     background: #EFF6FF;
-    border: 1px solid #E4ECF7;
+    border: 1px solid #BFDBFE;
     border-radius: 16px;
   }
   .glow-cyan {
-    box-shadow: 0 0 24px rgba(37, 99, 235, 0.25);
+    box-shadow: 0 4px 16px rgba(37, 99, 235, 0.18);
   }
   .glow-blue {
-    box-shadow: 0 0 24px rgba(37, 99, 235, 0.25);
+    box-shadow: 0 4px 16px rgba(37, 99, 235, 0.18);
   }
   .text-gradient-cyan {
     background: linear-gradient(135deg, #1D4ED8, #2563EB);

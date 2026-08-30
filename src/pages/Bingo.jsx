@@ -166,7 +166,7 @@ export default function Bingo() {
                 WebkitBackgroundClip: 'text',
                 WebkitTextFillColor: 'transparent',
                 backgroundClip: 'text',
-                filter: `drop-shadow(0 0 30px ${category.accent}99)`,
+                filter: `drop-shadow(0 4px 12px ${category.accent}44)`,
                 animation: 'wordPop 0.55s cubic-bezier(0.34, 1.56, 0.64, 1)',
               }}>
               {currentWord}

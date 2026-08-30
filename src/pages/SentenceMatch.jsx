@@ -7,9 +7,9 @@ import { Header } from '../components/ui'
 
 const LEVELS = ['상', '중', '하']
 const LEVEL_COLOR = {
-  '상': { txt: '#9C6F0F', bg: 'rgba(248,113,113,0.10)', bd: 'rgba(248,113,113,0.45)' },
-  '중': { txt: '#FFD98C', bg: 'rgba(251,191,36,0.10)',  bd: 'rgba(251,191,36,0.45)' },
-  '하': { txt: '#3B82F6', bg: 'rgba(52,211,153,0.10)',  bd: 'rgba(52,211,153,0.45)' },
+  '상': { txt: '#B91C1C', bg: '#FEF2F2', bd: '#FCA5A5' },
+  '중': { txt: '#854D0E', bg: '#FEF3C7', bd: '#FDE68A' },
+  '하': { txt: '#166534', bg: '#F0FDF4', bd: '#86EFAC' },
 }
 
 export default function SentenceMatch() {

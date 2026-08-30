@@ -17,10 +17,10 @@ const yutNameOf = (sticks) => {
 
 const YUT_INFO = {
   '도': { steps: 1, again: false, color: '#3B4759', emoji: '🐖', desc: '돼지' },
-  '개': { steps: 2, again: false, color: '#93C5FD', emoji: '🐕', desc: '개' },
-  '걸': { steps: 3, again: false, color: '#FFD98C', emoji: '🐑', desc: '양' },
-  '윷': { steps: 4, again: true,  color: '#9C6F0F', emoji: '🐄', desc: '소' },
-  '모': { steps: 5, again: true,  color: '#3B82F6', emoji: '🐎', desc: '말' },
+  '개': { steps: 2, again: false, color: '#1D4ED8', emoji: '🐕', desc: '개' },
+  '걸': { steps: 3, again: false, color: '#854D0E', emoji: '🐑', desc: '양' },
+  '윷': { steps: 4, again: true,  color: '#C2410C', emoji: '🐄', desc: '소' },
+  '모': { steps: 5, again: true,  color: '#1E40AF', emoji: '🐎', desc: '말' },
 }
 
 export default function Dice() {
@@ -237,14 +237,14 @@ function DiceArea({ values, rolling, showResult, count, sum }) {
       </div>
       {showResult && count === 2 && (
         <div className="text-center relative" key={`sum-${sum}`}>
-          <Sparkles count={6} color="#9C6F0F" />
+          <Sparkles count={6} color="#C2410C" />
           <p className="text-[11px] font-black tracking-widest uppercase mb-1" style={{ color: '#5C6A93' }}>
             합계
           </p>
           <p className="font-black leading-none relative inline-block"
             style={{
-              fontSize: 72, color: '#9C6F0F',
-              textShadow: '0 0 50px rgba(251,146,60,0.7)',
+              fontSize: 72, color: '#C2410C',
+              textShadow: '0 2px 10px rgba(194,65,12,0.25)',
               animation: isBig ? 'popBig 0.7s cubic-bezier(0.34, 1.56, 0.64, 1)' : 'pop 0.5s cubic-bezier(0.34, 1.56, 0.64, 1)',
             }}>
             {sum}
@@ -328,10 +328,9 @@ function YutArea({ sticks, rolling, showResult, name }) {
             <p className="font-black leading-none relative inline-block"
               style={{
                 fontSize: 96, color: info.color,
-                textShadow: `0 0 50px ${info.color}aa, 0 0 20px ${info.color}cc`,
-                ['--glow']: info.color + '99',
+                textShadow: '0 2px 10px rgba(0,0,0,0.1)',
                 animation: info.again
-                  ? 'popBig 0.7s cubic-bezier(0.34, 1.56, 0.64, 1), glowPulse 1.4s ease-in-out 0.7s infinite'
+                  ? 'popBig 0.7s cubic-bezier(0.34, 1.56, 0.64, 1)'
                   : 'pop 0.5s cubic-bezier(0.34, 1.56, 0.64, 1)',
               }}>
               {name}

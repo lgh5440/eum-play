@@ -15,9 +15,9 @@ import {
 
 const LEVELS = ['상', '중', '하']
 const LEVEL_COLOR = {
-  '상': { txt: '#9C6F0F', bg: 'rgba(248,113,113,0.10)', bd: 'rgba(248,113,113,0.35)' },
-  '중': { txt: '#FFD98C', bg: 'rgba(251,191,36,0.10)',  bd: 'rgba(251,191,36,0.35)' },
-  '하': { txt: '#3B82F6', bg: 'rgba(52,211,153,0.10)',  bd: 'rgba(52,211,153,0.35)' },
+  '상': { txt: '#B91C1C', bg: '#FEF2F2', bd: '#FCA5A5' },
+  '중': { txt: '#854D0E', bg: '#FEF3C7', bd: '#FDE68A' },
+  '하': { txt: '#166534', bg: '#F0FDF4', bd: '#86EFAC' },
 }
 const SET_SIZE = 10
 
@@ -433,7 +433,6 @@ export default function Chosung() {
                 style={{
                   fontSize: answer.length > 10 ? '24px' : answer.length > 6 ? '34px' : '44px',
                   color: c.txt,
-                  textShadow: `0 0 30px ${c.txt}66`,
                 }}>
                 {answer}
               </p>
@@ -518,13 +517,13 @@ export default function Chosung() {
 
       <div className="max-w-lg w-full mx-auto px-4 pb-6 flex gap-2">
         <button onClick={() => setMode('set')}
-          className="flex-1 py-4 rounded-2xl font-black"
-          style={{ background:'rgba(99,102,241,0.2)', color:'#93C5FD', border:'1px solid rgba(99,102,241,0.3)' }}>
+          className="flex-1 py-4 rounded-2xl font-black text-base active:scale-95 transition-all"
+          style={{ background:'#DBEAFE', color:'#1D4ED8', border:'1px solid #BFDBFE' }}>
           📋 다른 세트
         </button>
         <button onClick={() => { setMode('cat'); setCategory(null) }}
-          className="flex-1 py-4 rounded-2xl font-black"
-          style={{ background:'#EFF6FF', color:'#3A4568', border:'1px solid #E4ECF7' }}>
+          className="flex-1 py-4 rounded-2xl font-black text-base active:scale-95 transition-all"
+          style={{ background:'#EFF6FF', color:'#3A4568', border:'1px solid #BFDBFE' }}>
           🔀 카테고리 변경
         </button>
       </div>
