@@ -66,7 +66,8 @@ export default function SentenceMatch() {
                   style={{ textShadow: '0 1px 4px #1E2A45' }}>
                   {cat.name}
                 </p>
-                <p className="text-[13px] font-bold" style={{ color: '#5C6A93' }}>
+                <p className="text-[13px] font-bold text-white/90"
+                  style={{ textShadow: '0 1px 3px rgba(0,0,0,0.5)' }}>
                   상·중·하 각 30문제
                 </p>
               </button>
@@ -127,7 +128,7 @@ export default function SentenceMatch() {
       <Header title={`${category.emoji} ${category.name} · ${level}`} onBack={back}
         right={
           <span className="text-xs font-black px-2 py-0.5 rounded-md"
-            style={{ background: c.bg, color: c.txt, border: `1px solid ${c.bd}` }}>
+            style={{ background: '#EFF6FF', color: '#101A3D', border: '1px solid #BFDBFE' }}>
             {items.length}문제
           </span>
         } />
@@ -141,22 +142,22 @@ export default function SentenceMatch() {
           {items.map((item, i) => (
             <div key={i} className="rounded-xl px-3 py-2.5"
               style={{
-                background: 'rgba(10,16,35,0.7)',
-                border: `1px solid ${category.accent}22`,
-                borderLeft: `3px solid ${category.accent}88`,
+                background: '#EFF6FF',
+                border: '1px solid #BFDBFE',
+                borderLeft: '3px solid #1D4ED8',
               }}>
               <div className="flex items-start gap-2">
                 <span className="text-[13px] font-black tabular-nums shrink-0 mt-0.5"
-                  style={{ color: '#5C6A93', minWidth: 22 }}>
+                  style={{ color: '#1D4ED8', minWidth: 22 }}>
                   {String(i + 1).padStart(2, '0')}
                 </span>
                 <p className="text-[13px] leading-snug flex-1" style={{ color: '#3A4568' }}>
                   <span style={{ color: '#3A4568' }}>{item.left}</span>
-                  <span className="mx-1.5 font-black" style={{ color: category.accent }}>/</span>
+                  <span className="mx-1.5 font-black" style={{ color: '#1D4ED8' }}>/</span>
                   <span style={{ color: '#3A4568' }}>{item.right}</span>
                   {item.ref && (
                     <span className="ml-1.5 text-[11px] font-bold whitespace-nowrap"
-                      style={{ color: category.accent }}>
+                      style={{ color: '#1D4ED8' }}>
                       ({item.ref})
                     </span>
                   )}

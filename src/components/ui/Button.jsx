@@ -25,21 +25,21 @@ const VARIANTS = {
   },
   /* 보조 액션 — 인디고 톤 (가벼운 강조) */
   secondary: {
-    background: 'rgba(99,102,241,0.2)',
-    color: '#93C5FD',
-    border: '1px solid rgba(99,102,241,0.3)',
+    background: '#DBEAFE',
+    color: '#1D4ED8',
+    border: '1px solid #BFDBFE',
   },
   /* 정보·경고 — 노랑 톤 */
   warning: {
-    background: 'rgba(251,191,36,0.15)',
-    color: '#FFD98C',
-    border: '1px solid rgba(251,191,36,0.3)',
+    background: '#FEF3C7',
+    color: '#854D0E',
+    border: '1px solid #FDE68A',
   },
   /* 삭제 — 약한 빨강 (위험성 명확하지만 부드러움) */
   dangerSoft: {
-    background: 'rgba(239,68,68,0.1)',
-    color: '#9C6F0F',
-    border: '1px solid rgba(239,68,68,0.25)',
+    background: 'rgba(254,226,226,0.6)',
+    color: '#DC2626',
+    border: '1px solid #FECACA',
   },
   /* 중립 — 회색 보조 */
   ghost: {
@@ -49,9 +49,9 @@ const VARIANTS = {
   },
   /* 매우 약함 — 헤더 작은 액션 등 */
   subtle: {
-    background: 'rgba(10,16,35,0.8)',
+    background: '#EFF6FF',
     color: '#3A4568',
-    border: '1px solid #E6EEF9',
+    border: '1px solid #E4ECF7',
   },
 }
 

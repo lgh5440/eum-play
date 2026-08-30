@@ -22,12 +22,12 @@ export default function HowToCard({ gameId, defaultOpen = true, className = '' }
           <div className="flex items-center gap-2">
             <span style={{ fontSize: 18 }}>📚</span>
             <p className="font-black tracking-widest uppercase"
-              style={{ color: '#3B82F6', fontSize: 12 }}>
+              style={{ color: '#1D4ED8', fontSize: 12 }}>
               진행 방법 (초보자 안내)
             </p>
           </div>
           <span style={{
-            color: '#3B82F6',
+            color: '#1D4ED8',
             fontSize: 16,
             transform: open ? 'rotate(180deg)' : 'none',
             transition: 'transform 0.2s',
@@ -42,9 +42,9 @@ export default function HowToCard({ gameId, defaultOpen = true, className = '' }
               <li key={i} className="flex items-start gap-2.5">
                 <span className="font-black shrink-0 px-2 py-0.5 rounded-md"
                   style={{
-                    color: '#3B82F6',
+                    color: '#1E40AF',
                     fontSize: 12,
-                    background: 'rgba(37,99,235,0.15)',
+                    background: '#DBEAFE',
                     border: '1px solid #BFDBFE',
                     minWidth: 24,
                     textAlign: 'center',

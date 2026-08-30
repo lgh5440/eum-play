@@ -1,4 +1,4 @@
-/* 게임 모음 — 메타데이터 + 사용 정보(연령별·신앙)
+﻿/* 게임 모음 — 메타데이터 + 사용 정보(연령별·신앙)
  * GAMES: 게임 기본 메타 (코드 변경 없이 사용)
  * GAME_USAGE: 연령별 진행·신앙 키워드 — 선생님이 직접 입력
  *   비어 있으면 화면에서 "작성 필요" placeholder 표시
@@ -14,7 +14,7 @@ export const GAMES = [
     tagline: '시간을 멈춰라',
     description: '정해진 시간에 가장 가깝게 멈추는 사람이 승리하는 반응속도 게임.',
     gradient: 'linear-gradient(135deg,#1D4ED8,#2563EB)',
-    accent: '#3B82F6',
+    accent: '#2563EB',
     route: '/stopwatch',
     verse: { text: '세월을 아끼라 때가 악하니라', ref: '엡 5:16' },
     howTo: [
@@ -30,8 +30,8 @@ export const GAMES = [
     emoji: '⏳',
     tagline: '카운트다운 게임',
     description: '제한 시간 안에 미션을 완수하는 카운트다운 진행 도구.',
-    gradient: 'linear-gradient(135deg,#9C6F0F,#B8860B)',
-    accent: '#FFD98C',
+    gradient: 'linear-gradient(135deg,#854D0E,#A16207)',
+    accent: '#B45309',
     route: '/timer',
     verse: { text: '범사에 기한이 있고 천하 만사가 다 때가 있나니', ref: '전 3:1' },
     howTo: [
@@ -48,7 +48,7 @@ export const GAMES = [
     tagline: '이름 · 선물 랜덤 추첨',
     description: '드럼이 회전하며 무작위로 한 명을 뽑습니다. 뽑힌 사람 자동 제외 옵션.',
     gradient: 'linear-gradient(135deg,#6D28D9,#7C3AED)',
-    accent: '#93C5FD',
+    accent: '#6D28D9',
     route: '/random-pick',
     verse: { text: '제비는 사람이 뽑으나 모든 일을 작정하기는 여호와께 있느니라', ref: '잠 16:33' },
     howTo: [
@@ -65,8 +65,8 @@ export const GAMES = [
     emoji: '📷',
     tagline: '점점 커지는 사진을 맞춰라',
     description: '사진의 0.1%부터 시작해 8단계로 점점 확대되며 정답을 맞추는 게임.',
-    gradient: 'linear-gradient(135deg,#0F766E,#0D9488)',
-    accent: '#3B82F6',
+    gradient: 'linear-gradient(135deg,#0F766E,#115E59)',
+    accent: '#0F766E',
     route: '/photo-guess',
     verse: { text: '우리가 지금은 거울로 보는 것 같이 희미하나 그때에는 얼굴과 얼굴을 대하여 볼 것이요', ref: '고전 13:12' },
     howTo: [
@@ -84,8 +84,8 @@ export const GAMES = [
     emoji: '🔤',
     tagline: '초성으로 단어 맞추기',
     description: '10개 카테고리(성경 구약·신약·인물 포함)와 상중하 난이도에서 10문제 세트 진행.',
-    gradient: 'linear-gradient(135deg,#BE185D,#DB2777)',
-    accent: '#3B82F6',
+    gradient: 'linear-gradient(135deg,#9D174D,#BE185D)',
+    accent: '#BE185D',
     route: '/chosung',
     verse: { text: '주의 말씀은 내 발에 등이요 내 길에 빛이니이다', ref: '시 119:105' },
     howTo: [
@@ -103,8 +103,8 @@ export const GAMES = [
     emoji: '🎲',
     tagline: '굴려서 결과를 확인',
     description: '주사위 1·2개 또는 윷 4개를 굴려 화려한 이펙트와 함께 결과를 확인합니다. 한 화면에서 모드 전환 가능.',
-    gradient: 'linear-gradient(135deg,#C2410C,#EA580C)',
-    accent: '#9C6F0F',
+    gradient: 'linear-gradient(135deg,#9A3412,#C2410C)',
+    accent: '#C2410C',
     route: '/dice',
     verse: { text: '제비 뽑아 맛디아를 얻으니 그가 열한 사도의 수에 들어가니라', ref: '행 1:26' },
     howTo: [
@@ -122,8 +122,8 @@ export const GAMES = [
     emoji: '🎯',
     tagline: '주제별 단어 빙고',
     description: '주제와 빙고판 크기(3×3·4×4·5×5)를 선택하면 단어 풀에서 한 개씩 호명. 학생들은 자기 빙고판에서 표시.',
-    gradient: 'linear-gradient(135deg,#166534,#16A34A)',
-    accent: '#3B82F6',
+    gradient: 'linear-gradient(135deg,#14532D,#166534)',
+    accent: '#166534',
     route: '/bingo',
     verse: { text: '푯대를 향하여 그리스도 예수 안에서 하나님이 위에서 부르신 부름의 상을 위하여 달려가노라', ref: '빌 3:14' },
     howTo: [
@@ -141,8 +141,8 @@ export const GAMES = [
     emoji: '🔗',
     tagline: '한 명씩 차례로',
     description: '주제 단어를 한 사람씩 외치는 게임. 진행자는 통과·탈락만 누르면 됩니다. 시간 임박 시 빨강 깜빡임.',
-    gradient: 'linear-gradient(135deg,#4338CA,#6366F1)',
-    accent: '#9C6F0F',
+    gradient: 'linear-gradient(135deg,#3730A3,#4338CA)',
+    accent: '#4338CA',
     route: '/word-relay',
     verse: { text: '내가 주께 범죄하지 아니하려 하여 주의 말씀을 내 마음에 두었나이다', ref: '시 119:11' },
     howTo: [
@@ -160,8 +160,8 @@ export const GAMES = [
     emoji: '📜',
     tagline: '암송 앞뒷부분 맞추기',
     description: '진행자 자료 — 성경 구절·속담을 상·중·하 30절씩 표시. 앞부분/뒷부분(장절) 형태로 진행자가 보고 진행.',
-    gradient: 'linear-gradient(135deg,#7C2D12,#C2410C)',
-    accent: '#3B82F6',
+    gradient: 'linear-gradient(135deg,#7C2D12,#9A3412)',
+    accent: '#7C2D12',
     route: '/sentence-match',
     verse: { text: '오늘 내가 네게 명하는 이 말씀을 너는 마음에 새기고', ref: '신 6:6' },
     howTo: [
@@ -180,19 +180,6 @@ export const getGame = (id) => GAMES.find(g => g.id === id)
 
 /* ─── 연령별 진행 변형 + 신앙적 언어 ───
  * 선생님이 직접 채워 넣으세요.
- *
- * 예시 형식:
- * stopwatch: {
- *   ageVariations: {
- *     '유아유치': '5초 안에 멈추기',
- *     '초등':    '7초에 가장 가깝게 멈추기',
- *     '중고등':  '눈 감고 정확한 시간 도전',
- *     '청년':    '팀 평균 시간 맞추기',
- *     '장년':    '느긋하게 호흡과 함께',
- *     '노년':    '시간 흐름 체감 활동',
- *   },
- *   faithUse: ['때를 알라', '전 3:1', '깨어 있으라'],
- * },
  */
 export const GAME_USAGE = {
   stopwatch:     { ageVariations: {}, faithUse: [] },

@@ -29,7 +29,7 @@
   .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
 
   :focus-visible {
-    outline: 2px solid #9C6F0F;
+    outline: 2px solid #2563EB;
     outline-offset: 2px;
     border-radius: 4px;
   }
@@ -38,35 +38,35 @@
 @layer utilities {
   /* 대시보드와 통일된 카드 스타일 */
   .glass-card {
-    background: rgba(13, 20, 45, 0.6);
+    background: #EFF6FF;
     backdrop-filter: blur(16px);
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    border: 1px solid #BFDBFE;
   }
   .glass-card-hover {
-    background: rgba(13, 20, 55, 0.8);
+    background: #DBEAFE;
     backdrop-filter: blur(16px);
-    border: 1px solid rgba(6, 182, 212, 0.35);
-    box-shadow: 0 4px 24px rgba(6, 182, 212, 0.12);
+    border: 1px solid #93C5FD;
+    box-shadow: 0 4px 24px rgba(37, 99, 235, 0.12);
   }
   .stat-card {
-    background: rgba(10, 16, 35, 0.7);
-    border: 1px solid rgba(255, 255, 255, 0.07);
+    background: #EFF6FF;
+    border: 1px solid #E4ECF7;
     border-radius: 16px;
   }
   .glow-cyan {
-    box-shadow: 0 0 24px rgba(6, 182, 212, 0.35);
+    box-shadow: 0 0 24px rgba(37, 99, 235, 0.25);
   }
   .glow-blue {
-    box-shadow: 0 0 24px rgba(37, 99, 235, 0.35);
+    box-shadow: 0 0 24px rgba(37, 99, 235, 0.25);
   }
   .text-gradient-cyan {
-    background: linear-gradient(135deg, #3B82F6, #93C5FD);
+    background: linear-gradient(135deg, #1D4ED8, #2563EB);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
   .text-gradient-hero {
-    background: linear-gradient(135deg, #FFFFFF 0%, #243147 60%, #93C5FD 100%);
+    background: linear-gradient(135deg, #101A3D 0%, #1D4ED8 60%, #2563EB 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -77,9 +77,9 @@
   }
   /* 하단 네비게이션 */
   .bottom-nav {
-    background: rgba(7, 11, 22, 0.95);
+    background: #EFF6FF;
     backdrop-filter: blur(20px);
-    border-top: 1px solid rgba(255, 255, 255, 0.07);
+    border-top: 1px solid #E4ECF7;
   }
 }
 

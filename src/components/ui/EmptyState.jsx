@@ -6,14 +6,14 @@ export default function EmptyState({ icon = '📭', title, description, action, 
     <div
       className="rounded-2xl py-14 px-6 text-center"
       style={{
-        background: 'rgba(10,16,35,0.7)',
+        background: '#EFF6FF',
         border: dashed
-          ? '2px dashed rgba(99,102,241,0.3)'
+          ? '2px dashed #BFDBFE'
           : '1px solid #E4ECF7',
       }}>
       <div className="text-5xl mb-3" aria-hidden>{icon}</div>
       {title && (
-        <p className="font-black text-base" style={{ color: '#93C5FD' }}>
+        <p className="font-black text-base" style={{ color: '#101A3D' }}>
           {title}
         </p>
       )}

@@ -70,7 +70,8 @@ export default function Bingo() {
                   style={{ textShadow: '0 1px 4px #1E2A45' }}>
                   {cat.name}
                 </p>
-                <p className="text-[13px] font-bold" style={{ color: '#5C6A93' }}>
+                <p className="text-[13px] font-bold text-white/90"
+                  style={{ textShadow: '0 1px 3px rgba(0,0,0,0.5)' }}>
                   주제 {cat.subjects.length}종
                 </p>
               </button>
@@ -106,17 +107,18 @@ export default function Bingo() {
                   style={{ textShadow: '0 1px 4px #1E2A45' }}>
                   {s.name}
                 </p>
-                <p className="text-[13px] font-bold" style={{ color: '#5C6A93' }}>
+                <p className="text-[13px] font-bold text-white/90"
+                  style={{ textShadow: '0 1px 3px rgba(0,0,0,0.5)' }}>
                   단어 {s.words.length}개
                 </p>
                 {/* 빙고 크기 배지 — 주제별 고정 */}
                 <span className="absolute top-2 right-2 text-[13px] font-black px-2 py-0.5 rounded-md"
-                  style={{ background: '#E4ECF7', color: '#FFFFFF', backdropFilter: 'blur(4px)' }}>
+                  style={{ background: '#EFF6FF', color: '#101A3D', border: '1px solid #BFDBFE' }}>
                   {s.size}×{s.size}
                 </span>
                 {s.note && (
                   <span className="absolute top-2 left-2 text-[13px] font-bold px-1.5 py-0.5 rounded-md"
-                    style={{ background: '#E4ECF7', color: '#5C6A93' }}>
+                    style={{ background: '#EFF6FF', color: '#1E40AF', border: '1px solid #BFDBFE' }}>
                     {s.note}
                   </span>
                 )}
@@ -139,7 +141,7 @@ export default function Bingo() {
       <Header title={`${theme.name} · ${size}×${size}`} onBack={back}
         right={
           <span className="text-xs font-black px-2 py-0.5 rounded-md"
-            style={{ background: `${category.accent}1f`, color: category.accent, border: `1px solid ${category.accent}55` }}>
+            style={{ background: '#EFF6FF', color: '#101A3D', border: '1px solid #BFDBFE' }}>
             {called.length} / {pool.length}
           </span>
         } />
@@ -177,7 +179,7 @@ export default function Bingo() {
               학생들이 빙고판을 채울 시간을 주세요
             </p>
             <p className="text-[12px] leading-relaxed" style={{ color: '#3A4568' }}>
-              주제: <b style={{ color: category.accent }}>{theme.name}</b><br/>
+              주제: <b style={{ color: '#101A3D' }}>{theme.name}</b><br/>
               빙고판: {size}×{size} ({size*size}칸) · 단어 풀 {pool.length}개<br/>
               준비되면 <b style={{ color: '#3A4568' }}>"시작!"</b>을 누르세요.
             </p>
@@ -194,9 +196,9 @@ export default function Bingo() {
             {called.slice(0, -1).map((w, i) => (
               <span key={i} className="text-[11px] font-bold px-2 py-0.5 rounded-md"
                 style={{
-                  background: `${category.accent}1f`,
-                  color: category.accent,
-                  border: `1px solid ${category.accent}44`,
+                  background: '#EFF6FF',
+                  color: '#101A3D',
+                  border: '1px solid #BFDBFE',
                 }}>
                 {w}
               </span>
@@ -219,8 +221,8 @@ export default function Bingo() {
           </button>
         ) : (
           <div className="rounded-2xl py-4 text-center"
-            style={{ background: `${category.accent}1a`, border: `1px solid ${category.accent}55` }}>
-            <p className="font-black text-base" style={{ color: category.accent }}>
+            style={{ background: '#EFF6FF', border: '1px solid #BFDBFE' }}>
+            <p className="font-black text-base" style={{ color: '#166534' }}>
               ✓ 모든 단어 호명 완료
             </p>
           </div>

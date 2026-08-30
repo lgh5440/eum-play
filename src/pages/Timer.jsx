@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react'
+﻿import { useState, useEffect, useRef } from 'react'
 import { useNavigate } from 'react-router-dom'
 import VerseHeader from '../components/VerseHeader'
 import HowToCard from '../components/HowToCard'
@@ -81,19 +81,19 @@ export default function Timer() {
 
   /* 진행률 & 색상 */
   const ratio = totalSecs > 0 ? remaining / totalSecs : 0
-  const color  = done        ? '#9C6F0F'
-               : ratio > 0.5 ? '#3B82F6'
-               : ratio > 0.2 ? '#FFD98C'
-               :                '#f97316'
-  const glow   = done        ? 'rgba(239,68,68,0.5)'
-               : ratio > 0.5 ? '#BFDBFE'
-               : ratio > 0.2 ? 'rgba(251,191,36,0.3)'
-               :                'rgba(249,115,22,0.4)'
+  const color  = done        ? '#DC2626'
+               : ratio > 0.5 ? '#1D4ED8'
+               : ratio > 0.2 ? '#B45309'
+               :                '#DC2626'
+  const glow   = done        ? 'rgba(220,38,38,0.25)'
+               : ratio > 0.5 ? 'rgba(37,99,235,0.2)'
+               : ratio > 0.2 ? 'rgba(180,83,9,0.2)'
+               :                'rgba(220,38,38,0.25)'
 
   return (
     <div
       className="min-h-screen flex flex-col transition-all duration-700"
-      style={done ? { background: 'linear-gradient(160deg, #FFF7ED 0%, #FFFFFF 100%)' } : undefined}
+      style={done ? { background: 'linear-gradient(160deg, #FEF2F2 0%, #FFFFFF 100%)' } : undefined}
     >
       <Header title="타이머" onBack={() => navigate('/')} />
 
@@ -114,7 +114,7 @@ export default function Timer() {
                 aria-label={`${p.label} 타이머`}
                 className="px-3 py-1.5 rounded-full text-xs font-bold transition-all"
                 style={selected
-                  ? { background: '#EFF6FF', color: '#2563EB', border: '1px solid #BFDBFE' }
+                  ? { background: '#DBEAFE', color: '#1D4ED8', border: '1px solid #BFDBFE' }
                   : { background: '#EFF6FF', color: '#5C6A93', border: '1px solid #E6EEF9' }
                 }
               >
@@ -136,7 +136,7 @@ export default function Timer() {
             className="rounded-xl px-3 py-1.5 text-xs text-center font-bold w-32"
             style={{
               background: '#EFF6FF',
-              border: '1px solid #E6EEF9',
+              border: '1px solid #BFDBFE',
               color: '#3A4568',
               outline: 'none',
             }}
@@ -145,7 +145,7 @@ export default function Timer() {
             onClick={applyCustom}
             aria-label="사용자 지정 시간 적용"
             className="px-3 py-1.5 rounded-xl text-xs font-bold"
-            style={{ background: '#EFF6FF', color: '#3A4568', border: '1px solid #E4ECF7' }}
+            style={{ background: '#DBEAFE', color: '#1D4ED8', border: '1px solid #BFDBFE' }}
           >적용</button>
         </div>
       </div>
@@ -162,7 +162,7 @@ export default function Timer() {
             {/* 배경 원 */}
             <circle cx="140" cy="140" r="125"
               fill="none"
-              stroke="#EFF6FF"
+              stroke="#E4ECF7"
               strokeWidth="8"
             />
             {/* 진행 원 */}
@@ -170,7 +170,6 @@ export default function Timer() {
               fill="none"
               stroke={color}
               strokeWidth="8"
-              strokeLinecap="round"
               strokeDasharray={`${2 * Math.PI * 125}`}
               strokeDashoffset={`${2 * Math.PI * 125 * (1 - ratio)}`}
               style={{
@@ -183,14 +182,14 @@ export default function Timer() {
           {/* 숫자 */}
           <div className="absolute text-center">
             {done ? (
-              <div className="text-6xl font-black" style={{ color: '#9C6F0F' }}>종료!</div>
+              <div className="text-6xl font-black" style={{ color: '#DC2626' }}>종료!</div>
             ) : (
               <>
                 <div
                   className="font-black leading-none"
                   style={{
                     fontSize: totalSecs >= 60 ? '72px' : '88px',
-                    color,
+                    color: '#101A3D',
                     fontVariantNumeric: 'tabular-nums',
                     textShadow: `0 0 30px ${glow}`,
                     transition: 'color 0.5s',
@@ -199,7 +198,7 @@ export default function Timer() {
                   {display}
                 </div>
                 {totalSecs >= 60 && (
-                  <div className="text-sm font-semibold mt-1" style={{ color: '#E4ECF7' }}>
+                  <div className="text-sm font-bold mt-1" style={{ color: '#3A4568' }}>
                     {mins > 0 ? `${mins}분 ` : ''}{secs}초 남음
                   </div>
                 )}
@@ -215,7 +214,7 @@ export default function Timer() {
             className="flex-1 py-5 rounded-2xl font-black text-base transition-all active:scale-95"
             style={{
               background: '#EFF6FF',
-              border: '1px solid #E4ECF7',
+              border: '1px solid #BFDBFE',
               color: '#3A4568',
             }}
           >리셋</button>
@@ -225,18 +224,18 @@ export default function Timer() {
             disabled={done}
             className="flex-[2] py-5 rounded-2xl font-black text-xl transition-all active:scale-95"
             style={done ? {
-              background: 'rgba(239,68,68,0.15)',
-              color: '#9C6F0F',
-              border: '1px solid rgba(239,68,68,0.3)',
+              background: 'rgba(254,226,226,0.6)',
+              color: '#DC2626',
+              border: '1px solid #FECACA',
             } : running ? {
-              background: 'rgba(251,191,36,0.15)',
-              color: '#FFD98C',
-              border: '1px solid rgba(251,191,36,0.3)',
-              boxShadow: '0 4px 20px rgba(251,191,36,0.2)',
+              background: '#FEF3C7',
+              color: '#854D0E',
+              border: '1px solid #FDE68A',
+              boxShadow: '0 4px 20px rgba(217,119,6,0.2)',
             } : {
-              background: 'linear-gradient(135deg, #2563EB, #2563EB)',
+              background: 'linear-gradient(135deg, #1D4ED8, #2563EB)',
               color: '#FFFFFF',
-              boxShadow: '0 6px 30px #BFDBFE',
+              boxShadow: '0 6px 30px rgba(37,99,235,0.3)',
               border: '1px solid #BFDBFE',
             }}
           >

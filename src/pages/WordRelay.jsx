@@ -28,14 +28,14 @@ export default function WordRelay() {
 
         {/* 게임 설명 */}
         <div className="rounded-2xl p-4"
-          style={{ background:'rgba(252,211,77,0.08)', border:'1px solid rgba(252,211,77,0.25)' }}>
-          <p className="text-[11px] font-black tracking-widest uppercase mb-2" style={{ color: '#FFD98C' }}>
+          style={{ background:'#FEF3C7', border:'1px solid #FDE68A' }}>
+          <p className="text-[11px] font-black tracking-widest uppercase mb-2" style={{ color: '#854D0E' }}>
             📖 게임 방법
           </p>
           <ol className="text-[13px] leading-relaxed space-y-1.5" style={{ color: '#3A4568' }}>
             <li>1. 모두 함께 볼 주제를 하나 정합니다.</li>
             <li>2. 한 사람씩 차례로 주제에 맞는 단어를 외칩니다.</li>
-            <li>3. 막히거나 같은 단어를 외치면 <b style={{ color:'#9C6F0F' }}>탈락!</b></li>
+            <li>3. 막히거나 같은 단어를 외치면 <b style={{ color:'#DC2626' }}>탈락!</b></li>
             <li>4. 마지막까지 남는 사람이 승리합니다.</li>
           </ol>
         </div>
@@ -58,7 +58,8 @@ export default function WordRelay() {
                     <span className="drop-shadow-lg shrink-0" style={{ fontSize: 28 }}>{t.emoji}</span>
                     <div className="flex-1 min-w-0">
                       <p className="font-black text-white text-[15px] leading-tight">{t.name}</p>
-                      <p className="text-[11px] mt-0.5 truncate" style={{ color: '#5C6A93' }}>
+                      <p className="text-[11px] mt-0.5 truncate text-white/90"
+                        style={{ textShadow: '0 1px 3px rgba(0,0,0,0.5)' }}>
                         {t.goal ? `${t.goal}개` : '자유'} · {t.hint}
                       </p>
                     </div>
@@ -70,15 +71,15 @@ export default function WordRelay() {
 
                   {isOpen && (
                     <div className="p-3"
-                      style={{ background: 'rgba(10,16,35,0.7)', borderTop: `1px solid ${t.accent}22` }}>
+                      style={{ background: '#EFF6FF', borderTop: `1px solid #BFDBFE` }}>
                       {hasAnswers ? (
                         <div className="flex flex-wrap gap-1.5">
                           {t.answers.map((w, i) => (
                             <span key={i} className="text-[12px] font-bold px-2 py-1 rounded-md"
                               style={{
-                                background: `${t.accent}1a`,
-                                color: t.accent,
-                                border: `1px solid ${t.accent}44`,
+                                background: '#DBEAFE',
+                                color: '#101A3D',
+                                border: '1px solid #BFDBFE',
                               }}>
                               {w}
                             </span>
@@ -86,7 +87,7 @@ export default function WordRelay() {
                         </div>
                       ) : (
                         <p className="text-[12px] py-1.5 leading-relaxed" style={{ color: '#3A4568' }}>
-                          자유 주제 — 학생들이 알고 있는 모든 <b style={{ color: t.accent }}>{t.name}</b> 단어를 차례로 외치면 됩니다.
+                          자유 주제 — 학생들이 알고 있는 모든 <b style={{ color: '#1D4ED8' }}>{t.name}</b> 단어를 차례로 외치면 됩니다.
                         </p>
                       )}
                     </div>

@@ -56,7 +56,7 @@ export default function RandomPick() {
     const n    = list.length
 
     if (n === 0) {
-      ctx.fillStyle = 'rgba(255,255,255,0.18)'
+      ctx.fillStyle = '#5C6A93'
       ctx.font = 'bold 15px sans-serif'
       ctx.textAlign = 'center'; ctx.textBaseline = 'middle'
       ctx.fillText('이름을 추가하세요', cx, cy)
@@ -111,11 +111,11 @@ export default function RandomPick() {
         ctx.font = `bold ${currentFs}px sans-serif`
         ctx.textAlign = 'center'; ctx.textBaseline = 'middle'
         if (isCtr) {
-          ctx.fillStyle = '#FFFFFF'
+          ctx.fillStyle = '#101A3D'
           ctx.shadowColor = color
-          ctx.shadowBlur = curPhase === 'done' ? 32 : 18
+          ctx.shadowBlur = curPhase === 'done' ? 24 : 12
         } else {
-          ctx.fillStyle = `rgba(170,195,220,${alpha * 0.75})`
+          ctx.fillStyle = `rgba(92,106,147,${alpha * 0.85})`
         }
 
         const maxW = W - 40
@@ -301,7 +301,7 @@ export default function RandomPick() {
         <div className="flex-1 flex flex-col gap-3 overflow-y-auto" style={{ maxHeight:'100vh', paddingBlock:16 }}>
           <div className="flex items-center justify-between">
             <button onClick={() => navigate('/')} className="w-8 h-8 rounded-xl flex items-center justify-center"
-              style={{ background:'rgba(10,16,35,0.8)', border:'1px solid #E6EEF9', color:'#3A4568' }}>←</button>
+              style={{ background:'#EFF6FF', border:'1px solid #BFDBFE', color:'#101A3D' }}>←</button>
             <p className="text-[13px] font-black tracking-widest uppercase" style={{ color:'#101A3D' }}>랜덤 뽑기</p>
             <button onClick={reset} className="text-[13px] font-bold px-2 py-1 rounded-lg"
               style={{ color:'#3A4568', border:'1px solid #E4ECF7' }}>초기화</button>
@@ -319,16 +319,16 @@ export default function RandomPick() {
               aria-label="추가할 참가자 이름"
               onKeyDown={e => e.key === 'Enter' && !e.nativeEvent.isComposing && addName()}
               className="flex-1 rounded-xl px-3 py-1.5 text-xs font-bold"
-              style={{ background:'#EFF6FF', border:'1px solid #E4ECF7', color:'#3A4568', outline:'none' }} />
+              style={{ background:'#EFF6FF', border:'1px solid #BFDBFE', color:'#3A4568', outline:'none' }} />
             <button onClick={addName} aria-label="참가자 추가" className="w-8 rounded-xl font-black"
-              style={{ background:'rgba(99,102,241,0.2)', color:'#93C5FD', border:'1px solid rgba(99,102,241,0.3)' }}>+</button>
+              style={{ background:'#DBEAFE', color:'#1D4ED8', border:'1px solid #BFDBFE' }}>+</button>
           </div>
           <div className="flex flex-col gap-1 overflow-y-auto max-h-52">
             {names.map((nm, i) => (
               <div key={i} className="flex items-center justify-between px-2.5 py-1.5 rounded-xl"
-                style={{ background: pickedName === nm ? '#EFF6FF' : '#EFF6FF',
+                style={{ background: pickedName === nm ? '#DBEAFE' : '#EFF6FF',
                   border: pickedName === nm ? '1px solid #BFDBFE' : '1px solid #E4ECF7' }}>
-                <span className="text-xs font-bold truncate" style={{ color: pickedName === nm ? '#3B82F6' : '#5C6A93' }}>{nm}</span>
+                <span className="text-xs font-bold truncate" style={{ color: pickedName === nm ? '#1D4ED8' : '#5C6A93' }}>{nm}</span>
                 <button onClick={() => removeName(i)} aria-label={`${nm} 제거`} className="ml-2 text-xs flex-shrink-0" style={{ color:'#5C6A93' }}>×</button>
               </div>
             ))}
@@ -366,14 +366,14 @@ export default function RandomPick() {
         {phase === 'spinning' && (
           <button onClick={stopSpin}
             className="w-full py-5 rounded-2xl font-black text-2xl active:scale-95 transition-all"
-            style={{ background:'linear-gradient(135deg,#9C6F0F,#b91c1c)', color:'#FFFFFF',
-              boxShadow:'0 8px 40px rgba(239,68,68,0.6)', border:'1px solid rgba(239,68,68,0.5)' }}>
+            style={{ background:'linear-gradient(135deg,#9A3412,#C2410C)', color:'#FFFFFF',
+              boxShadow:'0 8px 40px rgba(194,65,12,0.4)', border:'1px solid #BFDBFE' }}>
             ✋ 멈춰!
           </button>
         )}
         {phase === 'stopping' && (
           <div className="w-full py-5 rounded-2xl font-black text-xl text-center"
-            style={{ background:'rgba(251,191,36,0.1)', color:'#FFD98C', border:'1px solid rgba(251,191,36,0.3)' }}>
+            style={{ background:'#FEF3C7', color:'#854D0E', border:'1px solid #FDE68A' }}>
             멈추는 중…
           </div>
         )}
@@ -381,7 +381,7 @@ export default function RandomPick() {
           <button onClick={poolEmpty ? reset : startSpin} disabled={!poolEmpty && pool.length === 0}
             className="w-full py-5 rounded-2xl font-black text-xl active:scale-95 transition-all"
             style={pool.length > 0 || poolEmpty ? {
-              background:'linear-gradient(135deg,#2563EB,#2563EB)', color:'#FFFFFF',
+              background:'linear-gradient(135deg,#1D4ED8,#2563EB)', color:'#FFFFFF',
               boxShadow:'0 8px 40px #BFDBFE', border:'1px solid #BFDBFE',
             } : { background:'#EFF6FF', color:'#5C6A93', border:'1px solid #E6EEF9' }}>
             {poolEmpty ? '✓ 다시 시작' : phase === 'done' ? '🔁 다시 돌리기' : '🎲 돌리기!'}
@@ -406,9 +406,9 @@ export default function RandomPick() {
             aria-label="추가할 참가자 이름"
             onKeyDown={e => e.key === 'Enter' && !e.nativeEvent.isComposing && addName()}
             className="flex-1 rounded-xl px-3 py-2 text-sm font-bold"
-            style={{ background:'#EFF6FF', border:'1px solid #E4ECF7', color:'#3A4568', outline:'none' }} />
+            style={{ background:'#EFF6FF', border:'1px solid #BFDBFE', color:'#3A4568', outline:'none' }} />
           <button onClick={addName} aria-label="참가자 추가" className="w-10 rounded-xl font-black text-xl"
-            style={{ background:'rgba(99,102,241,0.2)', color:'#93C5FD', border:'1px solid rgba(99,102,241,0.3)' }}>+</button>
+            style={{ background:'#DBEAFE', color:'#1D4ED8', border:'1px solid #BFDBFE' }}>+</button>
         </div>
         <div className="flex flex-col gap-1 overflow-y-auto max-h-40">
           {names.map((nm, i) => (

@@ -116,9 +116,9 @@ export default function Dice() {
       {/* 모드 토글 */}
       <div className="max-w-lg mx-auto w-full px-4 mb-3 relative z-10">
         <div className="grid grid-cols-2 gap-2 p-1 rounded-2xl"
-          style={{ background:'rgba(10,16,35,0.7)', border:'1px solid #E4ECF7' }}>
-          <ModeBtn active={mode === 'dice'} onClick={() => switchMode('dice')} color="#9C6F0F">🎲 주사위</ModeBtn>
-          <ModeBtn active={mode === 'yut'} onClick={() => switchMode('yut')} color="#FFD98C">🎴 윷놀이</ModeBtn>
+          style={{ background:'#EFF6FF', border:'1px solid #BFDBFE' }}>
+          <ModeBtn active={mode === 'dice'} onClick={() => switchMode('dice')} color="#C2410C">🎲 주사위</ModeBtn>
+          <ModeBtn active={mode === 'yut'} onClick={() => switchMode('yut')} color="#854D0E">🎴 윷놀이</ModeBtn>
         </div>
       </div>
 
@@ -133,9 +133,9 @@ export default function Dice() {
               <button key={n} onClick={() => setCount(n)} disabled={rolling}
                 className="py-2.5 rounded-xl font-black text-sm active:scale-95 transition-all"
                 style={{
-                  background: diceCount === n ? 'linear-gradient(135deg,#9C6F0F,#9a3412)' : '#EFF6FF',
+                  background: diceCount === n ? 'linear-gradient(135deg,#9A3412,#C2410C)' : '#EFF6FF',
                   color: diceCount === n ? '#FFFFFF' : '#5C6A93',
-                  border: `1px solid ${diceCount === n ? 'rgba(251,146,60,0.5)' : '#E4ECF7'}`,
+                  border: diceCount === n ? '1px solid #9A3412' : '1px solid #BFDBFE',
                   opacity: rolling ? 0.5 : 1,
                 }}>
                 {n}개
@@ -163,13 +163,13 @@ export default function Dice() {
           className="w-full py-5 rounded-2xl font-black text-xl active:scale-95 transition-all"
           style={{
             background: mode === 'dice'
-              ? 'linear-gradient(135deg,#9C6F0F,#9a3412)'
-              : 'linear-gradient(135deg,#9C6F0F,#92400e)',
+              ? 'linear-gradient(135deg,#9A3412,#C2410C)'
+              : 'linear-gradient(135deg,#854D0E,#A16207)',
             color: '#FFFFFF',
             boxShadow: mode === 'dice'
-              ? '0 8px 40px rgba(251,146,60,0.4)'
-              : '0 8px 40px rgba(251,191,36,0.4)',
-            border: '1px solid rgba(255,255,255,0.15)',
+              ? '0 8px 40px rgba(194,65,12,0.4)'
+              : '0 8px 40px rgba(180,83,9,0.4)',
+            border: '1px solid #BFDBFE',
             opacity: rolling ? 0.7 : 1,
             animation: rolling ? 'btnPulse 0.6s ease-in-out infinite' : 'none',
           }}>
@@ -343,8 +343,9 @@ function YutArea({ sticks, rolling, showResult, name }) {
           {info.again && (
             <p className="mt-3 px-4 py-2 rounded-full inline-block text-sm font-black"
               style={{
-                background:'rgba(251,191,36,0.15)', color:'#FFD98C',
-                border:'1px solid rgba(251,191,36,0.4)',
+                background: '#FEF3C7',
+                color: '#854D0E',
+                border: '1px solid #FDE68A',
                 animation: 'pop 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) 0.4s both',
               }}>
               ✨ 한 번 더 던지세요!

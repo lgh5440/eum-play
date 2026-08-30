@@ -56,8 +56,8 @@ export default function Stopwatch() {
   const mins = Math.floor(time / 60000)
   const display = `${String(mins).padStart(2,'0')}:${String(secs).padStart(2,'0')}:${String(ms).padStart(2,'0')}`
 
-  const mainColor = running ? '#3B82F6' : time > 0 ? '#f97316' : '#FFFFFF'
-  const glow      = running ? '0 0 60px #BFDBFE' : 'none'
+  const mainColor = running ? '#1D4ED8' : time > 0 ? '#DC2626' : '#101A3D'
+  const glow      = running ? '0 0 40px rgba(37,99,235,0.2)' : 'none'
 
   /* ───── 가로 (TV·모니터·태블릿) ───── */
   if (isLandscape) {
@@ -69,7 +69,7 @@ export default function Stopwatch() {
         <button
           onClick={() => navigate('/')}
           className="absolute top-4 left-4 w-9 h-9 rounded-xl flex items-center justify-center text-lg z-10"
-          style={{ background: 'rgba(10,16,35,0.8)', border: '1px solid #E6EEF9', color: '#3A4568' }}
+          style={{ background: '#EFF6FF', border: '1px solid #BFDBFE', color: '#3A4568' }}
         >←</button>
 
         {/* 시간 — 화면 꽉 채움 */}
@@ -94,7 +94,7 @@ export default function Stopwatch() {
             className="px-6 py-3 rounded-2xl font-black text-base transition-all active:scale-95"
             style={{
               background: '#EFF6FF',
-              border: '1px solid #E4ECF7',
+              border: '1px solid #BFDBFE',
               color: '#3A4568',
             }}
           >리셋</button>
@@ -104,9 +104,9 @@ export default function Stopwatch() {
               onClick={handleStart}
               className="px-10 py-3 rounded-2xl font-black text-base transition-all active:scale-95"
               style={{
-                background: 'linear-gradient(135deg, #2563EB, #2563EB)',
+                background: 'linear-gradient(135deg, #1D4ED8, #2563EB)',
                 color: '#FFFFFF',
-                boxShadow: '0 4px 20px #BFDBFE',
+                boxShadow: '0 4px 20px rgba(37,99,235,0.3)',
                 border: '1px solid #BFDBFE',
               }}
             >시작</button>
@@ -115,10 +115,10 @@ export default function Stopwatch() {
               onClick={handleStop}
               className="px-10 py-3 rounded-2xl font-black text-base transition-all active:scale-95"
               style={{
-                background: 'linear-gradient(135deg, #9C6F0F, #b91c1c)',
+                background: 'linear-gradient(135deg, #9A3412, #C2410C)',
                 color: '#FFFFFF',
-                boxShadow: '0 4px 20px rgba(239,68,68,0.4)',
-                border: '1px solid rgba(239,68,68,0.4)',
+                boxShadow: '0 4px 20px rgba(194,65,12,0.3)',
+                border: '1px solid #BFDBFE',
               }}
             >정지</button>
           )}
@@ -162,7 +162,7 @@ export default function Stopwatch() {
             className="flex-1 py-5 rounded-2xl font-black text-lg transition-all active:scale-95"
             style={{
               background: '#EFF6FF',
-              border: '1px solid #E4ECF7',
+              border: '1px solid #BFDBFE',
               color: '#3A4568',
             }}
           >리셋</button>
@@ -172,9 +172,9 @@ export default function Stopwatch() {
               onClick={handleStart}
               className="flex-[2] py-5 rounded-2xl font-black text-xl transition-all active:scale-95"
               style={{
-                background: 'linear-gradient(135deg, #2563EB, #2563EB)',
+                background: 'linear-gradient(135deg, #1D4ED8, #2563EB)',
                 color: '#FFFFFF',
-                boxShadow: '0 6px 30px #BFDBFE',
+                boxShadow: '0 6px 30px rgba(37,99,235,0.3)',
                 border: '1px solid #BFDBFE',
               }}
             >시작</button>
@@ -183,10 +183,10 @@ export default function Stopwatch() {
               onClick={handleStop}
               className="flex-[2] py-5 rounded-2xl font-black text-xl transition-all active:scale-95"
               style={{
-                background: 'linear-gradient(135deg, #9C6F0F, #b91c1c)',
+                background: 'linear-gradient(135deg, #9A3412, #C2410C)',
                 color: '#FFFFFF',
-                boxShadow: '0 6px 30px rgba(239,68,68,0.4)',
-                border: '1px solid rgba(239,68,68,0.4)',
+                boxShadow: '0 6px 30px rgba(194,65,12,0.3)',
+                border: '1px solid #BFDBFE',
               }}
             >정지</button>
           )}

@@ -17,7 +17,7 @@ export default function Field({ label, hint, error, children }) {
         </p>
       )}
       {error && (
-        <p className="text-[11px] leading-relaxed" style={{ color: '#9C6F0F' }}>
+        <p className="text-[11px] leading-relaxed font-bold" style={{ color: '#DC2626' }}>
           {error}
         </p>
       )}

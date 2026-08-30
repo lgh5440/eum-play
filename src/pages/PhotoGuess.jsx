@@ -204,7 +204,7 @@ export default function PhotoGuess() {
                         }
                       }}
                       className="text-[11px] font-bold px-2.5 py-1 rounded-lg"
-                      style={{ background:'rgba(99,102,241,0.1)', color:'#93C5FD', border:'1px solid rgba(99,102,241,0.25)' }}>
+                      style={{ background:'#DBEAFE', color:'#1D4ED8', border:'1px solid #BFDBFE' }}>
                       🔁 모두 다시
                     </button>
                   </div>
@@ -218,14 +218,14 @@ export default function PhotoGuess() {
                   return (
                     <div key={photo.id} className="rounded-2xl overflow-hidden relative"
                       style={{
-                        background:'rgba(10,16,35,0.7)',
+                        background:'#EFF6FF',
                         border: played ? '1px solid #BFDBFE' : '1px solid #E4ECF7',
                         opacity: played ? 0.7 : 1,
                       }}>
                       {/* 진행 완료 배지 */}
                       {played && (
                         <div className="absolute top-2 right-2 z-10 px-2 py-0.5 rounded-md text-[13px] font-black"
-                          style={{ background:'rgba(37,99,235,0.18)', color:'#3B82F6', border:'1px solid #BFDBFE' }}>
+                          style={{ background:'#DBEAFE', color:'#1D4ED8', border:'1px solid #BFDBFE' }}>
                           ✓ 완료
                         </div>
                       )}
@@ -243,7 +243,7 @@ export default function PhotoGuess() {
                           style={{ background: 'radial-gradient(circle, rgba(37,99,235,0.18), transparent 65%)' }} />
                         <div className="text-center relative z-10">
                           <div className="text-4xl mb-1 drop-shadow-lg">🔍</div>
-                          <p className="text-[13px] font-black tracking-widest uppercase" style={{ color:'#5C6A93' }}>
+                          <p className="text-[13px] font-black tracking-widest uppercase" style={{ color:'#FFFFFF' }}>
                             가려짐
                           </p>
                         </div>
@@ -256,14 +256,14 @@ export default function PhotoGuess() {
                         <div className="flex items-center justify-between gap-2">
                           <button onClick={() => toggleAnswer(photo.id)}
                             className="text-[13px] truncate text-left flex-1 py-0.5"
-                            style={{ color: ansShown ? '#3B82F6' : '#5C6A93' }}>
+                            style={{ color: ansShown ? '#1D4ED8' : '#5C6A93' }}>
                             {photo.answer
                               ? (ansShown ? `정답: ${photo.answer}` : '🔒 정답 숨김 (탭)')
                               : '정답 미설정'}
                           </button>
                           <button onClick={() => deletePhoto(photo.id)}
                             className="text-[13px] font-bold px-2 py-1 rounded-lg shrink-0"
-                            style={{ background:'rgba(239,68,68,0.1)', color:'#9C6F0F', border:'1px solid rgba(239,68,68,0.2)' }}>
+                            style={{ background:'rgba(254,226,226,0.6)', color:'#DC2626', border:'1px solid #FECACA' }}>
                             삭제
                           </button>
                         </div>
@@ -342,7 +342,7 @@ export default function PhotoGuess() {
     <div className="min-h-screen flex flex-col">
       <Header title={photo?.name || '사진 맞추기'} onBack={back}
         right={
-          <span className="text-xs font-black tracking-widest" style={{ color: revealed ? '#3B82F6' : '#FFD98C' }}>
+          <span className="text-xs font-black tracking-widest" style={{ color: revealed ? '#1D4ED8' : '#854D0E' }}>
             {revealed ? '정답 공개' : `${stage} / ${MAX_STAGE} 단계`}
           </span>
         } />
@@ -394,7 +394,7 @@ export default function PhotoGuess() {
       {revealed && (
         <div className="max-w-lg w-full mx-auto px-4 mb-2 text-center">
           <p className="font-black text-3xl"
-            style={{ color: '#3B82F6', textShadow: '0 0 30px rgba(37,99,235,0.35)' }}>
+            style={{ color: '#1D4ED8', textShadow: '0 0 30px rgba(37,99,235,0.2)' }}>
             {photo?.answer || '정답 미설정'}
           </p>
         </div>
@@ -406,14 +406,14 @@ export default function PhotoGuess() {
         {!revealed && (
           <button onClick={() => setPos(randomCenter())}
             className="w-full py-2.5 rounded-xl font-bold text-xs active:scale-95"
-            style={{ background:'rgba(99,102,241,0.15)', color:'#93C5FD', border:'1px solid rgba(99,102,241,0.3)' }}>
+            style={{ background:'#DBEAFE', color:'#1D4ED8', border:'1px solid #BFDBFE' }}>
             🎲 다른 위치 보기
           </button>
         )}
         {!revealed && stage < MAX_STAGE && (
           <button onClick={nextStage}
             className="w-full py-5 rounded-2xl font-black text-xl active:scale-95 transition-all"
-            style={{ background:'linear-gradient(135deg,#2563EB,#2563EB)', color:'#FFFFFF',
+            style={{ background:'linear-gradient(135deg,#1D4ED8,#2563EB)', color:'#FFFFFF',
               boxShadow:'0 8px 40px #BFDBFE', border:'1px solid #BFDBFE' }}>
             ➕ 다음 단계
           </button>
@@ -421,8 +421,8 @@ export default function PhotoGuess() {
         {!revealed && stage === MAX_STAGE && (
           <button onClick={reveal}
             className="w-full py-5 rounded-2xl font-black text-xl active:scale-95 transition-all"
-            style={{ background:'linear-gradient(135deg,#9C6F0F,#b91c1c)', color:'#FFFFFF',
-              boxShadow:'0 8px 40px rgba(239,68,68,0.6)', border:'1px solid rgba(239,68,68,0.5)' }}>
+            style={{ background:'linear-gradient(135deg,#9A3412,#C2410C)', color:'#FFFFFF',
+              boxShadow:'0 8px 40px rgba(194,65,12,0.4)', border:'1px solid #BFDBFE' }}>
             🎉 정답 공개!
           </button>
         )}
@@ -430,12 +430,12 @@ export default function PhotoGuess() {
           <div className="flex gap-2">
             <button onClick={replaySame}
               className="flex-1 py-4 rounded-2xl font-black text-base active:scale-95"
-              style={{ background:'rgba(99,102,241,0.2)', color:'#93C5FD', border:'1px solid rgba(99,102,241,0.3)' }}>
+              style={{ background:'#DBEAFE', color:'#1D4ED8', border:'1px solid #BFDBFE' }}>
               🔁 같은 사진 (위치 변경)
             </button>
             <button onClick={backToLibrary}
               className="flex-1 py-4 rounded-2xl font-black text-base active:scale-95"
-              style={{ background:'#EFF6FF', color:'#3A4568', border:'1px solid #E4ECF7' }}>
+              style={{ background:'#EFF6FF', color:'#3A4568', border:'1px solid #BFDBFE' }}>
               📂 라이브러리
             </button>
           </div>

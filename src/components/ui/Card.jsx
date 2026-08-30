@@ -16,11 +16,11 @@ export default function Card({
       {...props}
       className={`rounded-2xl ${className}`}
       style={{
-        background: 'rgba(10,16,35,0.7)',
+        background: '#EFF6FF',
         border: active
           ? '1px solid #BFDBFE'
           : '1px solid #E4ECF7',
-        boxShadow: active ? '0 0 30px #EFF6FF' : undefined,
+        boxShadow: active ? '0 0 20px rgba(37,99,235,0.15)' : undefined,
         padding: PADS[padding],
         transition: hover ? 'border-color 0.2s, box-shadow 0.2s' : undefined,
         ...style,

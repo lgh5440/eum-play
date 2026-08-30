@@ -163,12 +163,12 @@ export default function Chosung() {
 
           {/* 게임 옵션 — 타이머 */}
           <div className="mb-4 p-3 rounded-2xl flex items-center justify-between flex-wrap gap-2"
-            style={{ background:'rgba(10,16,35,0.7)', border:'1px solid #E4ECF7' }}>
+            style={{ background:'#EFF6FF', border:'1px solid #BFDBFE' }}>
             <label className="flex items-center gap-2 cursor-pointer">
               <input type="checkbox" checked={options.timerOn}
                 onChange={e => updateOption({ timerOn: e.target.checked })}
                 className="w-4 h-4" />
-              <span className="text-xs font-bold" style={{ color: '#5C6A93' }}>⏱ 타이머 사용</span>
+              <span className="text-xs font-bold" style={{ color: '#3A4568' }}>⏱ 타이머 사용</span>
             </label>
             {options.timerOn && (
               <div className="flex items-center gap-1">
@@ -177,9 +177,9 @@ export default function Chosung() {
                     onClick={() => updateOption({ timerSec: sec })}
                     className="text-[11px] font-black px-2.5 py-1 rounded-lg"
                     style={{
-                      background: options.timerSec === sec ? 'rgba(251,191,36,0.15)' : '#EFF6FF',
-                      color:      options.timerSec === sec ? '#FFD98C' : '#5C6A93',
-                      border:     options.timerSec === sec ? '1px solid rgba(251,191,36,0.4)' : '1px solid #E6EEF9',
+                      background: options.timerSec === sec ? '#DBEAFE' : '#EFF6FF',
+                      color:      options.timerSec === sec ? '#1D4ED8' : '#5C6A93',
+                      border:     options.timerSec === sec ? '1px solid #93C5FD' : '1px solid #E6EEF9',
                     }}>
                     {sec}초
                   </button>
@@ -197,14 +197,14 @@ export default function Chosung() {
                 <button key={cat.key} onClick={() => pickCategory(cat)}
                   className="rounded-2xl overflow-hidden text-left active:scale-95 transition-all flex flex-col"
                   style={{
-                    background: 'rgba(10,16,35,0.7)',
+                    background: '#EFF6FF',
                     border: `1px solid ${cat.color}55`,
-                    boxShadow: `0 4px 20px ${cat.color}22`,
+                    boxShadow: `0 4px 20px ${cat.color}15`,
                   }}>
                   {/* 비주얼 영역 — 그라데이션 + 큰 이모지 */}
                   <div className="flex items-center justify-center"
                     style={{
-                      background: `linear-gradient(135deg, ${cat.color}33, ${cat.color}11)`,
+                      background: `linear-gradient(135deg, ${cat.color}22, ${cat.color}08)`,
                       aspectRatio: '16/9',
                       borderBottom: `1px solid ${cat.color}33`,
                     }}>
@@ -212,7 +212,7 @@ export default function Chosung() {
                   </div>
                   {/* 본문 */}
                   <div className="p-3 flex flex-col gap-1.5">
-                    <p className="font-black text-white text-sm leading-tight">{cat.label}</p>
+                    <p className="font-black text-sm leading-tight" style={{ color: '#101A3D' }}>{cat.label}</p>
                     {isFree ? (
                       <div className="flex items-center justify-between">
                         <p className="text-[13px] font-black" style={{ color: cat.color }}>🎲 자유 모드</p>
@@ -327,10 +327,11 @@ export default function Chosung() {
 
         {/* 큰 초성 */}
         <div className="flex-1 flex items-center justify-center px-4">
-          <p className="font-black tracking-[0.3em] leading-none text-white text-center"
+          <p className="font-black tracking-[0.3em] leading-none text-center"
             style={{
               fontSize: freeChosung.length > 4 ? 84 : 120,
-              textShadow: `0 0 40px ${category.color}55`,
+              color: '#101A3D',
+              textShadow: `0 4px 24px rgba(37,99,235,0.15)`,
             }}>
             {freeChosung}
           </p>
@@ -375,14 +376,14 @@ export default function Chosung() {
               {badge && (
                 <span className="text-[13px] font-black px-2 py-0.5 rounded-md"
                   style={{
-                    background: `${c.txt}1f`,
-                    color: c.txt,
-                    border: `1px solid ${c.txt}55`,
+                    background: '#EFF6FF',
+                    color: '#101A3D',
+                    border: `1px solid #BFDBFE`,
                   }}>
                   {badge.emoji} {badge.label}
                 </span>
               )}
-              <span className="text-xs font-black" style={{ color: c.txt }}>
+              <span className="text-xs font-black" style={{ color: '#101A3D' }}>
                 {qIdx + 1} / {questions.length}
               </span>
             </div>
@@ -402,7 +403,7 @@ export default function Chosung() {
             </p>
             {showTimer && (
               <p className="text-base font-black tabular-nums"
-                style={{ color: urgent ? '#9C6F0F' : '#FFD98C', transition: 'color 0.2s' }}>
+                style={{ color: urgent ? '#DC2626' : '#2563EB', transition: 'color 0.2s' }}>
                 ⏱ {timeLeft}s
               </p>
             )}
@@ -415,7 +416,7 @@ export default function Chosung() {
             <p className="font-black tracking-[0.3em] leading-none"
               style={{
                 fontSize: cho.length > 8 ? '40px' : cho.length > 5 ? '60px' : '90px',
-                color: revealed ? '#E4ECF7' : '#FFFFFF',
+                color: revealed ? '#5C6A93' : '#101A3D',
                 transition: 'color 0.3s, font-size 0.3s',
               }}>
               {cho}
@@ -423,7 +424,7 @@ export default function Chosung() {
             {/* 힌트 표시 */}
             {hintShown && hint && !revealed && (
               <p className="mt-5 px-5 py-3 rounded-2xl text-sm font-bold inline-block max-w-md leading-relaxed"
-                style={{ background:'rgba(251,191,36,0.1)', color:'#FFD98C', border:'1px solid rgba(251,191,36,0.3)' }}>
+                style={{ background:'#FEF3C7', color:'#854D0E', border:'1px solid #FDE68A' }}>
                 💡 {hint}
               </p>
             )}
@@ -440,37 +441,48 @@ export default function Chosung() {
           </div>
         </div>
 
-        {/* 컨트롤 */}
+        {/* 액션 버튼 */}
         <div className="max-w-lg w-full mx-auto px-4 pb-6 flex flex-col gap-2.5">
+          {/* 힌트 버튼 (힌트가 있는 경우만) */}
+          {hint && !revealed && !hintShown && (
+            <button onClick={() => setHintShown(true)}
+              className="w-full py-2.5 rounded-xl text-xs font-black transition-all active:scale-95"
+              style={{ background:'#FEF3C7', color:'#854D0E', border:'1px solid #FDE68A' }}>
+              💡 힌트 보기
+            </button>
+          )}
+
           {!revealed ? (
-            <>
-              {/* 힌트 버튼 — 힌트 데이터가 있을 때만 노출 */}
-              {hint && !hintShown && (
-                <button onClick={() => setHintShown(true)}
-                  className="w-full py-3 rounded-xl font-bold text-sm active:scale-95"
-                  style={{ background:'rgba(251,191,36,0.1)', color:'#FFD98C', border:'1px solid rgba(251,191,36,0.3)' }}>
-                  💡 힌트 보기
-                </button>
-              )}
-              <button onClick={() => setRevealed(true)}
-                className="w-full py-5 rounded-2xl font-black text-xl active:scale-95"
-                style={{ background:'linear-gradient(135deg,#2563EB,#2563EB)', color:'#FFFFFF',
-                  boxShadow:'0 8px 40px #BFDBFE', border:'1px solid #BFDBFE' }}>
-                👁 정답 공개
-              </button>
-            </>
+            <button onClick={() => setRevealed(true)}
+              className="w-full py-5 rounded-2xl font-black text-xl active:scale-95 transition-all"
+              style={{
+                background: 'linear-gradient(135deg, #1D4ED8, #2563EB)',
+                color: '#FFFFFF',
+                boxShadow: '0 8px 40px rgba(37,99,235,0.4)',
+                border: '1px solid #BFDBFE',
+              }}>
+              🎉 정답 공개
+            </button>
           ) : (
-            <div className="flex gap-2">
+            <div className="flex gap-2.5">
               <button onClick={() => judge(false)}
-                className="flex-1 py-5 rounded-2xl font-black text-xl active:scale-95"
-                style={{ background:'#EFF6FF', color:'#3A4568', border:'1px solid #E4ECF7' }}>
-                ✗ 패스
+                className="flex-1 py-4 rounded-2xl font-black text-base active:scale-95 transition-all"
+                style={{
+                  background: '#EFF6FF',
+                  color: '#3A4568',
+                  border: '1px solid #BFDBFE',
+                }}>
+                패스 ({score.pass})
               </button>
               <button onClick={() => judge(true)}
-                className="flex-1 py-5 rounded-2xl font-black text-xl active:scale-95"
-                style={{ background:'linear-gradient(135deg,#2563EB,#2563EB)', color:'#FFFFFF',
-                  boxShadow:'0 8px 40px rgba(16,185,129,0.45)', border:'1px solid rgba(16,185,129,0.4)' }}>
-                ✓ 맞춤
+                className="flex-[2] py-4 rounded-2xl font-black text-lg active:scale-95 transition-all"
+                style={{
+                  background: 'linear-gradient(135deg,#166534,#15803D)',
+                  color: '#FFFFFF',
+                  boxShadow: '0 8px 30px rgba(22,101,52,0.4)',
+                  border: '1px solid #86EFAC',
+                }}>
+                ✓ 맞춤! ({score.ok})
               </button>
             </div>
           )}
@@ -480,7 +492,8 @@ export default function Chosung() {
   }
 
   /* ───── 화면 4 — 결과 ───── */
-  const resultPct = Math.round((score.ok / questions.length) * 100)
+  const total = questions.length
+  const resultPct = total > 0 ? Math.round((score.ok / total) * 100) : 0
   const c = LEVEL_COLOR[level]
 
   return (
@@ -494,7 +507,7 @@ export default function Chosung() {
               ? `${TYPE_BADGE[setIdx]?.emoji || ''} ${TYPE_BADGE[setIdx]?.label || setIdx}`
               : `세트 ${setIdx + 1}`}
           </p>
-          <p className="font-black leading-none mb-3" style={{ fontSize: '110px', color: '#FFFFFF' }}>
+          <p className="font-black leading-none mb-3" style={{ fontSize: '110px', color: '#101A3D' }}>
             {score.ok}<span style={{ fontSize: '40px', color: '#5C6A93' }}>/{questions.length}</span>
           </p>
           <p className="text-2xl font-black" style={{ color: c.txt }}>

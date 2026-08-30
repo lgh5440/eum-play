@@ -62,12 +62,7 @@ export default function EumFamilyFooter({ currentApp, variant = 'footer', size =
       <header className={s.headerMb}>
         <h3
           className={s.heading}
-          style={{
-            background: 'linear-gradient(135deg, #fef3c7 0%, #fcd34d 50%, #a16207 100%)',
-            WebkitBackgroundClip: 'text',
-            WebkitTextFillColor: 'transparent',
-            backgroundClip: 'text',
-          }}
+          style={{ color: '#101A3D' }}
         >
           {heading}
         </h3>
@@ -84,7 +79,7 @@ export default function EumFamilyFooter({ currentApp, variant = 'footer', size =
         <a
           href="mailto:lgh544092@gmail.com?subject=%5BE%3AUM%20%ED%8C%A8%EB%B0%80%EB%A6%AC%5D%20%EB%AC%B8%EC%9D%98%C2%B7%EC%98%A4%EB%A5%98%20%EC%A0%9C%EB%B3%B4"
           style={{
-            color: 'rgba(252,211,77,0.9)',
+            color: '#1D4ED8',
             textDecoration: 'underline',
             textUnderlineOffset: 4,
           }}
@@ -106,10 +101,10 @@ export default function EumFamilyFooter({ currentApp, variant = 'footer', size =
                 background: isCurrent
                   ? '#EFF6FF'
                   : hasUrl
-                    ? `linear-gradient(140deg, #EFF6FF, ${app.accent}1f)`
-                    : 'rgba(255,255,255,0.035)',
-                border: `1px solid ${isCurrent || !hasUrl ? '#E6EEF9' : `${app.accent}55`}`,
-                opacity: isCurrent || !hasUrl ? 0.45 : 1,
+                    ? 'linear-gradient(140deg, #EFF6FF, #DBEAFE)'
+                    : '#EFF6FF',
+                border: `1px solid ${isCurrent || !hasUrl ? '#BFDBFE' : '#93C5FD'}`,
+                opacity: isCurrent || !hasUrl ? 0.6 : 1,
               }}
             >
               <span
@@ -125,20 +120,20 @@ export default function EumFamilyFooter({ currentApp, variant = 'footer', size =
               </span>
               <p
                 className={s.name}
-                style={{ color: isCurrent || !hasUrl ? '#5C6A93' : '#FFFFFF' }}
+                style={{ color: '#101A3D' }}
               >
                 {app.name}
               </p>
               <p
                 className={s.tagline}
-                style={{ color: isCurrent || !hasUrl ? '#E4ECF7' : '#5C6A93' }}
+                style={{ color: '#5C6A93' }}
               >
                 {app.tagline}
               </p>
               {isCurrent && (
                 <span
                   className={s.badge}
-                  style={{ background: '#E6EEF9', color: '#5C6A93' }}
+                  style={{ background: '#DBEAFE', color: '#1E40AF' }}
                 >
                   현재 앱
                 </span>

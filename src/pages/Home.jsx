@@ -13,7 +13,7 @@ export default function Home() {
       <div className="flex items-center justify-between mb-5">
         <div
           className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[13px] font-black tracking-widest uppercase"
-          style={{ background: 'rgba(99,102,241,0.18)', color: '#93C5FD', border: '1px solid rgba(99,102,241,0.35)' }}
+          style={{ background: 'rgba(37,99,235,0.1)', color: '#1E40AF', border: '1px solid #BFDBFE' }}
         >
           ✦ CHURCH ACTIVITY
         </div>
@@ -21,7 +21,7 @@ export default function Home() {
           onClick={() => navigate('/settings')}
           aria-label="설정 열기"
           className="px-3 py-1.5 rounded-full text-[11px] font-bold flex items-center gap-1.5"
-          style={{ background: '#EFF6FF', color: '#3B82F6', border: '1px solid #BFDBFE' }}
+          style={{ background: '#EFF6FF', color: '#1D4ED8', border: '1px solid #BFDBFE' }}
         >
           <span aria-hidden>⚙</span> 설정
         </button>
@@ -56,15 +56,12 @@ export default function Home() {
               <h1 className="font-black leading-none tracking-tight"
                 style={{
                   fontSize: 22,
-                  background: 'linear-gradient(135deg, #fef3c7 0%, #9C6F0F 50%, #9C6F0F 100%)',
-                  WebkitBackgroundClip: 'text',
-                  WebkitTextFillColor: 'transparent',
-                  backgroundClip: 'text',
+                  color: '#101A3D',
                 }}>
                 이음
               </h1>
               <span className="font-black tracking-[0.25em]"
-                style={{ fontSize: 11, color: 'rgba(252,211,77,0.75)' }}>
+                style={{ fontSize: 11, color: '#5C6A93' }}>
                 E:UM
               </span>
             </div>
@@ -104,7 +101,7 @@ export default function Home() {
 
       {/* 안내 카드 */}
       <Card style={{ background: '#EFF6FF', border: '1px solid #BFDBFE' }}>
-        <p className="text-[11px] font-black mb-1.5 tracking-wider uppercase" style={{ color: '#3B82F6' }}>
+        <p className="text-[11px] font-black mb-1.5 tracking-wider uppercase" style={{ color: '#1D4ED8' }}>
           💡 사용 안내
         </p>
         <p className="text-xs leading-relaxed" style={{ color: '#3A4568' }}>
