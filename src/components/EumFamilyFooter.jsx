@@ -102,9 +102,8 @@ export default function EumFamilyFooter({ currentApp, variant = 'footer', size =
                   ? '#EFF6FF'
                   : hasUrl
                     ? 'linear-gradient(140deg, #EFF6FF, #DBEAFE)'
-                    : '#EFF6FF',
-                border: `1px solid ${isCurrent || !hasUrl ? '#BFDBFE' : '#93C5FD'}`,
-                opacity: isCurrent || !hasUrl ? 0.6 : 1,
+                    : '#F3F6FC',
+                border: `1px solid ${isCurrent ? '#BFDBFE' : !hasUrl ? '#D7E5FA' : '#93C5FD'}`,
               }}
             >
               <span
