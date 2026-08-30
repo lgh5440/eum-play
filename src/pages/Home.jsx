@@ -74,7 +74,7 @@ export default function Home() {
       </div>
 
       {/* 게임 9종 — 3×3 그리드 */}
-      <p className="text-[11px] font-black mb-3 tracking-widest uppercase" style={{ color: '#5C6A93' }}>
+      <p className="text-[11px] font-black mb-3 tracking-widest uppercase" style={{ color: '#3A4568' }}>
         🎲 게임 모음
       </p>
       <div className="grid grid-cols-3 gap-2 mb-5">
