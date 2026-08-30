@@ -1,4 +1,4 @@
-﻿import { useState, useEffect, useRef } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { useNavigate } from 'react-router-dom'
 import VerseHeader from '../components/VerseHeader'
 import HowToCard from '../components/HowToCard'
@@ -85,10 +85,6 @@ export default function Timer() {
                : ratio > 0.5 ? '#1D4ED8'
                : ratio > 0.2 ? '#B45309'
                :                '#DC2626'
-  const glow   = done        ? 'rgba(220,38,38,0.25)'
-               : ratio > 0.5 ? 'rgba(37,99,235,0.2)'
-               : ratio > 0.2 ? 'rgba(180,83,9,0.2)'
-               :                'rgba(220,38,38,0.25)'
 
   return (
     <div
@@ -174,7 +170,6 @@ export default function Timer() {
               strokeDashoffset={`${2 * Math.PI * 125 * (1 - ratio)}`}
               style={{
                 transition: 'stroke-dashoffset 0.9s linear, stroke 0.5s',
-                filter: `drop-shadow(0 0 8px ${glow})`,
               }}
             />
           </svg>
@@ -191,7 +186,6 @@ export default function Timer() {
                     fontSize: totalSecs >= 60 ? '72px' : '88px',
                     color: '#101A3D',
                     fontVariantNumeric: 'tabular-nums',
-                    textShadow: `0 0 30px ${glow}`,
                     transition: 'color 0.5s',
                   }}
                 >

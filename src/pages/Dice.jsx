@@ -215,12 +215,8 @@ export default function Dice() {
           100% { transform: translate(calc(-50% + var(--cx)), calc(-50% + var(--cy))) rotate(720deg); opacity: 0; }
         }
         @keyframes btnPulse {
-          0%, 100% { box-shadow: 0 8px 40px rgba(251,146,60,0.4); }
-          50%      { box-shadow: 0 8px 60px rgba(251,146,60,0.7); }
-        }
-        @keyframes glowPulse {
-          0%, 100% { filter: drop-shadow(0 0 16px var(--glow)); }
-          50%      { filter: drop-shadow(0 0 36px var(--glow)); }
+          0%, 100% { box-shadow: 0 8px 30px rgba(194,65,12,0.35); }
+          50%      { box-shadow: 0 8px 48px rgba(194,65,12,0.55); }
         }
       `}</style>
     </div>

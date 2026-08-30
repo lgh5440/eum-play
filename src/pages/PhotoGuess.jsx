@@ -353,7 +353,7 @@ export default function PhotoGuess() {
           style={{
             background: '#000',
             border: revealed ? '1px solid #BFDBFE' : '1px solid #EFF6FF',
-            boxShadow: revealed ? '0 0 50px #BFDBFE' : 'none',
+            boxShadow: revealed ? '0 8px 32px rgba(37,99,235,0.2)' : 'none',
             transition: 'border-color 0.4s, box-shadow 0.4s',
           }}>
           {photo && (
@@ -394,7 +394,7 @@ export default function PhotoGuess() {
       {revealed && (
         <div className="max-w-lg w-full mx-auto px-4 mb-2 text-center">
           <p className="font-black text-3xl"
-            style={{ color: '#1D4ED8', textShadow: '0 0 30px rgba(37,99,235,0.2)' }}>
+            style={{ color: '#1D4ED8' }}>
             {photo?.answer || '정답 미설정'}
           </p>
         </div>

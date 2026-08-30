@@ -266,7 +266,7 @@ export default function RandomPick() {
           <canvas ref={canvasRef} width={LCW} height={LCH}
             style={{ display: 'block', borderRadius: 12,
               border: phase === 'done' ? '1px solid #BFDBFE' : '1px solid #EFF6FF',
-              boxShadow: phase === 'done' ? '0 0 40px rgba(37,99,235,0.25)' : 'none',
+              boxShadow: phase === 'done' ? '0 8px 32px rgba(37,99,235,0.2)' : 'none',
               transition: 'border-color 0.4s, box-shadow 0.4s',
             }} />
 
@@ -274,13 +274,16 @@ export default function RandomPick() {
           {phase === 'spinning' && (
             <button onClick={stopSpin}
               className="font-black text-lg rounded-2xl active:scale-95 transition-all"
-              style={{ padding: '12px 40px', background: 'linear-gradient(135deg,#9C6F0F,#b91c1c)', color:'#FFFFFF',
-                boxShadow:'0 6px 28px rgba(239,68,68,0.6)', border:'1px solid rgba(239,68,68,0.5)' }}>
+              style={{ padding: '12px 40px', background: 'linear-gradient(135deg,#9A3412,#C2410C)', color:'#FFFFFF',
+                boxShadow:'0 6px 28px rgba(194,65,12,0.4)', border:'1px solid #BFDBFE' }}>
               ✋ 멈춰!
             </button>
           )}
           {phase === 'stopping' && (
-            <div className="font-black text-base" style={{ color:'#FFD98C', padding:'12px 40px' }}>멈추는 중…</div>
+            <div className="font-black text-base rounded-2xl"
+              style={{ background:'#FEF3C7', color:'#854D0E', border:'1px solid #FDE68A', padding:'12px 40px' }}>
+              멈추는 중…
+            </div>
           )}
           {(phase === 'idle' || phase === 'done') && (
             <button onClick={poolEmpty ? reset : startSpin} disabled={!poolEmpty && pool.length === 0}
@@ -357,7 +360,7 @@ export default function RandomPick() {
       <canvas ref={canvasRef} width={CW} height={CH}
         style={{ display:'block', margin:'0 auto', borderRadius:12, flexShrink:0,
           border: phase === 'done' ? '1px solid #BFDBFE' : '1px solid #EFF6FF',
-          boxShadow: phase === 'done' ? '0 0 50px #BFDBFE' : 'none',
+          boxShadow: phase === 'done' ? '0 8px 32px rgba(37,99,235,0.2)' : 'none',
           transition:'border-color 0.4s, box-shadow 0.4s',
         }} />
 
