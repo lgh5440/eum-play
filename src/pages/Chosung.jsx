@@ -138,7 +138,10 @@ export default function Chosung() {
   }
 
   const back = () => {
-    if (mode === 'play')          { setMode('set') }
+    if (mode === 'play') {
+      if (qIdx > 0 && !confirm('퀴즈 세트가 진행 중입니다. 세트 선택으로 돌아갈까요? (현재 진행 점수는 저장되지 않습니다)')) return
+      setMode('set')
+    }
     else if (mode === 'freePlay') { setMode('cat'); setCategory(null) }
     else if (mode === 'result')   { setMode('set'); reload() }
     else if (mode === 'set')      { setMode('cat'); setCategory(null); reload() }

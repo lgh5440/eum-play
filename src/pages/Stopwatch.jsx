@@ -57,7 +57,11 @@ export default function Stopwatch() {
   const display = `${String(mins).padStart(2,'0')}:${String(secs).padStart(2,'0')}:${String(ms).padStart(2,'0')}`
 
   const mainColor = running ? '#1D4ED8' : time > 0 ? '#DC2626' : '#101A3D'
-  const glow      = running ? '0 0 40px rgba(37,99,235,0.2)' : 'none'
+
+  const handleBack = () => {
+    if (running && !confirm('스톱워치가 측정 중입니다. 메인으로 나갈까요?')) return
+    navigate('/')
+  }
 
   /* ───── 가로 (TV·모니터·태블릿) ───── */
   if (isLandscape) {
@@ -67,7 +71,7 @@ export default function Stopwatch() {
       >
         {/* 뒤로 버튼 — 좌상단 */}
         <button
-          onClick={() => navigate('/')}
+          onClick={handleBack}
           className="absolute top-4 left-4 w-9 h-9 rounded-xl flex items-center justify-center text-lg z-10"
           style={{ background: '#EFF6FF', border: '1px solid #BFDBFE', color: '#3A4568' }}
         >←</button>
@@ -80,8 +84,7 @@ export default function Stopwatch() {
             fontVariantNumeric: 'tabular-nums',
             color: mainColor,
             letterSpacing: '-0.03em',
-            textShadow: glow,
-            transition: 'color 0.3s, text-shadow 0.3s',
+            transition: 'color 0.3s',
           }}
         >
           {display}
@@ -132,7 +135,7 @@ export default function Stopwatch() {
     <div
       className="min-h-screen flex flex-col"
     >
-      <Header title="스톱워치" onBack={() => navigate('/')} />
+      <Header title="스톱워치" onBack={handleBack} />
 
       {/* 진행자 멘트 + 사용법 */}
       <VerseHeader gameId="stopwatch" />

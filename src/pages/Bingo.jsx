@@ -36,7 +36,10 @@ export default function Bingo() {
   }
 
   const back = () => {
-    if (mode === 'play')         { setMode('subject') }
+    if (mode === 'play') {
+      if (called.length > 0 && !confirm('빙고 호명이 진행 중입니다. 주제 선택으로 돌아갈까요? (호명 기록이 초기화됩니다)')) return
+      setMode('subject')
+    }
     else if (mode === 'subject') { setMode('cat'); setCategory(null) }
     else                         { navigate('/') }
   }
@@ -51,7 +54,14 @@ export default function Bingo() {
         <HowToCard gameId="bingo" defaultOpen={false} />
 
         <div className="max-w-lg mx-auto px-4 pb-6">
-          <p className="mb-4 leading-relaxed" style={{ color: '#3A4568', fontSize: 13 }}>
+          <div className="mb-4 p-3 rounded-2xl flex items-center gap-2.5"
+            style={{ background: '#EFF6FF', border: '1px solid #BFDBFE' }}>
+            <span className="text-xl" aria-hidden>📝</span>
+            <p className="text-xs font-bold leading-relaxed" style={{ color: '#1E40AF' }}>
+              진행 팁: 학생들에게 종이 빙고판과 필기도구를 미리 나눠준 후 주제를 선택해 호명하세요. (대형 화면 미러링 권장)
+            </p>
+          </div>
+          <p className="mb-3 leading-relaxed" style={{ color: '#3A4568', fontSize: 13 }}>
             분류를 선택하면 세부 주제가 나옵니다. 주제마다 빙고판 크기가 정해져 있습니다.
           </p>
 

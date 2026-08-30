@@ -95,6 +95,12 @@ export default function Home() {
               style={{ textShadow: '0 1px 4px #1E2A45' }}>
               {game.name}
             </p>
+            {game.id === 'photo-guess' && (
+              <span className="absolute top-1.5 right-1.5 text-[9px] font-black px-1.5 py-0.5 rounded-md text-white/95"
+                style={{ background: 'rgba(0,0,0,0.35)' }}>
+                사전등록
+              </span>
+            )}
           </button>
         ))}
       </div>

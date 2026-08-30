@@ -139,9 +139,17 @@ export default function PhotoGuess() {
 
   /* 헤더 뒤로가기 */
   const back = () => {
-    if (mode === 'play')         backToLibrary()
-    else if (mode === 'addForm') cancelPending()
-    else                         navigate('/')
+    if (mode === 'play') {
+      if (!revealed && stage > 1 && !confirm('사진 퀴즈가 진행 중입니다. 라이브러리로 돌아갈까요?')) return
+      backToLibrary()
+    }
+    else if (mode === 'addForm') {
+      if (pendingDataUrl && !confirm('작성 중인 사진 등록을 취소할까요?')) return
+      cancelPending()
+    }
+    else {
+      navigate('/')
+    }
   }
 
   /* ──────────── 화면 1 — 라이브러리 ──────────── */
@@ -184,7 +192,21 @@ export default function PhotoGuess() {
             <EmptyState
               icon="🖼"
               title="등록된 사진이 없어요"
-              description='오른쪽 상단 "+ 사진 추가"로 등록' />
+              description="선생님 폰의 교회·학생·수련회 사진을 등록하여 사진 퀴즈를 진행해 보세요."
+              action={
+                <button
+                  onClick={() => setMode('addForm')}
+                  className="px-5 py-3 rounded-2xl font-black text-sm text-white transition-all active:scale-95 flex items-center gap-1.5"
+                  style={{
+                    background: 'linear-gradient(135deg, #1D4ED8, #2563EB)',
+                    boxShadow: '0 4px 16px rgba(37,99,235,0.25)',
+                    border: '1px solid #BFDBFE',
+                  }}
+                >
+                  ➕ 첫 사진 등록하기
+                </button>
+              }
+            />
           ) : (
             <>
               {/* 진행 통계 + 모두 다시 */}

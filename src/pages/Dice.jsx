@@ -83,7 +83,10 @@ export default function Dice() {
     }, ROLL_DURATION)
   }
 
-  const back = () => navigate('/')
+  const back = () => {
+    if (rolling && !confirm('주사위/윷을 굴리는 중입니다. 나가시겠습니까?')) return
+    navigate('/')
+  }
 
   /* 결과 색상 / 배경 글로우 */
   const sum = diceValues.slice(0, diceCount).reduce((a, b) => a + b, 0)

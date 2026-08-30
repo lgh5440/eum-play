@@ -86,12 +86,17 @@ export default function Timer() {
                : ratio > 0.2 ? '#B45309'
                :                '#DC2626'
 
+  const handleBack = () => {
+    if (running && !confirm('타이머가 동작 중입니다. 메인으로 나갈까요?')) return
+    navigate('/')
+  }
+
   return (
     <div
       className="min-h-screen flex flex-col transition-all duration-700"
       style={done ? { background: 'linear-gradient(160deg, #FEF2F2 0%, #FFFFFF 100%)' } : undefined}
     >
-      <Header title="타이머" onBack={() => navigate('/')} />
+      <Header title="타이머" onBack={handleBack} />
 
       {/* 진행자 멘트 + 사용법 */}
       <VerseHeader gameId="timer" />

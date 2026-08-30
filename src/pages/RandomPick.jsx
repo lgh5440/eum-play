@@ -5,6 +5,7 @@ import HowToCard from '../components/HowToCard'
 import { Header } from '../components/ui'
 
 const ACCENT = ['#3B82F6','#93C5FD','#3B82F6','#FFD98C','#9C6F0F','#e879f9','#60a5fa','#9C6F0F']
+const STORAGE_KEY = 'eum_play_random_names'
 
 export default function RandomPick() {
   const navigate      = useNavigate()
@@ -14,7 +15,14 @@ export default function RandomPick() {
   const nameInputRef  = useRef(null)
   const stopDataRef   = useRef(null)   // { targetAngle, winnerName }
 
-  const [names, setNames]                     = useState([])
+  const [names, setNames] = useState(() => {
+    try {
+      const saved = localStorage.getItem(STORAGE_KEY)
+      return saved ? JSON.parse(saved) : []
+    } catch {
+      return []
+    }
+  })
   const [phase, setPhase]                     = useState('idle')  // idle|spinning|stopping|done
   const [pickedName, setPickedName]           = useState(null)
   const [removeAfterPick, setRemoveAfterPick] = useState(false)
@@ -22,6 +30,13 @@ export default function RandomPick() {
   const [isLandscape, setIsLandscape]         = useState(() => window.innerWidth > window.innerHeight)
 
   useEffect(() => { namesRef.current = names }, [names])
+  useEffect(() => {
+    try {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(names))
+    } catch (err) {
+      console.error('[RandomPick] Failed to save names to localStorage', err)
+    }
+  }, [names])
   // names 변경 시 remainNames 동기화 — derive 불가 (게임 중 별도 변경 이뤄짐)
   // eslint-disable-next-line react-hooks/set-state-in-effect
   useEffect(() => { setRemainNames([...names]) }, [names])
@@ -241,17 +256,37 @@ export default function RandomPick() {
     setTimeout(() => drawDrum(0, 'idle'), 0)
   }
 
-  /* ── 입력 ── */
+  /* ── 입력 & 프리셋 ── */
   const addName = () => {
     const v = nameInputRef.current?.value.trim()
     if (!v) return
-    setNames(p => [...p, v])
+    const tokens = v.split(/[,/\n\r]+/).map(s => s.trim()).filter(Boolean)
+    if (tokens.length === 0) return
+    setNames(p => [...p, ...tokens])
     nameInputRef.current.value = ''
     nameInputRef.current.focus()
   }
   const removeName = idx => {
     if (phase === 'spinning' || phase === 'stopping') return
     setNames(p => p.filter((_, i) => i !== idx))
+  }
+  const applyPreset = (presetList) => {
+    setNames(presetList)
+    reset()
+  }
+  const clearAllNames = () => {
+    if (names.length === 0) return
+    if (confirm('참가자 명단을 모두 비울까요?')) {
+      setNames([])
+      reset()
+    }
+  }
+
+  const handleBack = () => {
+    if (phase === 'spinning' || phase === 'stopping') {
+      if (!confirm('추첨이 진행 중입니다. 나가시겠습니까?')) return
+    }
+    navigate('/')
   }
 
   const pool      = removeAfterPick ? remainNames : names
@@ -303,11 +338,19 @@ export default function RandomPick() {
         {/* 컨트롤 패널 */}
         <div className="flex-1 flex flex-col gap-3 overflow-y-auto" style={{ maxHeight:'100vh', paddingBlock:16 }}>
           <div className="flex items-center justify-between">
-            <button onClick={() => navigate('/')} className="w-8 h-8 rounded-xl flex items-center justify-center"
+            <button onClick={handleBack} className="w-8 h-8 rounded-xl flex items-center justify-center"
               style={{ background:'#EFF6FF', border:'1px solid #BFDBFE', color:'#101A3D' }}>←</button>
             <p className="text-[13px] font-black tracking-widest uppercase" style={{ color:'#101A3D' }}>랜덤 뽑기</p>
-            <button onClick={reset} className="text-[13px] font-bold px-2 py-1 rounded-lg"
-              style={{ color:'#3A4568', border:'1px solid #E4ECF7' }}>초기화</button>
+            <div className="flex items-center gap-1.5">
+              {names.length > 0 && (
+                <button onClick={clearAllNames} className="text-[11px] font-bold px-2 py-1 rounded-lg"
+                  style={{ color:'#DC2626', border:'1px solid #FECACA', background:'rgba(254,226,226,0.5)' }}>
+                  비우기
+                </button>
+              )}
+              <button onClick={reset} className="text-[13px] font-bold px-2 py-1 rounded-lg"
+                style={{ color:'#3A4568', border:'1px solid #E4ECF7' }}>초기화</button>
+            </div>
           </div>
           <label className="flex items-center gap-2 cursor-pointer">
             <input type="checkbox" checked={removeAfterPick}
@@ -318,7 +361,7 @@ export default function RandomPick() {
             참가자 ({pool.length}/{names.length})
           </p>
           <div className="flex gap-1.5">
-            <input ref={nameInputRef} defaultValue="" placeholder="이름"
+            <input ref={nameInputRef} defaultValue="" placeholder="이름 (쉼표/줄바꿈으로 다중 입력)"
               aria-label="추가할 참가자 이름"
               onKeyDown={e => e.key === 'Enter' && !e.nativeEvent.isComposing && addName()}
               className="flex-1 rounded-xl px-3 py-1.5 text-xs font-bold"
@@ -326,6 +369,31 @@ export default function RandomPick() {
             <button onClick={addName} aria-label="참가자 추가" className="w-8 rounded-xl font-black"
               style={{ background:'#DBEAFE', color:'#1D4ED8', border:'1px solid #BFDBFE' }}>+</button>
           </div>
+
+          {names.length === 0 && (
+            <div className="p-2.5 rounded-xl flex flex-col gap-1.5"
+              style={{ background:'#EFF6FF', border:'1px dashed #BFDBFE' }}>
+              <p className="text-[11px] font-bold" style={{ color:'#5C6A93' }}>💡 빠른 프리셋으로 채우기:</p>
+              <div className="flex gap-1.5 flex-wrap">
+                <button onClick={() => applyPreset(['1조','2조','3조','4조','5조','6조'])}
+                  className="px-2 py-1 rounded-lg text-xs font-bold"
+                  style={{ background:'#DBEAFE', color:'#1D4ED8', border:'1px solid #BFDBFE' }}>
+                  1~6조
+                </button>
+                <button onClick={() => applyPreset(['1번','2번','3번','4번','5번','6번','7번','8번'])}
+                  className="px-2 py-1 rounded-lg text-xs font-bold"
+                  style={{ background:'#DBEAFE', color:'#1D4ED8', border:'1px solid #BFDBFE' }}>
+                  1~8번
+                </button>
+                <button onClick={() => applyPreset(['1번','2번','3번','4번','5번','6번','7번','8번','9번','10번'])}
+                  className="px-2 py-1 rounded-lg text-xs font-bold"
+                  style={{ background:'#DBEAFE', color:'#1D4ED8', border:'1px solid #BFDBFE' }}>
+                  1~10번
+                </button>
+              </div>
+            </div>
+          )}
+
           <div className="flex flex-col gap-1 overflow-y-auto max-h-52">
             {names.map((nm, i) => (
               <div key={i} className="flex items-center justify-between px-2.5 py-1.5 rounded-xl"
@@ -344,12 +412,20 @@ export default function RandomPick() {
   /* ───── 세로 (모바일) ───── */
   return (
     <div className="min-h-screen flex flex-col">
-      <Header title="랜덤 뽑기" onBack={() => navigate('/')}
+      <Header title="랜덤 뽑기" onBack={handleBack}
         right={
-          <button onClick={reset} className="text-[13px] font-bold px-2.5 py-1.5 rounded-lg"
-            style={{ color:'#3A4568', border:'1px solid #E4ECF7' }}>
-            초기화
-          </button>
+          <div className="flex items-center gap-1">
+            {names.length > 0 && (
+              <button onClick={clearAllNames} className="text-[11px] font-bold px-2 py-1 rounded-lg"
+                style={{ color:'#DC2626', border:'1px solid #FECACA', background:'rgba(254,226,226,0.5)' }}>
+                비우기
+              </button>
+            )}
+            <button onClick={reset} className="text-[13px] font-bold px-2.5 py-1.5 rounded-lg"
+              style={{ color:'#3A4568', border:'1px solid #E4ECF7' }}>
+              초기화
+            </button>
+          </div>
         } />
 
       {/* 진행자 멘트 + 사용법 */}
@@ -405,7 +481,7 @@ export default function RandomPick() {
           참가자 ({removeAfterPick ? `${remainNames.length}/` : ''}{names.length})
         </p>
         <div className="flex gap-1.5">
-          <input ref={nameInputRef} defaultValue="" placeholder="이름 입력"
+          <input ref={nameInputRef} defaultValue="" placeholder="이름 (쉼표/줄바꿈으로 다중 입력 가능)"
             aria-label="추가할 참가자 이름"
             onKeyDown={e => e.key === 'Enter' && !e.nativeEvent.isComposing && addName()}
             className="flex-1 rounded-xl px-3 py-2 text-sm font-bold"
@@ -413,12 +489,39 @@ export default function RandomPick() {
           <button onClick={addName} aria-label="참가자 추가" className="w-10 rounded-xl font-black text-xl"
             style={{ background:'#DBEAFE', color:'#1D4ED8', border:'1px solid #BFDBFE' }}>+</button>
         </div>
+
+        {names.length === 0 && (
+          <div className="p-3 rounded-2xl flex flex-col gap-2"
+            style={{ background:'#EFF6FF', border:'1px dashed #BFDBFE' }}>
+            <p className="text-xs font-bold" style={{ color:'#3A4568' }}>
+              💡 참가자 이름을 직접 입력하거나 빠른 프리셋을 선택하세요:
+            </p>
+            <div className="flex gap-2 flex-wrap">
+              <button onClick={() => applyPreset(['1조','2조','3조','4조','5조','6조'])}
+                className="px-3 py-1.5 rounded-xl text-xs font-bold active:scale-95 transition-all"
+                style={{ background:'#DBEAFE', color:'#1D4ED8', border:'1px solid #BFDBFE' }}>
+                🏷 1~6조 (소그룹)
+              </button>
+              <button onClick={() => applyPreset(['1번','2번','3번','4번','5번','6번','7번','8번'])}
+                className="px-3 py-1.5 rounded-xl text-xs font-bold active:scale-95 transition-all"
+                style={{ background:'#DBEAFE', color:'#1D4ED8', border:'1px solid #BFDBFE' }}>
+                🔢 1~8번
+              </button>
+              <button onClick={() => applyPreset(['1번','2번','3번','4번','5번','6번','7번','8번','9번','10번'])}
+                className="px-3 py-1.5 rounded-xl text-xs font-bold active:scale-95 transition-all"
+                style={{ background:'#DBEAFE', color:'#1D4ED8', border:'1px solid #BFDBFE' }}>
+                🔢 1~10번
+              </button>
+            </div>
+          </div>
+        )}
+
         <div className="flex flex-col gap-1 overflow-y-auto max-h-40">
           {names.map((nm, i) => (
             <div key={i} className="flex items-center justify-between px-3 py-1.5 rounded-xl"
-              style={{ background: pickedName === nm ? '#EFF6FF' : '#EFF6FF',
+              style={{ background: pickedName === nm ? '#DBEAFE' : '#EFF6FF',
                 border: pickedName === nm ? '1px solid #BFDBFE' : '1px solid #E4ECF7' }}>
-              <span className="text-sm font-bold truncate" style={{ color: pickedName === nm ? '#3B82F6' : '#5C6A93' }}>{nm}</span>
+              <span className="text-sm font-bold truncate" style={{ color: pickedName === nm ? '#1D4ED8' : '#5C6A93' }}>{nm}</span>
               <button onClick={() => removeName(i)} aria-label={`${nm} 제거`} className="ml-2 text-xs flex-shrink-0" style={{ color:'#5C6A93' }}>×</button>
             </div>
           ))}
