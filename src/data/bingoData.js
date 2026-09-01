@@ -30,7 +30,7 @@ export const BINGO_CATEGORIES = [
   /* ════════════════════ 2. 구약 ════════════════════ */
   {
     id: 'ot', name: '구약', emoji: '📜',
-    gradient: 'linear-gradient(135deg, #9C6F0F, #B8860B)', accent: '#FFD98C',
+    gradient: 'linear-gradient(135deg, #1F5FD9, #2F73F2)', accent: '#2F73F2',
     subjects: [
       {
         id: 'commandments', name: '십계명', emoji: '📜', size: 3,
@@ -56,7 +56,7 @@ export const BINGO_CATEGORIES = [
   /* ════════════════════ 3. 교회·신앙 (신규) ════════════════════ */
   {
     id: 'church', name: '교회·신앙', emoji: '⛪',
-    gradient: 'linear-gradient(135deg, #6D28D9, #7C3AED)', accent: '#6FA7FF',
+    gradient: 'linear-gradient(135deg, #1F5FD9, #2F73F2)', accent: '#2F73F2',
     subjects: [
       {
         id: 'church_terms', name: '예수·신앙 용어', emoji: '✝️', size: 5,
@@ -85,7 +85,7 @@ export const BINGO_CATEGORIES = [
   /* ════════════════════ 4. 음식 (편의점 제거 / 서양식 → 일본식·이탈리안 분리) ════════════════════ */
   {
     id: 'food', name: '음식', emoji: '🍔',
-    gradient: 'linear-gradient(135deg, #C2410C, #EA580C)', accent: '#FFD98C',
+    gradient: 'linear-gradient(135deg, #1F5FD9, #2F73F2)', accent: '#2F73F2',
     subjects: [
       {
         id: 'bunsik', name: '분식', emoji: '🍢', size: 5,
@@ -113,7 +113,7 @@ export const BINGO_CATEGORIES = [
   /* ════════════════════ 5. 동물 ════════════════════ */
   {
     id: 'animal', name: '동물', emoji: '🦁',
-    gradient: 'linear-gradient(135deg, #BE185D, #DB2777)', accent: '#FFD98C',
+    gradient: 'linear-gradient(135deg, #1F5FD9, #2F73F2)', accent: '#2F73F2',
     subjects: [
       {
         id: 'sea', name: '바다생물', emoji: '🐟', size: 5,
@@ -137,7 +137,7 @@ export const BINGO_CATEGORIES = [
   /* ════════════════════ 6. 자연·생활 (신규) ════════════════════ */
   {
     id: 'life', name: '자연·생활', emoji: '🌳',
-    gradient: 'linear-gradient(135deg, #166534, #16A34A)', accent: '#6FA7FF',
+    gradient: 'linear-gradient(135deg, #1F5FD9, #2F73F2)', accent: '#2F73F2',
     subjects: [
       {
         id: 'fruits', name: '과일', emoji: '🍎', size: 5,
