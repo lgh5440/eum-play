@@ -57,17 +57,15 @@ export default function SentenceMatch() {
                 onClick={() => { setCategory(cat); setMode('level') }}
                 className="aspect-square rounded-2xl flex flex-col items-center justify-center active:scale-95 transition-all gap-1.5 px-2"
                 style={{
-                  background: cat.gradient,
-                  boxShadow: `0 6px 20px ${cat.accent}33`,
+                  background: `linear-gradient(135deg, ${cat.accent}22, ${cat.accent}0d)`,
+                  boxShadow: `0 6px 20px ${cat.accent}22`,
                   border: `1px solid ${cat.accent}55`,
                 }}>
                 <span className="drop-shadow-lg" style={{ fontSize: 44 }}>{cat.emoji}</span>
-                <p className="font-black text-white text-base leading-tight"
-                  style={{ textShadow: '0 1px 4px #1E2A45' }}>
+                <p className="font-black text-base leading-tight" style={{ color: '#101A3D' }}>
                   {cat.name}
                 </p>
-                <p className="text-[13px] font-bold text-white/90"
-                  style={{ textShadow: '0 1px 3px rgba(0,0,0,0.5)' }}>
+                <p className="text-[13px] font-bold" style={{ color: '#5C6A93' }}>
                   상·중·하 각 30문제
                 </p>
               </button>

@@ -13,14 +13,14 @@ export default function VerseHeader({ gameId, className = '' }) {
     <div className={`max-w-lg mx-auto w-full px-4 mb-4 ${className}`}>
       <div className="rounded-2xl px-4 py-4"
         style={{
-          background: 'linear-gradient(135deg, #FEF3C7, #FFFBEB)',
-          border: '1px solid #FDE68A',
-          boxShadow: '0 4px 20px rgba(217,119,6,0.08)',
+          background: 'linear-gradient(135deg, #EAF3FF, #F8FBFF)',
+          border: '1px solid #DDEEFF',
+          boxShadow: '0 4px 20px rgba(31,95,217,0.08)',
         }}>
         <div className="flex items-center gap-2 mb-2">
           <span style={{ fontSize: 18 }}>📖</span>
           <p className="text-[12px] font-black tracking-widest uppercase"
-            style={{ color: '#854D0E' }}>
+            style={{ color: '#1F5FD9' }}>
             진행자 멘트 · 오늘의 말씀
           </p>
         </div>
@@ -29,7 +29,7 @@ export default function VerseHeader({ gameId, className = '' }) {
           “{verse.text}”
         </p>
         <p className="text-right mt-2 font-black"
-          style={{ fontSize: 13, color: '#78350F' }}>
+          style={{ fontSize: 13, color: '#5C6A93' }}>
           — {verse.ref}
         </p>
       </div>

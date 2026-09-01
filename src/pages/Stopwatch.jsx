@@ -57,6 +57,7 @@ export default function Stopwatch() {
   const display = `${String(mins).padStart(2,'0')}:${String(secs).padStart(2,'0')}:${String(ms).padStart(2,'0')}`
 
   const mainColor = running ? '#1F5FD9' : time > 0 ? '#DC2626' : '#101A3D'
+  const glow      = running ? '0 0 40px rgba(37,99,235,0.2)' : 'none'
 
   const handleBack = () => {
     if (running && !confirm('스톱워치가 측정 중입니다. 메인으로 나갈까요?')) return

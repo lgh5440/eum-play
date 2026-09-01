@@ -28,8 +28,8 @@ export default function WordRelay() {
 
         {/* 게임 설명 */}
         <div className="rounded-2xl p-4"
-          style={{ background:'#FEF3C7', border:'1px solid #FDE68A' }}>
-          <p className="text-[11px] font-black tracking-widest uppercase mb-2" style={{ color: '#854D0E' }}>
+          style={{ background:'#EAF3FF', border:'1px solid #DDEEFF' }}>
+          <p className="text-[11px] font-black tracking-widest uppercase mb-2" style={{ color: '#1F5FD9' }}>
             📖 게임 방법
           </p>
           <ol className="text-[13px] leading-relaxed space-y-1.5" style={{ color: '#3A4568' }}>
@@ -54,17 +54,16 @@ export default function WordRelay() {
                   style={{ border: `1px solid ${t.accent}33` }}>
                   <button onClick={() => toggle(t.id)}
                     className="w-full flex items-center gap-3 px-3 py-3 active:scale-[0.99] transition-all text-left"
-                    style={{ background: t.gradient }}>
+                    style={{ background: `linear-gradient(135deg, ${t.accent}22, ${t.accent}0d)` }}>
                     <span className="drop-shadow-lg shrink-0" style={{ fontSize: 28 }}>{t.emoji}</span>
                     <div className="flex-1 min-w-0">
-                      <p className="font-black text-white text-[15px] leading-tight">{t.name}</p>
-                      <p className="text-[11px] mt-0.5 truncate text-white/90"
-                        style={{ textShadow: '0 1px 3px rgba(0,0,0,0.5)' }}>
+                      <p className="font-black text-[15px] leading-tight" style={{ color: '#101A3D' }}>{t.name}</p>
+                      <p className="text-[11px] mt-0.5 truncate" style={{ color: '#5C6A93' }}>
                         {t.goal ? `${t.goal}개` : '자유'} · {t.hint}
                       </p>
                     </div>
-                    <span className="text-white text-base shrink-0"
-                      style={{ transform: isOpen ? 'rotate(180deg)' : 'none', transition: 'transform 0.2s' }}>
+                    <span className="text-base shrink-0"
+                      style={{ color: '#1F5FD9', transform: isOpen ? 'rotate(180deg)' : 'none', transition: 'transform 0.2s' }}>
                       ▾
                     </span>
                   </button>
