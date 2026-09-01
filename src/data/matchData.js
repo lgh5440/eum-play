@@ -112,8 +112,9 @@ export const MATCH_CATEGORIES = [
     id: 'proverbs',
     name: '속담',
     emoji: '💬',
-    gradient: 'linear-gradient(135deg,#9C6F0F,#9a3412)',
-    accent: '#fdba74',
+    /* ★재스캔 발견(2026-09-01, master 지시 §전체재스캔 이행) — 갈색/주황 잔존을 정본 블루로. */
+    gradient: 'linear-gradient(135deg,#1F5FD9,#2F73F2)',
+    accent: '#2F73F2',
     levels: {
       하: [
         { left: '닭 쫓던 개',              right: '지붕 쳐다본다' },

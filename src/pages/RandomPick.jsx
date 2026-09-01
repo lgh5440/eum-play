@@ -4,7 +4,9 @@ import VerseHeader from '../components/VerseHeader'
 import HowToCard from '../components/HowToCard'
 import { Header } from '../components/ui'
 
-const ACCENT = ['#2F73F2','#6FA7FF','#2F73F2','#FFD98C','#9C6F0F','#e879f9','#60a5fa','#9C6F0F']
+/* ★리뷰어(reviewer-codex) 발견 + master 지시(2026-09-01): 골드(#FFD98C)·갈색(#9C6F0F)·
+   핑크(#e879f9)·비정본 하늘색(#60a5fa) 잔존 — 정본 블루 3색(main/deep/light)만 순환하도록 교체. */
+const ACCENT = ['#2F73F2','#1F5FD9','#6FA7FF']
 const STORAGE_KEY = 'eum_play_random_names'
 
 export default function RandomPick() {
@@ -309,14 +311,14 @@ export default function RandomPick() {
           {phase === 'spinning' && (
             <button onClick={stopSpin}
               className="font-black text-lg rounded-2xl active:scale-95 transition-all"
-              style={{ padding: '12px 40px', background: 'linear-gradient(135deg,#9A3412,#C2410C)', color:'#FFFFFF',
-                boxShadow:'0 6px 28px rgba(194,65,12,0.4)', border:'1px solid #DDEEFF' }}>
+              style={{ padding: '12px 40px', background: 'linear-gradient(135deg,#1F5FD9,#2F73F2)', color:'#FFFFFF',
+                boxShadow:'0 6px 28px rgba(31,95,217,0.4)', border:'1px solid #DDEEFF' }}>
               ✋ 멈춰!
             </button>
           )}
           {phase === 'stopping' && (
             <div className="font-black text-base rounded-2xl"
-              style={{ background:'#FEF3C7', color:'#854D0E', border:'1px solid #FDE68A', padding:'12px 40px' }}>
+              style={{ background:'#EAF3FF', color:'#1F5FD9', border:'1px solid #DDEEFF', padding:'12px 40px' }}>
               멈추는 중…
             </div>
           )}
@@ -445,14 +447,14 @@ export default function RandomPick() {
         {phase === 'spinning' && (
           <button onClick={stopSpin}
             className="w-full py-5 rounded-2xl font-black text-2xl active:scale-95 transition-all"
-            style={{ background:'linear-gradient(135deg,#9A3412,#C2410C)', color:'#FFFFFF',
-              boxShadow:'0 8px 40px rgba(194,65,12,0.4)', border:'1px solid #DDEEFF' }}>
+            style={{ background:'linear-gradient(135deg,#1F5FD9,#2F73F2)', color:'#FFFFFF',
+              boxShadow:'0 8px 40px rgba(31,95,217,0.4)', border:'1px solid #DDEEFF' }}>
             ✋ 멈춰!
           </button>
         )}
         {phase === 'stopping' && (
           <div className="w-full py-5 rounded-2xl font-black text-xl text-center"
-            style={{ background:'#FEF3C7', color:'#854D0E', border:'1px solid #FDE68A' }}>
+            style={{ background:'#EAF3FF', color:'#1F5FD9', border:'1px solid #DDEEFF' }}>
             멈추는 중…
           </div>
         )}

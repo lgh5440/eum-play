@@ -8,11 +8,13 @@
  *     단계당 30개(10×3세트). length 필드는 향후 자유 모드 복귀 대비 유지.
  */
 
+/* ★재스캔 발견(2026-09-01, master 지시 §전체재스캔 이행) — word3/idiom/proverb의 비정본
+   하늘색·골드·갈색 잔존을 정본 블루 3색(main/deep/light)으로 교체. */
 export const CATEGORIES = [
   { key: 'word2',    label: '2글자 단어', emoji: '🔤', color: '#2F73F2', mode: 'guess', length: 2 },
-  { key: 'word3',    label: '3글자 단어', emoji: '📝', color: '#60a5fa', mode: 'guess', length: 3 },
-  { key: 'idiom',    label: '사자성어',   emoji: '📜', color: '#FFD98C', mode: 'guess' },
-  { key: 'proverb',  label: '속담',       emoji: '💬', color: '#9C6F0F', mode: 'guess' },
+  { key: 'word3',    label: '3글자 단어', emoji: '📝', color: '#6FA7FF', mode: 'guess', length: 3 },
+  { key: 'idiom',    label: '사자성어',   emoji: '📜', color: '#1F5FD9', mode: 'guess' },
+  { key: 'proverb',  label: '속담',       emoji: '💬', color: '#2F73F2', mode: 'guess' },
   { key: 'bible_ot', label: '성경 — 구약', emoji: '📖', color: '#2F73F2', mode: 'guess', subdivided: true },
   { key: 'bible_nt', label: '성경 — 신약', emoji: '✝️', color: '#2F73F2', mode: 'guess', subdivided: true },
 ]
