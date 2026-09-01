@@ -88,11 +88,14 @@ export default function Home() {
             aria-label={`${game.name} 게임 시작`}
             className="aspect-square rounded-2xl overflow-hidden flex flex-col items-center justify-center active:scale-95 transition-all relative"
             style={{
-              /* ★재작업(2026-09-01, 오너 육안 피드백): 타일 배경 전체가 진한 블루라 흐려 보였음 —
-                 eum-card 기준대로 옅은 배경+블루 테두리 포인트로 전환, 게임 구분은 이모지로만. */
-              background: '#EAF3FF',
-              boxShadow: `0 4px 12px ${game.accent}22`,
-              border: `1px solid ${game.accent}55`,
+              /* ★오너 지시(2026-09-01): "게임모음 네모 테두리 무지개색, 바탕은 흰색" — 이음 패밀리
+                 공통 브랜드 요소인 무지개 테두리를 게임 타일에도 확대 적용. eum-card .frame과 동일한
+                 무지개 값, DOM 구조 변경 없이 단일 요소로 같은 시각효과를 내는 표준 CSS 기법
+                 (padding-box에 흰 배경, border-box에 무지개 그라데이션, border는 투명 처리) 사용 —
+                 rounded-2xl(border-radius)과 함께 써도 모서리가 깨지지 않는다. */
+              background: 'linear-gradient(#fff,#fff) padding-box, linear-gradient(135deg, #FF9AD8, #FFD98C, #8CC7FF, #18DDEB, #B98CFF) border-box',
+              border: '3px solid transparent',
+              boxShadow: '0 4px 12px rgba(31,95,217,.15)',
             }}
           >
             <span aria-hidden className="drop-shadow-lg mb-1.5" style={{ fontSize: 42 }}>{game.emoji}</span>
