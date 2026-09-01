@@ -54,9 +54,11 @@ export default function EumFamilyFooter({ currentApp, variant = 'footer', size =
       aria-label="이음 패밀리 앱"
       className={s.section}
       style={{
-        background: 'linear-gradient(150deg, #EAF3FF 0%, #EAF3FF 50%, #2F73F2 100%)',
-        border: '1px solid rgba(252,211,77,0.25)',
-        boxShadow: '0 8px 28px rgba(13,27,62,0.45)',
+        /* ★재작업(2026-09-01, 오너 육안 피드백): 배경이 우측 하단으로 갈수록 진한 블루(#2F73F2)로
+           바뀌어 그 위 카드 라벨이 흐려 보이는 문제 — 옅은 배경으로 통일, 진한 블루는 안 씀. */
+        background: 'linear-gradient(150deg, #EAF3FF 0%, #DDEEFF 60%, #EAF3FF 100%)',
+        border: '1px solid #DDEEFF',
+        boxShadow: '0 8px 28px rgba(31,95,217,.12)',
       }}
     >
       <header className={s.headerMb}>

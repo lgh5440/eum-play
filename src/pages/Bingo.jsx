@@ -6,6 +6,13 @@ import VerseHeader from '../components/VerseHeader'
 import HowToCard from '../components/HowToCard'
 import { Header } from '../components/ui'
 
+/* 카테고리 gradient 문자열에서 첫 hex(진한 쪽 정지점)만 뽑아 단색 텍스트로 쓴다 —
+   category.accent는 파스텔 글로우 전용이라 흰 배경 위 본문 텍스트 대비가 낮다(WCAG 미달 위험). */
+const solidFromGradient = (gradient) => {
+  const m = gradient && gradient.match(/#[0-9A-Fa-f]{6}/)
+  return m ? m[0] : '#1F5FD9'
+}
+
 export default function Bingo() {
   const navigate = useNavigate()
 
@@ -171,11 +178,10 @@ export default function Bingo() {
             </p>
             <p className="font-black leading-none drop-shadow-lg"
               style={{
+                /* ★재작업(2026-09-01, 오너 육안 피드백): 큰 글자에 그라데이션 텍스트 효과를 걸면
+                   글자가 흐려 보인다는 지적 — 카테고리 구분색은 유지하되 단색으로 전환. */
                 fontSize: currentWord.length > 5 ? 56 : currentWord.length > 3 ? 76 : 96,
-                background: category.gradient,
-                WebkitBackgroundClip: 'text',
-                WebkitTextFillColor: 'transparent',
-                backgroundClip: 'text',
+                color: solidFromGradient(category.gradient),
                 filter: `drop-shadow(0 4px 12px ${category.accent}44)`,
                 animation: 'wordPop 0.55s cubic-bezier(0.34, 1.56, 0.64, 1)',
               }}>

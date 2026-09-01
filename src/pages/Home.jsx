@@ -31,9 +31,12 @@ export default function Home() {
       <div
         className="relative rounded-2xl p-4 mb-5 overflow-hidden"
         style={{
-          background: 'linear-gradient(150deg, #EAF3FF 0%, #EAF3FF 45%, #2F73F2 100%)',
-          border: '1px solid rgba(99,102,241,0.35)',
-          boxShadow: '0 6px 24px rgba(99,102,241,0.18)',
+          /* ★재작업(2026-09-01, 오너 육안 피드백): 배경이 우측으로 갈수록 진한 블루(#2F73F2)로
+             바뀌면서 그 위의 "이음" 잉크색 텍스트(#101A3D)가 흐려 보이는 문제 — eum-card 기준대로
+             옅은 배경(전부 파스텔 톤)+가는 블루 테두리로 전환, 큰 면적 진한 블루 채움 금지. */
+          background: 'linear-gradient(150deg, #EAF3FF 0%, #DDEEFF 60%, #EAF3FF 100%)',
+          border: '1px solid #DDEEFF',
+          boxShadow: '0 6px 24px rgba(31,95,217,.12)',
         }}
       >
         <div className="absolute -top-10 -right-6 w-32 h-32 rounded-full pointer-events-none"
@@ -85,14 +88,16 @@ export default function Home() {
             aria-label={`${game.name} 게임 시작`}
             className="aspect-square rounded-2xl overflow-hidden flex flex-col items-center justify-center active:scale-95 transition-all relative"
             style={{
-              background: game.gradient,
-              boxShadow: `0 6px 20px ${game.accent}44`,
+              /* ★재작업(2026-09-01, 오너 육안 피드백): 타일 배경 전체가 진한 블루라 흐려 보였음 —
+                 eum-card 기준대로 옅은 배경+블루 테두리 포인트로 전환, 게임 구분은 이모지로만. */
+              background: '#EAF3FF',
+              boxShadow: `0 4px 12px ${game.accent}22`,
               border: `1px solid ${game.accent}55`,
             }}
           >
             <span aria-hidden className="drop-shadow-lg mb-1.5" style={{ fontSize: 42 }}>{game.emoji}</span>
-            <p className="font-black text-white text-[12px] leading-tight text-center px-1.5"
-              style={{ textShadow: '0 1px 4px #1E2A45' }}>
+            <p className="font-black text-[12px] leading-tight text-center px-1.5"
+              style={{ color: '#101A3D' }}>
               {game.name}
             </p>
             {game.id === 'photo-guess' && (
