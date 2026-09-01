@@ -256,8 +256,10 @@ export default function PhotoGuess() {
                         className="block w-full aspect-square flex items-center justify-center relative overflow-hidden"
                         style={{
                           /* 다크+3색(남색/보라/자홍) 타일 배경 — 정본 §3 "무지개색 금지"+블루 브랜드 위반이라
-                             블루 그라데이션으로 예외 없이 교체(2026-09-01 Phase 2) */
-                          background: 'linear-gradient(135deg, #1F5FD9 0%, #2F73F2 50%, #6FA7FF 100%)',
+                             블루 그라데이션으로 예외 없이 교체(2026-09-01 Phase 2).
+                             deep→main만 사용(light 톤 포함 시 중앙 흰 텍스트 대비 2.43:1로 WCAG 미달 —
+                             실측 후 제외, deep/main 양쪽 다 흰 텍스트 대비 4.33:1 이상 확인) */
+                          background: 'linear-gradient(135deg, #1F5FD9 0%, #2F73F2 100%)',
                           borderBottom: '1px solid #EAF3FF',
                         }}>
                         {/* 라이트 효과 */}
