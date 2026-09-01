@@ -17,10 +17,10 @@ const yutNameOf = (sticks) => {
 
 const YUT_INFO = {
   '도': { steps: 1, again: false, color: '#3B4759', emoji: '🐖', desc: '돼지' },
-  '개': { steps: 2, again: false, color: '#1D4ED8', emoji: '🐕', desc: '개' },
+  '개': { steps: 2, again: false, color: '#1F5FD9', emoji: '🐕', desc: '개' },
   '걸': { steps: 3, again: false, color: '#854D0E', emoji: '🐑', desc: '양' },
   '윷': { steps: 4, again: true,  color: '#C2410C', emoji: '🐄', desc: '소' },
-  '모': { steps: 5, again: true,  color: '#1E40AF', emoji: '🐎', desc: '말' },
+  '모': { steps: 5, again: true,  color: '#1F5FD9', emoji: '🐎', desc: '말' },
 }
 
 export default function Dice() {
@@ -119,7 +119,7 @@ export default function Dice() {
       {/* 모드 토글 */}
       <div className="max-w-lg mx-auto w-full px-4 mb-3 relative z-10">
         <div className="grid grid-cols-2 gap-2 p-1 rounded-2xl"
-          style={{ background:'#EFF6FF', border:'1px solid #BFDBFE' }}>
+          style={{ background:'#EAF3FF', border:'1px solid #DDEEFF' }}>
           <ModeBtn active={mode === 'dice'} onClick={() => switchMode('dice')} color="#C2410C">🎲 주사위</ModeBtn>
           <ModeBtn active={mode === 'yut'} onClick={() => switchMode('yut')} color="#854D0E">🎴 윷놀이</ModeBtn>
         </div>
@@ -136,9 +136,9 @@ export default function Dice() {
               <button key={n} onClick={() => setCount(n)} disabled={rolling}
                 className="py-2.5 rounded-xl font-black text-sm active:scale-95 transition-all"
                 style={{
-                  background: diceCount === n ? 'linear-gradient(135deg,#9A3412,#C2410C)' : '#EFF6FF',
+                  background: diceCount === n ? 'linear-gradient(135deg,#9A3412,#C2410C)' : '#EAF3FF',
                   color: diceCount === n ? '#FFFFFF' : '#5C6A93',
-                  border: diceCount === n ? '1px solid #9A3412' : '1px solid #BFDBFE',
+                  border: diceCount === n ? '1px solid #9A3412' : '1px solid #DDEEFF',
                   opacity: rolling ? 0.5 : 1,
                 }}>
                 {n}개
@@ -172,7 +172,7 @@ export default function Dice() {
             boxShadow: mode === 'dice'
               ? '0 8px 40px rgba(194,65,12,0.4)'
               : '0 8px 40px rgba(180,83,9,0.4)',
-            border: '1px solid #BFDBFE',
+            border: '1px solid #DDEEFF',
             opacity: rolling ? 0.7 : 1,
             animation: rolling ? 'btnPulse 0.6s ease-in-out infinite' : 'none',
           }}>
@@ -418,7 +418,7 @@ function Sparkles({ count = 6, color = '#FFD98C' }) {
 /* ───── 컨페티 (결과 확정 시 폭발 — 일반 16개 / 큰 결과 32개) ───── */
 function Confetti({ explosive, color }) {
   const items = useMemo(() => {
-    const COLORS = ['#9C6F0F', '#FFD98C', '#3B82F6', '#3B82F6', '#3B82F6', '#9C6F0F', color]
+    const COLORS = ['#9C6F0F', '#FFD98C', '#2F73F2', '#2F73F2', '#2F73F2', '#9C6F0F', color]
     const count = explosive ? 36 : 18
     return Array.from({ length: count }, (_, i) => {
       const angle = (i / count) * Math.PI * 2 + Math.random() * 0.6

@@ -13,8 +13,8 @@ export const GAMES = [
     emoji: '⏱',
     tagline: '정확한 시간을 맞춰라',
     description: '정해진 시간에 가장 가깝게 멈추는 사람이 승리하는 반응속도 게임.',
-    gradient: 'linear-gradient(135deg,#1D4ED8,#2563EB)',
-    accent: '#2563EB',
+    gradient: 'linear-gradient(135deg,#1F5FD9,#2F73F2)',
+    accent: '#2F73F2',
     route: '/stopwatch',
     verse: { text: '세월을 아끼라 때가 악하니라', ref: '엡 5:16' },
     howTo: [

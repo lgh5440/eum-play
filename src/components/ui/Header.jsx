@@ -20,8 +20,8 @@ export default function Header({ title, subtitle, onBack, right, sticky = false 
           className="rounded-xl flex items-center justify-center text-lg shrink-0 active:scale-95"
           style={{
             width: 44, height: 44,
-            background: '#EFF6FF',
-            border: '1px solid #BFDBFE',
+            background: '#EAF3FF',
+            border: '1px solid #DDEEFF',
             color: '#101A3D',
           }}
           aria-label="뒤로">

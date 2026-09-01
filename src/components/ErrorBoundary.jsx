@@ -59,16 +59,16 @@ function ErrorFallback({ error, reset }) {
         <div className="flex gap-2">
           <button onClick={reset}
             className="flex-1 py-3.5 rounded-xl font-black active:scale-95"
-            style={{ background:'#DBEAFE', color:'#1D4ED8', border:'1px solid #BFDBFE' }}>
+            style={{ background:'#EAF3FF', color:'#1F5FD9', border:'1px solid #DDEEFF' }}>
             🔄 다시 시도
           </button>
           <button onClick={() => { window.location.href = import.meta.env.BASE_URL }}
             className="flex-1 py-3.5 rounded-xl font-black"
             style={{
-              background:'linear-gradient(135deg,#2563EB,#2563EB)',
+              background:'linear-gradient(135deg,#2F73F2,#2F73F2)',
               color:'#FFFFFF',
-              boxShadow:'0 4px 20px #BFDBFE',
-              border:'1px solid #BFDBFE',
+              boxShadow:'0 4px 20px #DDEEFF',
+              border:'1px solid #DDEEFF',
             }}>
             🏠 홈으로
           </button>

@@ -9,7 +9,7 @@ export const BINGO_CATEGORIES = [
   /* ════════════════════ 1. 신약 ════════════════════ */
   {
     id: 'nt', name: '신약', emoji: '✝️',
-    gradient: 'linear-gradient(135deg, #1D4ED8, #2563EB)', accent: '#3B82F6',
+    gradient: 'linear-gradient(135deg, #1F5FD9, #2F73F2)', accent: '#2F73F2',
     subjects: [
       {
         id: 'disciples_12', name: '12제자', emoji: '👥', size: 3,
@@ -56,7 +56,7 @@ export const BINGO_CATEGORIES = [
   /* ════════════════════ 3. 교회·신앙 (신규) ════════════════════ */
   {
     id: 'church', name: '교회·신앙', emoji: '⛪',
-    gradient: 'linear-gradient(135deg, #6D28D9, #7C3AED)', accent: '#93C5FD',
+    gradient: 'linear-gradient(135deg, #6D28D9, #7C3AED)', accent: '#6FA7FF',
     subjects: [
       {
         id: 'church_terms', name: '예수·신앙 용어', emoji: '✝️', size: 5,
@@ -137,7 +137,7 @@ export const BINGO_CATEGORIES = [
   /* ════════════════════ 6. 자연·생활 (신규) ════════════════════ */
   {
     id: 'life', name: '자연·생활', emoji: '🌳',
-    gradient: 'linear-gradient(135deg, #166534, #16A34A)', accent: '#93C5FD',
+    gradient: 'linear-gradient(135deg, #166534, #16A34A)', accent: '#6FA7FF',
     subjects: [
       {
         id: 'fruits', name: '과일', emoji: '🍎', size: 5,

@@ -82,7 +82,7 @@ export default function Timer() {
   /* 진행률 & 색상 */
   const ratio = totalSecs > 0 ? remaining / totalSecs : 0
   const color  = done        ? '#DC2626'
-               : ratio > 0.5 ? '#1D4ED8'
+               : ratio > 0.5 ? '#1F5FD9'
                : ratio > 0.2 ? '#B45309'
                :                '#DC2626'
 
@@ -115,8 +115,8 @@ export default function Timer() {
                 aria-label={`${p.label} 타이머`}
                 className="px-3 py-1.5 rounded-full text-xs font-bold transition-all"
                 style={selected
-                  ? { background: '#DBEAFE', color: '#1D4ED8', border: '1px solid #BFDBFE' }
-                  : { background: '#EFF6FF', color: '#5C6A93', border: '1px solid #E6EEF9' }
+                  ? { background: '#EAF3FF', color: '#1F5FD9', border: '1px solid #DDEEFF' }
+                  : { background: '#EAF3FF', color: '#5C6A93', border: '1px solid #DDEEFF' }
                 }
               >
                 {p.label}
@@ -136,8 +136,8 @@ export default function Timer() {
             min="1"
             className="rounded-xl px-3 py-1.5 text-xs text-center font-bold w-32"
             style={{
-              background: '#EFF6FF',
-              border: '1px solid #BFDBFE',
+              background: '#EAF3FF',
+              border: '1px solid #DDEEFF',
               color: '#3A4568',
               outline: 'none',
             }}
@@ -146,7 +146,7 @@ export default function Timer() {
             onClick={applyCustom}
             aria-label="사용자 지정 시간 적용"
             className="px-3 py-1.5 rounded-xl text-xs font-bold"
-            style={{ background: '#DBEAFE', color: '#1D4ED8', border: '1px solid #BFDBFE' }}
+            style={{ background: '#EAF3FF', color: '#1F5FD9', border: '1px solid #DDEEFF' }}
           >적용</button>
         </div>
       </div>
@@ -163,7 +163,7 @@ export default function Timer() {
             {/* 배경 원 */}
             <circle cx="140" cy="140" r="125"
               fill="none"
-              stroke="#E4ECF7"
+              stroke="#DDEEFF"
               strokeWidth="8"
             />
             {/* 진행 원 */}
@@ -212,8 +212,8 @@ export default function Timer() {
             onClick={handleReset}
             className="flex-1 py-5 rounded-2xl font-black text-base transition-all active:scale-95"
             style={{
-              background: '#EFF6FF',
-              border: '1px solid #BFDBFE',
+              background: '#EAF3FF',
+              border: '1px solid #DDEEFF',
               color: '#3A4568',
             }}
           >리셋</button>
@@ -232,10 +232,10 @@ export default function Timer() {
               border: '1px solid #FDE68A',
               boxShadow: '0 4px 20px rgba(217,119,6,0.2)',
             } : {
-              background: 'linear-gradient(135deg, #1D4ED8, #2563EB)',
+              background: 'linear-gradient(135deg, #1F5FD9, #2F73F2)',
               color: '#FFFFFF',
               boxShadow: '0 6px 30px rgba(37,99,235,0.3)',
-              border: '1px solid #BFDBFE',
+              border: '1px solid #DDEEFF',
             }}
           >
             {done ? '종료' : running ? '일시정지' : '시작'}

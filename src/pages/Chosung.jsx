@@ -166,7 +166,7 @@ export default function Chosung() {
 
           {/* 게임 옵션 — 타이머 */}
           <div className="mb-4 p-3 rounded-2xl flex items-center justify-between flex-wrap gap-2"
-            style={{ background:'#EFF6FF', border:'1px solid #BFDBFE' }}>
+            style={{ background:'#EAF3FF', border:'1px solid #DDEEFF' }}>
             <label className="flex items-center gap-2 cursor-pointer">
               <input type="checkbox" checked={options.timerOn}
                 onChange={e => updateOption({ timerOn: e.target.checked })}
@@ -180,9 +180,9 @@ export default function Chosung() {
                     onClick={() => updateOption({ timerSec: sec })}
                     className="text-[11px] font-black px-2.5 py-1 rounded-lg"
                     style={{
-                      background: options.timerSec === sec ? '#DBEAFE' : '#EFF6FF',
-                      color:      options.timerSec === sec ? '#1D4ED8' : '#5C6A93',
-                      border:     options.timerSec === sec ? '1px solid #93C5FD' : '1px solid #E6EEF9',
+                      background: options.timerSec === sec ? '#EAF3FF' : '#EAF3FF',
+                      color:      options.timerSec === sec ? '#1F5FD9' : '#5C6A93',
+                      border:     options.timerSec === sec ? '1px solid #6FA7FF' : '1px solid #DDEEFF',
                     }}>
                     {sec}초
                   </button>
@@ -200,7 +200,7 @@ export default function Chosung() {
                 <button key={cat.key} onClick={() => pickCategory(cat)}
                   className="rounded-2xl overflow-hidden text-left active:scale-95 transition-all flex flex-col"
                   style={{
-                    background: '#EFF6FF',
+                    background: '#EAF3FF',
                     border: `1px solid ${cat.color}55`,
                     boxShadow: `0 4px 20px ${cat.color}15`,
                   }}>
@@ -254,7 +254,7 @@ export default function Chosung() {
         <div className="max-w-lg mx-auto px-4 pb-6 flex flex-col gap-5">
           {subdivided && (
             <p className="text-[12px] leading-relaxed text-center px-2" style={{ color: '#3A4568' }}>
-              난이도와 종류를 선택하세요. (예: <b style={{ color: '#3B82F6' }}>하 난이도 인물 게임</b>)
+              난이도와 종류를 선택하세요. (예: <b style={{ color: '#2F73F2' }}>하 난이도 인물 게임</b>)
             </p>
           )}
 
@@ -284,10 +284,10 @@ export default function Chosung() {
                         className="aspect-square rounded-xl flex flex-col items-center justify-center gap-0.5 font-black active:scale-95 transition-all px-1 overflow-hidden relative"
                         style={{
                           background: done
-                            ? '#EFF6FF'
+                            ? '#EAF3FF'
                             : `linear-gradient(135deg, ${c.txt}26, ${c.txt}0d)`,
                           color: done ? '#5C6A93' : c.txt,
-                          border: `1px solid ${done ? '#E4ECF7' : c.bd}`,
+                          border: `1px solid ${done ? '#DDEEFF' : c.bd}`,
                           boxShadow: done ? 'none' : `0 4px 16px ${c.txt}1a`,
                         }}>
                         {subdivided ? (
@@ -379,9 +379,9 @@ export default function Chosung() {
               {badge && (
                 <span className="text-[13px] font-black px-2 py-0.5 rounded-md"
                   style={{
-                    background: '#EFF6FF',
+                    background: '#EAF3FF',
                     color: '#101A3D',
-                    border: `1px solid #BFDBFE`,
+                    border: `1px solid #DDEEFF`,
                   }}>
                   {badge.emoji} {badge.label}
                 </span>
@@ -397,7 +397,7 @@ export default function Chosung() {
           <div className="flex gap-1 mb-2">
             {questions.map((_, i) => (
               <div key={i} className="flex-1 h-1 rounded-full"
-                style={{ background: i < qIdx ? c.txt : i === qIdx ? '#2563EB' : '#E6EEF9' }} />
+                style={{ background: i < qIdx ? c.txt : i === qIdx ? '#2F73F2' : '#DDEEFF' }} />
             ))}
           </div>
           <div className="flex items-center justify-between">
@@ -406,7 +406,7 @@ export default function Chosung() {
             </p>
             {showTimer && (
               <p className="text-base font-black tabular-nums"
-                style={{ color: urgent ? '#DC2626' : '#2563EB', transition: 'color 0.2s' }}>
+                style={{ color: urgent ? '#DC2626' : '#2F73F2', transition: 'color 0.2s' }}>
                 ⏱ {timeLeft}s
               </p>
             )}
@@ -458,10 +458,10 @@ export default function Chosung() {
             <button onClick={() => setRevealed(true)}
               className="w-full py-5 rounded-2xl font-black text-xl active:scale-95 transition-all"
               style={{
-                background: 'linear-gradient(135deg, #1D4ED8, #2563EB)',
+                background: 'linear-gradient(135deg, #1F5FD9, #2F73F2)',
                 color: '#FFFFFF',
                 boxShadow: '0 8px 40px rgba(37,99,235,0.4)',
-                border: '1px solid #BFDBFE',
+                border: '1px solid #DDEEFF',
               }}>
               🎉 정답 공개
             </button>
@@ -470,9 +470,9 @@ export default function Chosung() {
               <button onClick={() => judge(false)}
                 className="flex-1 py-4 rounded-2xl font-black text-base active:scale-95 transition-all"
                 style={{
-                  background: '#EFF6FF',
+                  background: '#EAF3FF',
                   color: '#3A4568',
-                  border: '1px solid #BFDBFE',
+                  border: '1px solid #DDEEFF',
                 }}>
                 패스 ({score.pass})
               </button>
@@ -521,12 +521,12 @@ export default function Chosung() {
       <div className="max-w-lg w-full mx-auto px-4 pb-6 flex gap-2">
         <button onClick={() => setMode('set')}
           className="flex-1 py-4 rounded-2xl font-black text-base active:scale-95 transition-all"
-          style={{ background:'#DBEAFE', color:'#1D4ED8', border:'1px solid #BFDBFE' }}>
+          style={{ background:'#EAF3FF', color:'#1F5FD9', border:'1px solid #DDEEFF' }}>
           📋 다른 세트
         </button>
         <button onClick={() => { setMode('cat'); setCategory(null) }}
           className="flex-1 py-4 rounded-2xl font-black text-base active:scale-95 transition-all"
-          style={{ background:'#EFF6FF', color:'#3A4568', border:'1px solid #BFDBFE' }}>
+          style={{ background:'#EAF3FF', color:'#3A4568', border:'1px solid #DDEEFF' }}>
           🔀 카테고리 변경
         </button>
       </div>
@@ -540,7 +540,7 @@ function TinyBtn({ onClick, children }) {
   return (
     <button onClick={onClick}
       className="text-[13px] font-bold px-2.5 py-1.5 rounded-lg"
-      style={{ color:'#3A4568', border:'1px solid #E4ECF7' }}>
+      style={{ color:'#3A4568', border:'1px solid #DDEEFF' }}>
       {children}
     </button>
   )

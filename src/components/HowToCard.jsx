@@ -13,7 +13,7 @@ export default function HowToCard({ gameId, defaultOpen = true, className = '' }
     <div className={`max-w-lg mx-auto w-full px-4 mb-4 ${className}`}>
       <div className="rounded-2xl"
         style={{
-          background: 'linear-gradient(135deg, #EFF6FF, rgba(14,116,144,0.04))',
+          background: 'linear-gradient(135deg, #EAF3FF, rgba(14,116,144,0.04))',
           border: '1px solid rgba(37,99,235,0.32)',
           boxShadow: '0 4px 20px rgba(37,99,235,0.08)',
         }}>
@@ -22,12 +22,12 @@ export default function HowToCard({ gameId, defaultOpen = true, className = '' }
           <div className="flex items-center gap-2">
             <span style={{ fontSize: 18 }}>📚</span>
             <p className="font-black tracking-widest uppercase"
-              style={{ color: '#1D4ED8', fontSize: 12 }}>
+              style={{ color: '#1F5FD9', fontSize: 12 }}>
               진행 방법 (초보자 안내)
             </p>
           </div>
           <span style={{
-            color: '#1D4ED8',
+            color: '#1F5FD9',
             fontSize: 16,
             transform: open ? 'rotate(180deg)' : 'none',
             transition: 'transform 0.2s',
@@ -42,10 +42,10 @@ export default function HowToCard({ gameId, defaultOpen = true, className = '' }
               <li key={i} className="flex items-start gap-2.5">
                 <span className="font-black shrink-0 px-2 py-0.5 rounded-md"
                   style={{
-                    color: '#1E40AF',
+                    color: '#1F5FD9',
                     fontSize: 12,
-                    background: '#DBEAFE',
-                    border: '1px solid #BFDBFE',
+                    background: '#EAF3FF',
+                    border: '1px solid #DDEEFF',
                     minWidth: 24,
                     textAlign: 'center',
                   }}>

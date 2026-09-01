@@ -4,10 +4,10 @@
 const VARIANTS = {
   /* 메인 액션 — 시안 그라데이션 (시그니처) */
   primary: {
-    background: 'linear-gradient(135deg,#2563EB,#2563EB)',
+    background: 'linear-gradient(135deg,#2F73F2,#2F73F2)',
     color: '#FFFFFF',
-    boxShadow: '0 8px 40px #BFDBFE',
-    border: '1px solid #BFDBFE',
+    boxShadow: '0 8px 40px #DDEEFF',
+    border: '1px solid #DDEEFF',
   },
   /* 위험 액션 — 정답 공개·중요 강조 */
   danger: {
@@ -18,16 +18,16 @@ const VARIANTS = {
   },
   /* 성공 액션 — 맞춤·확인 */
   success: {
-    background: 'linear-gradient(135deg,#2563EB,#2563EB)',
+    background: 'linear-gradient(135deg,#2F73F2,#2F73F2)',
     color: '#FFFFFF',
     boxShadow: '0 8px 40px rgba(16,185,129,0.45)',
     border: '1px solid rgba(16,185,129,0.4)',
   },
   /* 보조 액션 — 인디고 톤 (가벼운 강조) */
   secondary: {
-    background: '#DBEAFE',
-    color: '#1D4ED8',
-    border: '1px solid #BFDBFE',
+    background: '#EAF3FF',
+    color: '#1F5FD9',
+    border: '1px solid #DDEEFF',
   },
   /* 정보·경고 — 노랑 톤 */
   warning: {
@@ -43,15 +43,15 @@ const VARIANTS = {
   },
   /* 중립 — 회색 보조 */
   ghost: {
-    background: '#EFF6FF',
+    background: '#EAF3FF',
     color: '#3A4568',
-    border: '1px solid #E4ECF7',
+    border: '1px solid #DDEEFF',
   },
   /* 매우 약함 — 헤더 작은 액션 등 */
   subtle: {
-    background: '#EFF6FF',
+    background: '#EAF3FF',
     color: '#3A4568',
-    border: '1px solid #E4ECF7',
+    border: '1px solid #DDEEFF',
   },
 }
 

@@ -6,7 +6,7 @@ export const RELAY_THEMES = [
   /* ─── 신앙 ─── */
   {
     id: 'jesus_names', name: '예수님의 이름', emoji: '✝️',
-    gradient: 'linear-gradient(135deg,#1D4ED8,#2563EB)', accent: '#93C5FD',
+    gradient: 'linear-gradient(135deg,#1F5FD9,#2F73F2)', accent: '#6FA7FF',
     goal: 15, hint: '예수님의 호칭들',
     answers: ['예수','그리스도','메시아','임마누엘','어린양','독생자','세상의빛','생명의떡','선한목자','다윗의자손','하나님의아들','인자','구원자','만왕의왕','알파와오메가'],
   },
@@ -71,17 +71,17 @@ export const RELAY_THEMES = [
   },
   {
     id: 'kr_cities', name: '한국 도시', emoji: '🏙',
-    gradient: 'linear-gradient(135deg,#2563EB,#2563EB)', accent: '#3B82F6',
+    gradient: 'linear-gradient(135deg,#2F73F2,#2F73F2)', accent: '#2F73F2',
     goal: null, hint: '서울·부산 등',
   },
   {
     id: 'sports', name: '운동·스포츠', emoji: '⚽',
-    gradient: 'linear-gradient(135deg,#0ea5e9,#0c4a6e)', accent: '#93C5FD',
+    gradient: 'linear-gradient(135deg,#0ea5e9,#0c4a6e)', accent: '#6FA7FF',
     goal: null, hint: '아무 스포츠',
   },
   {
     id: 'jobs', name: '직업', emoji: '💼',
-    gradient: 'linear-gradient(135deg,#2563EB,#4c1d95)', accent: '#3B82F6',
+    gradient: 'linear-gradient(135deg,#2F73F2,#4c1d95)', accent: '#2F73F2',
     goal: null, hint: '아무 직업',
   },
 ]

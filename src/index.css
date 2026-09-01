@@ -8,7 +8,7 @@
   }
 
   body {
-    background: linear-gradient(180deg, #CFE6FF 0%, #EAF3FF 45%, #F8FBFF 100%);
+    background: linear-gradient(180deg, #DDEEFF 0%, #EAF3FF 45%, #F5F7FA 100%);
     min-height: 100vh;
     font-family: 'Noto Sans KR', 'Apple SD Gothic Neo', -apple-system, BlinkMacSystemFont, sans-serif;
     color: #3A4568;
@@ -17,19 +17,19 @@
 
   #root {
     min-height: 100vh;
-    background: linear-gradient(180deg, #CFE6FF 0%, #EAF3FF 45%, #F8FBFF 100%);
+    background: linear-gradient(180deg, #DDEEFF 0%, #EAF3FF 45%, #F5F7FA 100%);
   }
 
   ::-webkit-scrollbar { width: 4px; height: 4px; }
-  ::-webkit-scrollbar-track { background: #F8FBFF; }
-  ::-webkit-scrollbar-thumb { background: #BFDBFE; border-radius: 2px; }
-  ::-webkit-scrollbar-thumb:hover { background: #2563EB; }
+  ::-webkit-scrollbar-track { background: #F5F7FA; }
+  ::-webkit-scrollbar-thumb { background: #DDEEFF; border-radius: 2px; }
+  ::-webkit-scrollbar-thumb:hover { background: #2F73F2; }
 
   .no-scrollbar::-webkit-scrollbar { display: none; }
   .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
 
   :focus-visible {
-    outline: 2px solid #2563EB;
+    outline: 2px solid #2F73F2;
     outline-offset: 2px;
     border-radius: 4px;
   }
@@ -38,19 +38,19 @@
 @layer utilities {
   /* 대시보드와 통일된 카드 스타일 */
   .glass-card {
-    background: #EFF6FF;
+    background: #EAF3FF;
     backdrop-filter: blur(16px);
-    border: 1px solid #BFDBFE;
+    border: 1px solid #DDEEFF;
   }
   .glass-card-hover {
-    background: #DBEAFE;
+    background: #EAF3FF;
     backdrop-filter: blur(16px);
-    border: 1px solid #3B82F6;
+    border: 1px solid #2F73F2;
     box-shadow: 0 4px 24px rgba(37, 99, 235, 0.12);
   }
   .stat-card {
-    background: #EFF6FF;
-    border: 1px solid #BFDBFE;
+    background: #EAF3FF;
+    border: 1px solid #DDEEFF;
     border-radius: 16px;
   }
   .glow-cyan {
@@ -60,26 +60,26 @@
     box-shadow: 0 4px 16px rgba(37, 99, 235, 0.18);
   }
   .text-gradient-cyan {
-    background: linear-gradient(135deg, #1D4ED8, #2563EB);
+    background: linear-gradient(135deg, #1F5FD9, #2F73F2);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
   .text-gradient-hero {
-    background: linear-gradient(135deg, #101A3D 0%, #1D4ED8 60%, #2563EB 100%);
+    background: linear-gradient(135deg, #101A3D 0%, #1F5FD9 60%, #2F73F2 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
   /* 대시보드 히어로 그라디언트 */
   .hero-gradient {
-    background: linear-gradient(150deg, #EAF3FF 0%, #EFF6FF 45%, #2563EB 100%);
+    background: linear-gradient(150deg, #EAF3FF 0%, #EAF3FF 45%, #2F73F2 100%);
   }
   /* 하단 네비게이션 */
   .bottom-nav {
-    background: #EFF6FF;
+    background: #EAF3FF;
     backdrop-filter: blur(20px);
-    border-top: 1px solid #E4ECF7;
+    border-top: 1px solid #DDEEFF;
   }
 }
 

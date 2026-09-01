@@ -56,7 +56,7 @@ export default function Stopwatch() {
   const mins = Math.floor(time / 60000)
   const display = `${String(mins).padStart(2,'0')}:${String(secs).padStart(2,'0')}:${String(ms).padStart(2,'0')}`
 
-  const mainColor = running ? '#1D4ED8' : time > 0 ? '#DC2626' : '#101A3D'
+  const mainColor = running ? '#1F5FD9' : time > 0 ? '#DC2626' : '#101A3D'
 
   const handleBack = () => {
     if (running && !confirm('스톱워치가 측정 중입니다. 메인으로 나갈까요?')) return
@@ -73,7 +73,7 @@ export default function Stopwatch() {
         <button
           onClick={handleBack}
           className="absolute top-4 left-4 w-9 h-9 rounded-xl flex items-center justify-center text-lg z-10"
-          style={{ background: '#EFF6FF', border: '1px solid #BFDBFE', color: '#3A4568' }}
+          style={{ background: '#EAF3FF', border: '1px solid #DDEEFF', color: '#3A4568' }}
         >←</button>
 
         {/* 시간 — 화면 꽉 채움 */}
@@ -96,8 +96,8 @@ export default function Stopwatch() {
             onClick={handleReset}
             className="px-6 py-3 rounded-2xl font-black text-base transition-all active:scale-95"
             style={{
-              background: '#EFF6FF',
-              border: '1px solid #BFDBFE',
+              background: '#EAF3FF',
+              border: '1px solid #DDEEFF',
               color: '#3A4568',
             }}
           >리셋</button>
@@ -107,10 +107,10 @@ export default function Stopwatch() {
               onClick={handleStart}
               className="px-10 py-3 rounded-2xl font-black text-base transition-all active:scale-95"
               style={{
-                background: 'linear-gradient(135deg, #1D4ED8, #2563EB)',
+                background: 'linear-gradient(135deg, #1F5FD9, #2F73F2)',
                 color: '#FFFFFF',
                 boxShadow: '0 4px 20px rgba(37,99,235,0.3)',
-                border: '1px solid #BFDBFE',
+                border: '1px solid #DDEEFF',
               }}
             >시작</button>
           ) : (
@@ -121,7 +121,7 @@ export default function Stopwatch() {
                 background: 'linear-gradient(135deg, #9A3412, #C2410C)',
                 color: '#FFFFFF',
                 boxShadow: '0 4px 20px rgba(194,65,12,0.3)',
-                border: '1px solid #BFDBFE',
+                border: '1px solid #DDEEFF',
               }}
             >정지</button>
           )}
@@ -164,8 +164,8 @@ export default function Stopwatch() {
             onClick={handleReset}
             className="flex-1 py-5 rounded-2xl font-black text-lg transition-all active:scale-95"
             style={{
-              background: '#EFF6FF',
-              border: '1px solid #BFDBFE',
+              background: '#EAF3FF',
+              border: '1px solid #DDEEFF',
               color: '#3A4568',
             }}
           >리셋</button>
@@ -175,10 +175,10 @@ export default function Stopwatch() {
               onClick={handleStart}
               className="flex-[2] py-5 rounded-2xl font-black text-xl transition-all active:scale-95"
               style={{
-                background: 'linear-gradient(135deg, #1D4ED8, #2563EB)',
+                background: 'linear-gradient(135deg, #1F5FD9, #2F73F2)',
                 color: '#FFFFFF',
                 boxShadow: '0 6px 30px rgba(37,99,235,0.3)',
-                border: '1px solid #BFDBFE',
+                border: '1px solid #DDEEFF',
               }}
             >시작</button>
           ) : (
@@ -189,7 +189,7 @@ export default function Stopwatch() {
                 background: 'linear-gradient(135deg, #9A3412, #C2410C)',
                 color: '#FFFFFF',
                 boxShadow: '0 6px 30px rgba(194,65,12,0.3)',
-                border: '1px solid #BFDBFE',
+                border: '1px solid #DDEEFF',
               }}
             >정지</button>
           )}

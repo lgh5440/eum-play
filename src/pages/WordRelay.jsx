@@ -71,15 +71,15 @@ export default function WordRelay() {
 
                   {isOpen && (
                     <div className="p-3"
-                      style={{ background: '#EFF6FF', borderTop: `1px solid #BFDBFE` }}>
+                      style={{ background: '#EAF3FF', borderTop: `1px solid #DDEEFF` }}>
                       {hasAnswers ? (
                         <div className="flex flex-wrap gap-1.5">
                           {t.answers.map((w, i) => (
                             <span key={i} className="text-[12px] font-bold px-2 py-1 rounded-md"
                               style={{
-                                background: '#DBEAFE',
+                                background: '#EAF3FF',
                                 color: '#101A3D',
-                                border: '1px solid #BFDBFE',
+                                border: '1px solid #DDEEFF',
                               }}>
                               {w}
                             </span>
@@ -87,7 +87,7 @@ export default function WordRelay() {
                         </div>
                       ) : (
                         <p className="text-[12px] py-1.5 leading-relaxed" style={{ color: '#3A4568' }}>
-                          자유 주제 — 학생들이 알고 있는 모든 <b style={{ color: '#1D4ED8' }}>{t.name}</b> 단어를 차례로 외치면 됩니다.
+                          자유 주제 — 학생들이 알고 있는 모든 <b style={{ color: '#1F5FD9' }}>{t.name}</b> 단어를 차례로 외치면 됩니다.
                         </p>
                       )}
                     </div>

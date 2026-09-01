@@ -36,8 +36,8 @@ export default function SentenceMatch() {
 
         <div className="max-w-lg mx-auto px-4 pb-6">
           <div className="rounded-2xl p-4 mb-4"
-            style={{ background:'rgba(37,99,235,0.06)', border:'1px solid #EFF6FF' }}>
-            <p className="text-[11px] font-black tracking-widest uppercase mb-2" style={{ color: '#3B82F6' }}>
+            style={{ background:'rgba(37,99,235,0.06)', border:'1px solid #EAF3FF' }}>
+            <p className="text-[11px] font-black tracking-widest uppercase mb-2" style={{ color: '#2F73F2' }}>
               📖 진행 방법
             </p>
             <ol className="text-[13px] leading-relaxed space-y-1.5" style={{ color: '#3A4568' }}>
@@ -128,7 +128,7 @@ export default function SentenceMatch() {
       <Header title={`${category.emoji} ${category.name} · ${level}`} onBack={back}
         right={
           <span className="text-xs font-black px-2 py-0.5 rounded-md"
-            style={{ background: '#EFF6FF', color: '#101A3D', border: '1px solid #BFDBFE' }}>
+            style={{ background: '#EAF3FF', color: '#101A3D', border: '1px solid #DDEEFF' }}>
             {items.length}문제
           </span>
         } />
@@ -142,22 +142,22 @@ export default function SentenceMatch() {
           {items.map((item, i) => (
             <div key={i} className="rounded-xl px-3 py-2.5"
               style={{
-                background: '#EFF6FF',
-                border: '1px solid #BFDBFE',
-                borderLeft: '3px solid #1D4ED8',
+                background: '#EAF3FF',
+                border: '1px solid #DDEEFF',
+                borderLeft: '3px solid #1F5FD9',
               }}>
               <div className="flex items-start gap-2">
                 <span className="text-[13px] font-black tabular-nums shrink-0 mt-0.5"
-                  style={{ color: '#1D4ED8', minWidth: 22 }}>
+                  style={{ color: '#1F5FD9', minWidth: 22 }}>
                   {String(i + 1).padStart(2, '0')}
                 </span>
                 <p className="text-[13px] leading-snug flex-1" style={{ color: '#3A4568' }}>
                   <span style={{ color: '#3A4568' }}>{item.left}</span>
-                  <span className="mx-1.5 font-black" style={{ color: '#1D4ED8' }}>/</span>
+                  <span className="mx-1.5 font-black" style={{ color: '#1F5FD9' }}>/</span>
                   <span style={{ color: '#3A4568' }}>{item.right}</span>
                   {item.ref && (
                     <span className="ml-1.5 text-[11px] font-bold whitespace-nowrap"
-                      style={{ color: '#1D4ED8' }}>
+                      style={{ color: '#1F5FD9' }}>
                       ({item.ref})
                     </span>
                   )}

@@ -13,7 +13,7 @@ export default function Home() {
       <div className="flex items-center justify-between mb-5">
         <div
           className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[13px] font-black tracking-widest uppercase"
-          style={{ background: 'rgba(37,99,235,0.1)', color: '#1E40AF', border: '1px solid #BFDBFE' }}
+          style={{ background: 'rgba(37,99,235,0.1)', color: '#1F5FD9', border: '1px solid #DDEEFF' }}
         >
           ✦ CHURCH ACTIVITY
         </div>
@@ -21,7 +21,7 @@ export default function Home() {
           onClick={() => navigate('/settings')}
           aria-label="설정 열기"
           className="px-3 py-1.5 rounded-full text-[11px] font-bold flex items-center gap-1.5"
-          style={{ background: '#EFF6FF', color: '#1D4ED8', border: '1px solid #BFDBFE' }}
+          style={{ background: '#EAF3FF', color: '#1F5FD9', border: '1px solid #DDEEFF' }}
         >
           <span aria-hidden>⚙</span> 설정
         </button>
@@ -31,7 +31,7 @@ export default function Home() {
       <div
         className="relative rounded-2xl p-4 mb-5 overflow-hidden"
         style={{
-          background: 'linear-gradient(150deg, #EAF3FF 0%, #EFF6FF 45%, #2563EB 100%)',
+          background: 'linear-gradient(150deg, #EAF3FF 0%, #EAF3FF 45%, #2F73F2 100%)',
           border: '1px solid rgba(99,102,241,0.35)',
           boxShadow: '0 6px 24px rgba(99,102,241,0.18)',
         }}
@@ -106,8 +106,8 @@ export default function Home() {
       </div>
 
       {/* 안내 카드 */}
-      <Card style={{ background: '#EFF6FF', border: '1px solid #BFDBFE' }}>
-        <p className="text-[11px] font-black mb-1.5 tracking-wider uppercase" style={{ color: '#1D4ED8' }}>
+      <Card style={{ background: '#EAF3FF', border: '1px solid #DDEEFF' }}>
+        <p className="text-[11px] font-black mb-1.5 tracking-wider uppercase" style={{ color: '#1F5FD9' }}>
           💡 사용 안내
         </p>
         <p className="text-xs leading-relaxed" style={{ color: '#3A4568' }}>

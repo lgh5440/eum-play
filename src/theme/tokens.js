@@ -5,11 +5,11 @@
 
 export const colors = {
   // 배경
-  bg:           '#F8FBFF',
-  bgCard:       '#EFF6FF',
+  bg:           '#F5F7FA',
+  bgCard:       '#EAF3FF',
   bgCardSolid:  '#FFFFFF',
-  bgInput:      '#EFF6FF',
-  bgOverlay:    '#E4ECF7',
+  bgInput:      '#EAF3FF',
+  bgOverlay:    '#DDEEFF',
 
   // 텍스트 (밝은 톤 ~ 어두운 톤 — Tier 1 정본)
   heading:      '#101A3D',   // 제목 (h1급)
@@ -20,14 +20,14 @@ export const colors = {
   gold:         '#FFD98C',   // 강조 골드 단색
 
   // 메인 액션 — 블루
-  primary:      '#2563EB',
-  primaryDark:  '#1D4ED8',
-  primaryDeep:  '#1E40AF',
+  primary:      '#2F73F2',
+  primaryDark:  '#1F5FD9',
+  primaryDeep:  '#1F5FD9',
 
   // 보조 액션 — 인디고·블루 (밝은 배경에서 가독성 확보)
-  secondary:        '#2563EB',
-  secondaryDeep:    '#1D4ED8',
-  accent:           '#2563EB',
+  secondary:        '#2F73F2',
+  secondaryDeep:    '#1F5FD9',
+  accent:           '#2F73F2',
 
   // 의미 색상 (밝은 배경에서 가독성 확보)
   warning:      '#B45309',   // 정보·경고 (amber-700)
@@ -37,10 +37,10 @@ export const colors = {
   successDeep:  '#166534',
 
   // 보더
-  border:        '#E4ECF7',
-  borderHover:   '#BFDBFE',
-  borderActive:  '#BFDBFE',
-  borderDashed:  '#BFDBFE',
+  border:        '#DDEEFF',
+  borderHover:   '#DDEEFF',
+  borderActive:  '#DDEEFF',
+  borderDashed:  '#DDEEFF',
 }
 
 /* 여백 — 4px 배수 */
@@ -81,9 +81,9 @@ export const touchTarget = 48
 
 /* 그림자 (강조 액션용) */
 export const shadow = {
-  primary: '0 8px 40px #BFDBFE',
+  primary: '0 8px 40px #DDEEFF',
   danger:  '0 8px 40px rgba(239,68,68,0.6)',
   success: '0 8px 40px rgba(16,185,129,0.45)',
   warning: '0 8px 40px rgba(251,191,36,0.4)',
-  card:    '0 4px 20px rgba(0,0,0,0.2)',
+  card:    '0 4px 20px rgba(31,95,217,0.2)',   /* 정본 §8 "경계 뚜렷한 검정 그림자 금지" — 블루 톤으로 교체 */
 }

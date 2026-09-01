@@ -54,7 +54,7 @@ export default function EumFamilyFooter({ currentApp, variant = 'footer', size =
       aria-label="이음 패밀리 앱"
       className={s.section}
       style={{
-        background: 'linear-gradient(150deg, #EAF3FF 0%, #EFF6FF 50%, #2563EB 100%)',
+        background: 'linear-gradient(150deg, #EAF3FF 0%, #EAF3FF 50%, #2F73F2 100%)',
         border: '1px solid rgba(252,211,77,0.25)',
         boxShadow: '0 8px 28px rgba(13,27,62,0.45)',
       }}
@@ -79,7 +79,7 @@ export default function EumFamilyFooter({ currentApp, variant = 'footer', size =
         <a
           href="mailto:lgh544092@gmail.com?subject=%5BE%3AUM%20%ED%8C%A8%EB%B0%80%EB%A6%AC%5D%20%EB%AC%B8%EC%9D%98%C2%B7%EC%98%A4%EB%A5%98%20%EC%A0%9C%EB%B3%B4"
           style={{
-            color: '#1D4ED8',
+            color: '#1F5FD9',
             textDecoration: 'underline',
             textUnderlineOffset: 4,
           }}
@@ -99,11 +99,11 @@ export default function EumFamilyFooter({ currentApp, variant = 'footer', size =
               className={s.cardPad}
               style={{
                 background: isCurrent
-                  ? '#EFF6FF'
+                  ? '#EAF3FF'
                   : hasUrl
-                    ? 'linear-gradient(140deg, #EFF6FF, #DBEAFE)'
+                    ? 'linear-gradient(140deg, #EAF3FF, #EAF3FF)'
                     : '#F3F6FC',
-                border: `1px solid ${isCurrent ? '#BFDBFE' : !hasUrl ? '#D7E5FA' : '#93C5FD'}`,
+                border: `1px solid ${isCurrent ? '#DDEEFF' : !hasUrl ? '#D7E5FA' : '#6FA7FF'}`,
               }}
             >
               <span
@@ -132,7 +132,7 @@ export default function EumFamilyFooter({ currentApp, variant = 'footer', size =
               {isCurrent && (
                 <span
                   className={s.badge}
-                  style={{ background: '#DBEAFE', color: '#1E40AF' }}
+                  style={{ background: '#EAF3FF', color: '#1F5FD9' }}
                 >
                   현재 앱
                 </span>

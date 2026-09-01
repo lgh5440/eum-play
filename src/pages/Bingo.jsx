@@ -55,9 +55,9 @@ export default function Bingo() {
 
         <div className="max-w-lg mx-auto px-4 pb-6">
           <div className="mb-4 p-3 rounded-2xl flex items-center gap-2.5"
-            style={{ background: '#EFF6FF', border: '1px solid #BFDBFE' }}>
+            style={{ background: '#EAF3FF', border: '1px solid #DDEEFF' }}>
             <span className="text-xl" aria-hidden>📝</span>
-            <p className="text-xs font-bold leading-relaxed" style={{ color: '#1E40AF' }}>
+            <p className="text-xs font-bold leading-relaxed" style={{ color: '#1F5FD9' }}>
               진행 팁: 학생들에게 종이 빙고판과 필기도구를 미리 나눠준 후 주제를 선택해 호명하세요. (대형 화면 미러링 권장)
             </p>
           </div>
@@ -123,12 +123,12 @@ export default function Bingo() {
                 </p>
                 {/* 빙고 크기 배지 — 주제별 고정 */}
                 <span className="absolute top-2 right-2 text-[13px] font-black px-2 py-0.5 rounded-md"
-                  style={{ background: '#EFF6FF', color: '#101A3D', border: '1px solid #BFDBFE' }}>
+                  style={{ background: '#EAF3FF', color: '#101A3D', border: '1px solid #DDEEFF' }}>
                   {s.size}×{s.size}
                 </span>
                 {s.note && (
                   <span className="absolute top-2 left-2 text-[13px] font-bold px-1.5 py-0.5 rounded-md"
-                    style={{ background: '#EFF6FF', color: '#1E40AF', border: '1px solid #BFDBFE' }}>
+                    style={{ background: '#EAF3FF', color: '#1F5FD9', border: '1px solid #DDEEFF' }}>
                     {s.note}
                   </span>
                 )}
@@ -151,13 +151,13 @@ export default function Bingo() {
       <Header title={`${theme.name} · ${size}×${size}`} onBack={back}
         right={
           <span className="text-xs font-black px-2 py-0.5 rounded-md"
-            style={{ background: '#EFF6FF', color: '#101A3D', border: '1px solid #BFDBFE' }}>
+            style={{ background: '#EAF3FF', color: '#101A3D', border: '1px solid #DDEEFF' }}>
             {called.length} / {pool.length}
           </span>
         } />
 
       <div className="max-w-lg mx-auto w-full px-4 mb-2">
-        <div className="h-1.5 rounded-full overflow-hidden" style={{ background: '#E6EEF9' }}>
+        <div className="h-1.5 rounded-full overflow-hidden" style={{ background: '#DDEEFF' }}>
           <div className="h-full transition-all duration-500"
             style={{ width: `${progress}%`, background: category.gradient }} />
         </div>
@@ -206,9 +206,9 @@ export default function Bingo() {
             {called.slice(0, -1).map((w, i) => (
               <span key={i} className="text-[11px] font-bold px-2 py-0.5 rounded-md"
                 style={{
-                  background: '#EFF6FF',
+                  background: '#EAF3FF',
                   color: '#101A3D',
-                  border: '1px solid #BFDBFE',
+                  border: '1px solid #DDEEFF',
                 }}>
                 {w}
               </span>
@@ -231,7 +231,7 @@ export default function Bingo() {
           </button>
         ) : (
           <div className="rounded-2xl py-4 text-center"
-            style={{ background: '#EFF6FF', border: '1px solid #BFDBFE' }}>
+            style={{ background: '#EAF3FF', border: '1px solid #DDEEFF' }}>
             <p className="font-black text-base" style={{ color: '#166534' }}>
               ✓ 모든 단어 호명 완료
             </p>
@@ -242,9 +242,9 @@ export default function Bingo() {
           <button onClick={reshuffle}
             className="w-full py-3 rounded-xl font-bold text-sm active:scale-95"
             style={{
-              background: '#EFF6FF',
+              background: '#EAF3FF',
               color: '#3A4568',
-              border: '1px solid #E4ECF7',
+              border: '1px solid #DDEEFF',
             }}>
             🔁 다시 셔플하고 시작
           </button>

@@ -7,8 +7,8 @@ export const MATCH_CATEGORIES = [
     id: 'bible_verses',
     name: '성경 구절',
     emoji: '📖',
-    gradient: 'linear-gradient(135deg,#2563EB,#2563EB)',
-    accent: '#3B82F6',
+    gradient: 'linear-gradient(135deg,#2F73F2,#2F73F2)',
+    accent: '#2F73F2',
     levels: {
       하: [
         { left: '무릇 지킬만한 것보다',                     right: '네 마음을 지키라',                                                       ref: '잠 4:23' },
