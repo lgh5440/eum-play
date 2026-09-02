@@ -34,7 +34,7 @@ export default function Home() {
           /* ★재작업(2026-09-01, 오너 육안 피드백): 배경이 우측으로 갈수록 진한 블루(#2F73F2)로
              바뀌면서 그 위의 "이음" 잉크색 텍스트(#101A3D)가 흐려 보이는 문제 — eum-card 기준대로
              옅은 배경(전부 파스텔 톤)+가는 블루 테두리로 전환, 큰 면적 진한 블루 채움 금지. */
-          background: 'linear-gradient(150deg, #EAF3FF 0%, #DDEEFF 60%, #EAF3FF 100%)',
+          background: '#FFFFFF',
           border: '1px solid #DDEEFF',
           boxShadow: '0 6px 24px rgba(31,95,217,.12)',
         }}
